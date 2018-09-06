@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <link rel="icon" type="image/png" href="{{ 'Gekks-Favicon.png' | asset_url }}">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+    {{ checkout_scripts }}
+    {{ checkout_stylesheets }}
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
+  {{ 'autocomplete.js' | asset_url | script_tag }}
+    
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWJVTQQ');
+
+</script>
+<!--    snapchat  -->
+    <script type='text/javascript'>
+  (function(win, doc, sdk_url){
+  if(win.snaptr) return;
+  var tr=win.snaptr=function(){
+  tr.handleRequest? tr.handleRequest.apply(tr, arguments):tr.queue.push(arguments);
+};
+  tr.queue = [];
+  var s='script';
+  var new_script_section=doc.createElement(s);
+  new_script_section.async=!0;
+  new_script_section.src=sdk_url;
+  var insert_pos=doc.getElementsByTagName(s)[0];
+  insert_pos.parentNode.insertBefore(new_script_section, insert_pos);
+})(window, document, 'https://sc-static.net/scevent.min.js');
+
+  snaptr('init','7f9f2cbd-0592-42e0-aede-d8bdcd4182be',{
+  'user_email':'<USER-EMAIL>'
+})
+  snaptr('track','PAGE_VIEW') 
+</script>
+<!--    end snapchat  -->
+    <!--   Pinterest Pixel   -->
+<script>
+!function(e){if(!window.pintrk){window.pintrk = function () {
+window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+      n=window.pintrk;n.queue=[],n.version="3.0";var
+      t=document.createElement("script");t.async=!0,t.src=e;var
+      r=document.getElementsByTagName("script")[0];
+      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load', '2615164668106', {em: '<user_email_address>'});
+pintrk('page');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt=""
+      src="https://ct.pinterest.com/v3/?tid=2615164668106&pd[em]=<hashed_email_address>&noscript=1" />
+</noscript>
+    
+ <script>
+pintrk('track', 'pagevisit');
+</script>
+<!-- end Pinterest Tag -->
+
+    <!-- Global site tag (gtag.js) - Google AdWords: 973442114 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-973442114"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-973442114');
+</script>
+<!-- End Google Tag Manager -->
+   	{{'custom.jquery.js' | asset_url | script_tag }}
+    {{ 'customcheckout.js' | asset_url | script_tag }}
+
+     {% include 'postpurchase-survey' %}
+
+  </head>
+  
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  <body>
+    {{skip_to_content_link}}
+    <div class="banner" data-header>
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </div>
+
+    {{ order_summary_toggle }}
+
+    <div class="content" data-content>
+      <div class="wrap">
+      
+        <div class="main" role="main">
+          <div class="main__header">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </div>
+          <div class="main__content">
+            {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
+          </div>
+          <div class="main__footer">
+            {{ content_for_footer }}
+          </div>
+        </div>
+          <div class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </div>
+      </div>
+    </div> 
+    {{ tracking_code }}
+  </body>
+</html>
+

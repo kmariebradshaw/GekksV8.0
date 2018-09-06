@@ -1,0 +1,121 @@
+<form action="/cart/add" method="post" id="product-form-{{ product.id }} t" class="checkout" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+ 
+ <section id="product-details">
+    {% if product.type == "Closet Pack" or product.type == "Gift Card" %}
+      <h3>{{product.title}}</h3>
+    {% else %}
+      <h3>{{ product.collections.first.title }}'s {{product.title}}</h3>
+    {% endif %}
+    <p class="subscript">{{ product.description}}</p>
+    {% if product.available %} 
+    <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}">
+      <p id="product-price-{{ product.id }}">{{ product.price | money }}</p>
+      {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<p  class="subscript" id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</p>{% endif %}
+    </div>  
+      {% else %}
+        <meta itemprop="priceCurrency" content="{{ shop.currency }}">                          
+        <link itemprop="availability" href="http://schema.org/OutOfStock">
+        <div class="sold">Sold Out</div>
+      {% endif %}
+      {% unless product.title == "Select" or product.title == "Gift Cards" %} 
+   	  <div id="review-details">
+        <div class="prodrating">
+          {% if product.title == "Ballet Flats" or product.type == "Closet Pack" or product.title == "Heels & Wedges" %}
+            <span class="pf">
+          {% else %}
+          	<span>
+          {% endif%}
+            ☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+        </div>
+        <div id="orankl-summary-thumbnail" style="display:inline-block">
+          <div class="orankl-summary" data-product-key="{{ product.id }}" style="text-align:left;padding-bottom:0px">
+            <style scoped>
+              #orankl-summary-thumbnail .orankl-summary span { display: inline-block; text-transform: lowercase !important; font-weight: 900 !important;margin-left:0 !important;cursor:auto!important;color: #6DCDB8;  }
+              #orankl-summary-thumbnail .orankl-summary .icon-orankl-star { display: none !important; font-size: 22px !important; width: 26px !important; }
+            </style>
+          </div>
+        </div>
+       </div>
+      {% endunless %}
+  </section>
+  
+  {% if product.available and product.variants.size > 1 and product.type != "Gift Card"%}
+   {% include 'swatch' with 'Color' %}
+  {% endif %}
+  {% if product.available %}
+    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+    <link itemprop="availability" href="http://schema.org/InStock">
+    
+   <select name="id" id="productSelect-{{ product.id }}" class="product-single__variants" style="display: none;">
+      {% for variant in product.variants %}
+     	{% if product.collection.first.title == "Men" %}
+           {% if product.title != "Men's Closet Pack" %}
+           	<option {% if forloop.index == 4 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+           {% else %}
+           	<option {% if forloop.index == 2 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+           {% endif %}
+        {% else %} 
+           {% if product.title != "Ballet Flats" %}
+           	<option {% if forloop.index == 2 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+           {% else %}
+           	<option {% if forloop.index == 3 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+           {% endif %}
+        <option data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+        {% else %}
+        <option disabled="disabled" style="display: none;">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+        {% endif %}
+      {% endfor %}
+   </select>
+   <select name="quantity" id="quantity">
+<!--      <option value="" disabled selected>quantity</option> -->
+     {% for i in (1..10) %}
+     <option value="{{ i }}">{{ i }}</option>
+     {% endfor %}         
+  </select> 
+  <p class="subscript">*We recommend sizing up if you are in between sizes</p>
+  <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="background-green text-white"><span>add to cart</span></button>
+</form>
+
+
+{% unless product.title == "Select" %} 
+{% if product.available %}
+<script>
+
+  var selectCallback_{{ product.id }} = function(variant, selector) {
+
+    // BEGIN SWATCHES
+    if (variant) {
+      var form = jQuery('#' + selector.domIdPrefix).closest('form');
+      for (var i=0,length=variant.options.length; i<length; i++) {
+        var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+        if (radioButton.size()) {
+          radioButton.get(0).checked = true;
+        }
+      }
+    }
+    // END SWATCHES
+    timber.productPage({
+      money_format: "{{ shop.money_format }}",
+      variant: variant,
+      selector: selector,
+      product_id: '{{ product.id }}',
+      translations: {
+      add_to_cart : "{{ settings.add_to_cart_text }}",
+      sold_out : "Sold Out",
+      unavailable : "Unavailable"
+    }
+                       });
+  };
+  jQuery(function($) {
+    new Shopify.OptionSelectors('productSelect-{{ product.id }}', {
+                                product: {{ product | json }},
+                                onVariantSelected: selectCallback_{{ product.id }},
+                                enableHistoryState: true
+                                });
+
+
+  });
+</script>
+{% endif %}
+{% endunless %} 
+{% endif %} 
