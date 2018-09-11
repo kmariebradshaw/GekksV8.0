@@ -1,8 +1,15 @@
 // desktop sub-nav
 $('.sub-nav-header').on('click mouseover', function() {
-  event.preventDefault();  
-  $(this).next('.sub-nav').slideDown(); 
+  event.preventDefault();
+  var subnav = $(this).next('.sub-nav')
+  $('.sub-nav').not(subnav).hide(); 
+  $(subnav).show(); 
+  $('header').css("height", $('.desktop-sub-nav').height() + subnav.height() + 30 + "px")
 });
+$(window).scroll(function() {
+  $('.sub-nav').hide(); 
+  $('header').css("height", "")
+})
 // thumbnail selection on product pages
 $('#thumbnails ul li img').click(function() {
   var src = $(this).attr("src").replace("compact", "2000x2000"); 
