@@ -24,8 +24,8 @@
             </div>
               <div class="accent-padding price-details">
                 <h3 class="tar">{{ item.line_price | money}} </h3>
-                <a href="/cart/change?id={{ item.id }}&quantity=0"><p id="rm-tab">remove</p></a>
-                <p><input type="submit" name="update" value="update" class="button-xxs"></p>
+                <a href="/cart/change?id={{ item.id }}&quantity=0" class="cart-update">remove</a></p>
+                <input type="submit" name="update" value="update" class="cart-update">
               </div>
             </div>
           {% endfor %}
