@@ -33,6 +33,7 @@ form button {
 .nmt { margin-top: 0; }
 .nm { margin: 0; } 
 .tar { text-align: right; }
+.fr { float: right; }
 .ttu { text-transform: uppercase; }
 .jcs { justify-content: flex-start; }
 .jcc { justify-content: center; }
@@ -599,12 +600,67 @@ width: 80%;     display: block;     margin: 0 auto;     max-width:
   height: 50px;
 }
 .latest-news .third p { height: 100px; }
-
-
-
-
-
-
-
+/*cart page*/
+.cart-page .line-item-details input {
+    font-size: 14pt;
+    border: 2px solid #F9F7F7;
+    text-align: center;
+    margin: 5px;
+    font-weight: 300;
+}
+.line-item-details, .price-details { width: 40%;  }
+.cart-page form { 
+  display: inline-block;
+  width: 70%;
+  margin-right: 3%;
+  vertical-align: middle;
+}
+.quarter { 
+  width: 25%; 
+display: inline-block;
+vertical-align: middle;
+}
+.additional-checkout-button { 
+  width: 100%; 
+  box-sizing: border-box;
+  margin: 5px 0 !important;
+}
+.cart-page .additional-checkout-button--google-pay {
+    line-height: 0 !important;
+    padding: 0 !important;
+    border-radius: unset !important;
+    width: 100% !important;
+}
+#checkout {
+    font-size: 14pt;
+    text-align: center;
+    background: #6dcdb8;
+    width: 100%;
+    border: none;
+    height: 47px;
+    color: white;
+}
+.cart-page form .flex-container { margin: 15px 0; }
+.cart-page #note  {
+    width: 800px;
+    height: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #F9F7F7;
+}
+.cart-update {
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+    background: #F9F7F7;
+    padding: 5px;
+    font-size: 14pt;
+    box-sizing: border-box;
+    border: none;
+    font-weight: 300;
+    margin-top: 10px;
+    float: right;
+}
+.cart-update:first-of-type { margin-right: 5px; }
 
 
