@@ -92,7 +92,6 @@ ul {
   body>header nav ul li a {font-size: 14pt; line-height: 65px; } 
   body>header nav ul .desktop-sub-nav li a {font-size: 12pt; } 
 }
-  
 header {
     position: fixed;
     width: 100%;
@@ -100,7 +99,10 @@ header {
   	top: 0; 
     z-index: 999; 
     height: fit-content;
+    box-shadow: 1px 1px 1px #F9F7F7;
 }
+.sub-nav li a:hover { color: #6DCDB8; text-decoration: none;}
+.sub-nav-header a:hover { border-bottom: 2px solid #6DCDB8; }
 .logo {
     max-width: 110px;
     vertical-align: middle;
@@ -243,7 +245,7 @@ footer input::placeholder { color: #fff; }
   	vertical-align: top; 
 }
 .icon-display img { width: 80%; margin: 0 auto; } 
-.index-padding { padding: 5%; } 
+.index-padding { padding: 5% 10%; } 
 /* also used on product pages see 'endorsed' snippets */
 .endorsements-features ul {
     padding: 20px;
@@ -310,7 +312,6 @@ footer input::placeholder { color: #fff; }
   margin: 20px; 
   width: 20%; 
 } 
-#review-highlights h3 { float: right;} 
 #review-highlights ul li:before { 
   content: open-quote;
   font-size: 24pt;
