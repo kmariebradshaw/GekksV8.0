@@ -1,16 +1,16 @@
-  <script id="CartTemplate" type="text/template">
-  {% raw %}
-          <div id="close-cart" onclick="parentNode.style.display='none'">X</div>
-
-    <form action="/cart" method="post" novalidate class="cart ajaxcart">
-      <input class="js-form-discount" type="hidden" name="discount" value="" >
-      <div class="ajaxcart__inner"> 
-        {{#items}}
+ <script id="CartTemplate" type="text/template">
+{% raw %}
+   <div id="close-cart" class="close" onclick="parentNode.style.display='none'">✕</div>
+  <form action="/cart" method="post" novalidate class=" ajaxcart  accent-padding">
+    <div class="ajaxcart__inner"> 
+      {{#items}}
         <div class="ajaxcart__product">
           <div class="ajaxcart__row" data-line="{{line}}">
             <div class="grid">
-               <div class="grid__item one-quarter">
-              	<a href="{{url}}" class="ajaxcart__product-image"><img src="{{img}}" alt=""></a>
+              <div class="grid__item one-quarter">
+                <a href="{{url}}" class="ajaxcart__product-image">
+                  <img src="{{img}}" alt="">
+                </a>
               </div>
               <div class="grid__item three-quarters">
                 <p>
@@ -100,8 +100,8 @@
       </button>
     </div>
   {% endraw %}
-  </script>
-  <script id="JsQty" type="text/template">
+ </script>  
+ <script id="JsQty" type="text/template">
   {% raw %}
     <div class="js-qty">
       <button type="button" class="js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{key}}" data-qty="{{itemMinus}}">
