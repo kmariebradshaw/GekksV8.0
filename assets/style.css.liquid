@@ -536,7 +536,14 @@ width: 80%;     display: block;     margin: 0 auto;     max-width:
 800px; } 
 
 /*  how it works / tech page  */ 
-
+#plasticbottles { background-image: url("{{'plasticbottles.png' | asset_url}}");  }
+#recycledresin { background-image: url("{{'recycledresin.png' | asset_url}}"); }
+#polyester { background-image: url("{{'polyester.png' | asset_url}}"); }
+#hiw-page .accent-section div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
+}
 #repreve { 
   background-image: url("{{'' | asset_url}}"); 
   background-repeat: no-repeat;
@@ -584,7 +591,7 @@ table .lg { background-color: #F9F7F7; }
   vertical-align: middle;
  }
  #timeline .accent-padding { margin: 0 20px; }
-#timeline .tar div { margin-top: 25px; }
+#timeline .tar div { margin-top: 40px; }
 #timeline #timeline-right-half {border-left: 2px solid  #F9F2ED;}
 #spacer-timeline { margin: 50px 0; } 
 .third { width: 33.33%; }
