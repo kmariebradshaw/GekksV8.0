@@ -15,7 +15,7 @@
       {% else %}
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">                          
         <link itemprop="availability" href="http://schema.org/OutOfStock">
-        <div class="sold">Sold Out</div>
+        <p><span>Sold Out</span></p>
       {% endif %}
       {% unless product.title == "Select" or product.title == "Gift Cards" %} 
    	  <div id="review-details">
@@ -74,6 +74,7 @@
   </select> 
   <p class="subscript">*We recommend sizing up if you are in between sizes</p>
   <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="background-green text-white"><span>add to cart</span></button>
+  {% endif %}
 </form>
 
 

@@ -208,7 +208,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                   </ul>
                {% else %}
-                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                <li class="no-sub"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
               {% endif %}
              {% endfor %}  
             </ul>
@@ -245,11 +245,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         	  </div>
             </ul>
           </nav>
-          <div>
-            <div class="user-info">
-              <a href="/cart/" class="cart"><span>{{ cart.item_count }}</span> <image class="cart-icon" src="{{'shoppingbag.svg' | asset_url}}" style="margin-bottom: -11px;"/></a>
+            <div class="customer-portal">
+              {% if customer %}
+                <a href="/account/"><img src="{{'login.png' | asset_url}}" alt="View Account"/></a>
+              {% else %}
+                <a href="/account/login"><img src="{{'login.png' | asset_url}}" alt="Login/Register"/></a>
+              {% endif %}
             </div>
-          </div>
+              <a href="/cart/" class="cart"><span>{{ cart.item_count }}</span> <image class="cart-icon" src="{{'shoppingbag.svg' | asset_url}}" style="margin-bottom: -11px;"/></a>
+    
       	 </div>
       </div>
     </header>
@@ -262,7 +266,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="https://www.instagram.com/gekks_go_sockless/?hl=en" _target="blank"><img src="{{'ig.png' | asset_url}}" alt="Instagram" /></a>
           <a href="https://www.pinterest.com/gekksliners/" _target="blank"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" /></a>
      	</div>
-        <div class="clearfix">
+        <div id="footer-nav">
               <ul>
                 <h3>help</h3>
                 {% for link in linklists.footer-1.links limit: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}

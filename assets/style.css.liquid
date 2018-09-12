@@ -101,6 +101,13 @@ header {
     height: fit-content;
     box-shadow: 1px 1px 1px #F9F7F7;
 }
+.customer-portal {
+    position: absolute;
+    right: 85px;
+    top: 25px;
+}
+.customer-portal img { max-width: 35px; }
+.no-sub a:hover { border-bottom: 2px solid #6DCDB8; }
 .sub-nav li a:hover { color: #6DCDB8; text-decoration: none;}
 .sub-nav-header a:hover { border-bottom: 2px solid #6DCDB8; }
 .logo {
@@ -176,9 +183,10 @@ footer .copywrite {
   text-transform: uppercase; 
   margin-bottom: 0; 
 } 
+#footer-nav { margin-left: 30px; }
 #footer-aside {
     display: inline-block;
-    margin: 20px 50px;
+    margin: 0px 50px;
     text-align: center;
     width: 60%;
     float: right;
@@ -224,6 +232,8 @@ footer form input[type="submit"] {
 }
 
 .index-padding-to { padding-top: 5%; } 
+.index-padding-so { padding: 1px 10%; }
+.index-padding-bo { padding-top: 0; padding-left: 10%; padding-right: 10%; padding-bottom: 5%; }
 
 footer input::placeholder { color: #fff; }
 /* index page */
@@ -233,12 +243,15 @@ footer input::placeholder { color: #fff; }
   background: #6DCDB8;
   color: white; 
 } 
+#shop-w:hover, #shop-m:hover { 
+    opacity: 0.7;
+     }
 #atf1  div { margin: 0 auto; } 
 /* icon display also used on product pages */
 .icon-display {text-align: center;} 
 .icon-display li {
     display: inline-block;
-    width: 15%;
+    width: 20%;
     text-align: center;
     min-width: 150px;
     margin: 20px;
@@ -301,10 +314,6 @@ footer input::placeholder { color: #fff; }
   vertical-align: middle;
   margin: 0 -2px;
 }
-#review-highlights {
-  background-color: #F9F2ED; 
-  padding: 50px; 
-} 
   
 #review-highlights ul li {
   display: inline-block;
@@ -638,7 +647,7 @@ table .lg { background-color: #F9F7F7; }
   display: inline-block;
   width: 70%;
   margin-right: 3%;
-  vertical-align: middle;
+  vertical-align: top;
 }
 .quarter { 
   width: 25%; 

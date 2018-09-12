@@ -10,6 +10,10 @@ $(window).scroll(function() {
   $('.sub-nav').hide(); 
   $('header').css("height", "")
 })
+$('.no-sub a').on('click mouseover', function() {
+  $('.sub-nav').hide(); 
+    $('header').css("height", "")
+})
 // thumbnail selection on product pages
 $('#thumbnails ul li img').click(function() {
   var src = $(this).attr("src").replace("compact", "2000x2000"); 
