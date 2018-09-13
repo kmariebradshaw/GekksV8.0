@@ -1,13 +1,13 @@
-<main id="account">	     
+<main id="account" class="customer">	     
 	<section class="index-padding flex-container">
     <div class="third">
       <div class="title-border"></div>
         <h2>Your Account</h2>
         <ul>
           <li><h3><a href="/account" class="current text-green"">your orders</a></h3></li>
-          <li><h3><a href="/addresses" class="text-green">view addresses</a></h3></li>
-          <li><h3><a href="/contact-us" class="text-green">contact Gekks</a></h3></li>
-          <li><h3><a href="/logout" class="text-green">logout</a></h3></li>
+          <li><h3><a href="/account/addresses" class="text-green">view addresses</a></h3></li>
+          <li><h3><a href="/pages/contact-us" class="text-green">contact Gekks</a></h3></li>
+          <li><h3><a href="/account/logout" class="text-green" id="customer_logout_link">logout</a></h3></li>
         </ul>
       </div>
       <div class="two-thirds accent-padding background-lightgray tac">
@@ -24,10 +24,16 @@
             </thead>
              <tbody>
             {% for order in customer.orders %}
-                <tr {% if order.cancelled %} class="cancelled" title="Canceled Order"{% endif %}>
+                <tr>
                     <td class="order-number">{{ order.name | link_to: order.customer_url }}</td>
                     <td class="date"><span class="note">{{ order.created_at | date: "%b %d, %Y" }}</span></td>
-                    <td class="fulfillment-status"><span class="status_{{ order.fulfillment_status }}">{{ order.fulfillment_status }}</span></td>
+                    <td class="fulfillment-status"><span class="status_{{ order.fulfillment_status }}">
+                     {% if order.cancelled %}
+                      cancelled
+                    {% else %}
+                      {{ order.fulfillment_status }}</span></td>
+                    {% endif %}
+                     
                     <td class="total"><strong class="total money">{{ order.total_price | money }}</strong></td>
                 </tr>
             {% endfor %}

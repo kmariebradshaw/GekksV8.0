@@ -12,9 +12,9 @@
     <section>
       {% form 'customer_login' %}
         {{ form.errors | default_errors }}
-        <h3 class="text-green ib"><label for="customer_email">Email Address</label></h3>
+        <h3 class="text-green"><label for="customer_email">Email Address</label></h3>
         <input type="email" value="" name="customer[email]" class="background-lightgray"><br>
-        <h3 class="text-green ib"><label for="customer_password">Password</label></h3>
+        <h3 class="text-green"><label for="customer_password">Password</label></h3>
         <input type="password" value="" name="customer[password]" size="16" class="background-lightgray"><br>
         <input type="submit" value="Sign In">
         <p class="forgot-password tac"><a href="#recover" onclick="showRecoverPasswordForm()">Forgot your password?</a></p>
@@ -29,7 +29,7 @@
     <section>
       {% form 'recover_customer_password' %}
         {{ form.errors | default_errors }}
-        <h3 class="text-green ib"><label for="email">Email Address</label></h3>
+        <h3 class="text-green"><label for="email">Email Address</label></h3>
         <input type="email" value="" size="30" name="email" class="background-lightgray"> 
         <input type="submit" value="Submit">
         <p class="forgot-password tac"> <span>back to <a href="javascript:void(0)" onclick="hideRecoverPasswordForm()">login</a></span></p>

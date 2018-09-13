@@ -41,7 +41,7 @@ form button {
 .jce { justify-content: flex-end; }
 .page-header, .accent-padding { padding: 20px; } 
 .clickable { cursor: pointer; }
-p, textarea, td { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
+p, textarea, td, ul, li { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
 body { margin: 0; color: #545359;overflow-x: hidden;}
 .text-green { color: #6DCDB8; } 
 .text-white { color: #fff; }
@@ -748,7 +748,7 @@ vertical-align: middle;
     margin: 0 auto;
     min-width: 320px;
 }
-.customer input[type=submit] {
+.customer input[type=submit], .shopify-challenge__container input[type="submit"] {
     font-size: 16pt;
     line-height: 2;
     background: #6DCDB8;
@@ -783,8 +783,11 @@ vertical-align: middle;
     padding: 50px;
     text-align: left;
 }
-.cancelled { text-decoration: line-through; }
 #account .index-padding { 
-  background-image: url("{{'Pairs-05.svg" | asset_url}}"");
+  background-image: url("{{'Pairs-05.svg'| asset_url}}");
   background-repeat: no-repeat;
+}
+.customer .current { border-bottom: 2px solid #6DCDB8; }
+.shopify-challenge__container {
+    margin: 230px auto 150px auto !important;
 }
