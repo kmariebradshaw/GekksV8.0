@@ -41,7 +41,7 @@ form button {
 .jce { justify-content: flex-end; }
 .page-header, .accent-padding { padding: 20px; } 
 .clickable { cursor: pointer; }
-p, textarea, td { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
+p, textarea, td, ul, li { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
 body { margin: 0; color: #545359;overflow-x: hidden;}
 .text-green { color: #6DCDB8; } 
 .text-white { color: #fff; }
@@ -485,12 +485,12 @@ select { height: 40px; }
   background-position: 40% bottom;
   background-size: 30%;
 } 
-.contact-us form h3 {
+.contact-us form h3, .customer form h3 {
   display: inline-block; 
   padding-right: 20px;
 } 
-.contact-us form input[type="text"] {
-    width: 80%;
+.contact-us form input[type="text"], .customer form input[type="text"], .customer form input[type="email"], .customer form input[type="password"] {
+    width: 66%;
     font-size: 12pt;
     line-height: 2;
     font-weight: 300;
@@ -740,4 +740,55 @@ vertical-align: middle;
   background-color: white;
   max-width: 320px;
 }
-
+/* Customer Flow */
+.customer form{
+    padding: 50px;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    min-width: 320px;
+}
+.customer input[type=submit], .shopify-challenge__container input[type="submit"] {
+    font-size: 16pt;
+    line-height: 2;
+    background: #6DCDB8;
+    color: white;
+    text-transform: lowercase;
+    width: 80%;
+    min-width: 320px;
+    display: block;
+    margin: 20px auto;
+}
+.login { 
+  background-image: url("{{'Pairs-03.svg' | asset_url}}"); 
+  background-repeat: no-repeat;
+}
+.recover-password, #register{ 
+  background-image: url("{{'Pairs-04.svg' | asset_url}}"); 
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.third { 
+  width: 33%; 
+display: inline-block;
+vertical-align: middle;
+}
+.two-thirds { 
+  width: 66%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.order-history{
+    width: 100%;
+    padding: 50px;
+    text-align: left;
+}
+#account .index-padding { 
+  background-image: url("{{'Pairs-05.svg'| asset_url}}");
+  background-repeat: no-repeat;
+}
+.customer .current { border-bottom: 2px solid #6DCDB8; }
+.shopify-challenge__container {
+    margin: 230px auto 150px auto !important;
+}
+.errors ul li { text-align: center; }

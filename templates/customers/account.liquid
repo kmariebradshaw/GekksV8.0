@@ -1,39 +1,47 @@
-    <main id="account">	     
-	    <section>
-    	    <div class="wrap clearfix">
-        	    <div class="twothirds">
-            	    <header>
-            	        <h1>Order History</h1>
-            	    </header>
-                    {% if customer.orders.size != 0 %}
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="order-number">Order</th>
-                                <th class="date">Date</th>
-                                <th class="payment-status">Paid?</th>
-                                <th class="fulfillment-status">Fulfilled?</th>
-                                <th class="total">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {% for order in customer.orders %}
-                            <tr{% if order.cancelled %} class="cancelled" title="Canceled Order"{% endif %}>
-                                <td class="order-number">{{ order.name | link_to: order.customer_url }}</td>
-                                <td class="date"><span class="note">{{ order.created_at | date: "%b %d, %Y" }}</span></td>
-                                <td class="payment-status"><span class="status_{{ order.financial_status }}">{{ order.financial_status }}</span></td>
-                                <td class="fulfillment-status"><span class="status_{{ order.fulfillment_status }}">{{ order.fulfillment_status }}</span></td>
-                                <td class="total"><strong class="total money">{{ order.total_price | money }}</strong></td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
+<main id="account" class="customer">	     
+	<section class="index-padding flex-container">
+    <div class="third">
+      <div class="title-border"></div>
+        <h2>Your Account</h2>
+        <ul>
+          <li><h3><a href="/account" class="current text-green"">your orders</a></h3></li>
+          <li><h3><a href="/account/addresses" class="text-green">view addresses</a></h3></li>
+          <li><h3><a href="/pages/contact-us" class="text-green">contact Gekks</a></h3></li>
+          <li><h3><a href="/account/logout" class="text-green" id="customer_logout_link">logout</a></h3></li>
+        </ul>
+      </div>
+      <div class="two-thirds accent-padding background-lightgray tac">
+        <h2 class="text-green nmb">Order History</h2>
+        {% if customer.orders.size !=0 %}
+          <table class="order-history">
+            <thead>
+              <tr>
+                <th class="order-number">Order</th>
+                <th class="date">Date</th>
+                <th class="fulfillment-status">Status</th>
+                <th class="total">Total</th>
+              </tr>
+            </thead>
+             <tbody>
+            {% for order in customer.orders %}
+                <tr>
+                    <td class="order-number">{{ order.name | link_to: order.customer_url }}</td>
+                    <td class="date"><span class="note">{{ order.created_at | date: "%b %d, %Y" }}</span></td>
+                    <td class="fulfillment-status"><span class="status_{{ order.fulfillment_status }}">
+                     {% if order.cancelled %}
+                      cancelled
                     {% else %}
-                    <p>You haven't placed any orders yet.</p>
+                      {{ order.fulfillment_status }}</span></td>
                     {% endif %}
-        	    </div>
-        	    {% include 'account-menu' %}
-    	    </div>
-	    </section>
-    </main>
-<div id="talkable-dashboard"></div>
+                     
+                    <td class="total"><strong class="total money">{{ order.total_price | money }}</strong></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <h3>You haven't placed any orders yet.</h3>
+        {% endif%}
+      </div>
+   </section>
+</main>
