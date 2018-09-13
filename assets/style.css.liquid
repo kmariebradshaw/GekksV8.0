@@ -485,12 +485,12 @@ select { height: 40px; }
   background-position: 40% bottom;
   background-size: 30%;
 } 
-.contact-us form h3 {
+.contact-us form h3, .customer form h3 {
   display: inline-block; 
   padding-right: 20px;
 } 
-.contact-us form input[type="text"] {
-    width: 80%;
+.contact-us form input[type="text"], .customer form input[type="text"], .customer form input[type="email"], .customer form input[type="password"] {
+    width: 66%;
     font-size: 12pt;
     line-height: 2;
     font-weight: 300;
@@ -740,4 +740,22 @@ vertical-align: middle;
   background-color: white;
   max-width: 320px;
 }
-
+/* Customer Flow */
+.customer form{
+    padding: 50px;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    min-width: 320px;
+}
+.customer input[type=submit] {
+    font-size: 16pt;
+    line-height: 2;
+    background: #6DCDB8;
+    color: white;
+    text-transform: lowercase;
+    width: 80%;
+    min-width: 320px;
+    display: block;
+    margin: 20px auto;
+}
