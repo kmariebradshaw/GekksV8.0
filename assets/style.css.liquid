@@ -503,7 +503,7 @@ select { height: 40px; }
     background: #F9F7F7;
     padding: 30px 50px;
 }
-main.contact-us input[type=submit] {
+main.contact-us input[type=submit]{
     display: inline-block;
     width: 50%;
     font-size: 16pt;
@@ -792,3 +792,29 @@ vertical-align: middle;
     margin: 230px auto 150px auto !important;
 }
 .errors ul li { text-align: center; }
+
+/* popups */
+.modal {    
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+.modal input[type=email] {
+    width: 100%;
+    font-size: 16pt;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.modal .klaviyo_submit_button {
+    display: inline-block;
+    font-size: 16pt;
+    line-height: 2;
+    background: #6DCDB8;
+    color: white;
+    text-transform: lowercase;
+    width: 100%;
+}
+.klaviyo_header_close { color: white; }
+
