@@ -29,6 +29,7 @@ form button {
     font-size: 14pt;
     line-height: 2;
 }
+.ib { display: inline-block; }
 .spacer { height: 30px; }
 .nmb { margin-bottom: 0; } 
 .nmt { margin-top: 0; }
@@ -39,15 +40,18 @@ form button {
 .jcs { justify-content: flex-start; }
 .jcc { justify-content: center; }
 .jce { justify-content: flex-end; }
-.page-header, .accent-padding { padding: 20px; } 
 .clickable { cursor: pointer; }
-p, textarea, td, ul, li { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
+p, textarea, td, ul, li, .error_message, .success_message { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
 body { margin: 0; color: #545359;overflow-x: hidden;}
 .text-green { color: #6DCDB8; } 
 .text-white { color: #fff; }
 .tac { text-align: center; } 
 .fw { width: 100%;}
 .flex-container { 
+  display: flex; 
+  align-items: center; 
+} 
+.flex-container-no { 
   display: flex; 
   align-items: center; 
 } 
@@ -79,14 +83,88 @@ ul {
 .border-lightgray { border: 2px solid #F9F7F7; } 
 .border-white { border: 2px solid #fff; } 
 @media only screen and (min-width: 1100px) {
-  h1 { font-size: 72pt; } 
+  h1 { font-size: 67pt; } 
   h2 { font-size: 40pt; } 
   .accent-word { font-size: 24pt; } 
   h3{ font-size: 16pt; } 
   p, table { font-size: 14pt; } 
+.index-padding { padding: 5% 10%; } 
 
   .button {font-size: 20pt;} 
   .index-sections { margin-top: 87px}
+  nav ul li {margin: 0 20px; } 
+  .page-header, .accent-padding { padding: 20px; } 
+
+}
+@media only screen and (min-width: 800px) and (max-width: 1099px) {
+    h1 { font-size: 57pt; } 
+  h2 { font-size: 36pt; } 
+  .accent-word { font-size: 20pt; } 
+  h3{ font-size: 14pt; } 
+  p, table { font-size: 12pt; } 
+.index-padding { padding: 2.5% 5%; } 
+
+  .button {font-size: 16pt;} 
+  .index-sections { margin-top: 87px}
+  nav ul li {margin: 0 15px; } 
+  .page-header, .accent-padding { padding: 20px; } 
+  .half .contact-form {
+    background: #F9F7F7;
+    padding: 20px;
+}
+
+}
+@media only screen and (max-width: 799px) {
+  .half { 
+    width: 100%; 
+    padding: 20px 0 0 0; 
+  }
+  body .contact-us .flex-container {     
+    background-position: top;
+    background-size: 80%; 
+  }
+  .flex-container { flex-direction: column; }
+  .index-padding { padding: 2.5% 5%; }
+  .index-sections { margin-top: 87px}
+  nav ul li {margin: 0 5px; } 
+  h3{ font-size: 14pt; } 
+  main.contact-us form input[type=submit] { font-size: 14pt; }
+}
+@media only screen and (min-width: 589px) and (max-width: 799px) {
+  h1 { font-size: 43pt; } 
+  h2 { font-size: 30pt; } 
+    p, table { font-size: 12pt; }
+
+  .accent-word { font-size: 18pt; } 
+  .button {font-size: 16pt;} 
+  .page-header, .accent-padding { padding: 15px; } 
+  body #installation-page iframe {height: 300px;}
+}
+@media only screen and (max-width: 588px) {
+  h1 { font-size: 22pt; } 
+  h2 { font-size: 16pt; } 
+  p, table { font-size: 10pt; }
+  .accent-word { font-size: 14pt; } 
+  .button {font-size: 16pt;} 
+  #faq div section h2.text-green {
+    padding-left: 20px;
+    cursor: pointer;
+  }
+  #faq .q-and-a { padding: 25px; }
+  .page-header, .accent-padding { padding: 10px; } 
+  .contact-us .half form h3, .customer form h3 {
+    display: inline-block;
+    padding-right: 10px;
+  }
+  section .accent-image { max-width: 75px;}
+  section .instructions {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 10px;
+  }
+  body #installation-page iframe {height: auto;}
 }
 /* header */
 @media only screen and (min-width: 589px) {
@@ -120,7 +198,6 @@ header {
 nav ul li { 
   float: left;
   display: inline-block; 
-  margin: 0 20px; 
 } 
 .desktop-sub-nav li a {
   font-weight: 300; 
@@ -259,7 +336,6 @@ footer input::placeholder { color: #fff; }
   	vertical-align: top; 
 }
 .icon-display img { width: 80%; margin: 0 auto; } 
-.index-padding { padding: 5% 10%; } 
 /* also used on product pages see 'endorsed' snippets */
 .endorsements-features ul {
     padding: 20px;
@@ -501,9 +577,9 @@ select { height: 40px; }
 }
 .contact-form {
     background: #F9F7F7;
-    padding: 30px 50px;
+    padding: 20px;
 }
-main.contact-us input[type=submit] {
+main.contact-us input[type=submit]{
     display: inline-block;
     width: 50%;
     font-size: 16pt;
@@ -576,7 +652,12 @@ table .lg { background-color: #F9F7F7; }
 .accent-section .half, #care-instructions .half { height: 440px; } 
  /* care-instructions */
 #refresh { background-image: url("{{'placeholder.png' |asset_url}}");}
-#complete { background-image: url("{{'placeholder.png'| asset_url}}");} 
+#complete { 
+  background-image: url("{{'completerefresh2.jpg'| asset_url}}");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+} 
 #washing-instructions img { 
   border-radius: 100%;
   vertical-align: middle; 
@@ -792,3 +873,36 @@ vertical-align: middle;
     margin: 230px auto 150px auto !important;
 }
 .errors ul li { text-align: center; }
+
+/* popups */
+.modal {    
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+.modal input[type=email] {
+    width: 100%;
+    font-size: 16pt;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.modal .klaviyo_submit_button {
+    display: inline-block;
+    font-size: 16pt;
+    line-height: 2;
+    background: #6DCDB8;
+    color: white;
+    text-transform: lowercase;
+    width: 100%;
+}
+.klaviyo_header_close { color: white; }
+#newsletter_popup2  .third{ 
+  background-image: url("{{'popup.jpg' | asset_url}}"); 
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
+#newsletter_popup2 { overflow: hidden; }

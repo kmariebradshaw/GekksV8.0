@@ -1,3 +1,10 @@
+// popup close
+    $('.klaviyo_header_close').on('click', function() {
+      $(this).parent().parent().hide();
+      $('.modal').hide();
+    });
+
+
 // desktop sub-nav
 $('.sub-nav-header').on('click mouseover', function() {
   event.preventDefault();

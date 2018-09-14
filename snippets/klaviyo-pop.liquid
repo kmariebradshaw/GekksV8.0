@@ -1,52 +1,40 @@
-      {% comment %}Welcome Pop-Up{% endcomment %}
-
-  <div class="klaviyo_modal" id="newsletter_popup2" style="display:none;position: absolute;">
-   <div class="klaviyo_inner klinner">
-   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
-   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
-      <input type="hidden" name="g" value="Ai9wnf">
-      <input type="hidden" name="$fields" value="phone_number"/>
-      <img src="{{'pop-up2.jpg' | asset_url}}" alt="Weekly Shoe Giveaways" class="pop-image hide_on_submit" id="welcome-photo-pop"/>
-   <div class="khalf hide_on_submit">
-      <div class="klaviyo_fieldset">
-        <p class="klaviyo_header hide_on_submit">first order<br>discount!</p> 
-        <p class="klaviyo_subheader hide_on_submit">Enter your information to instantly unlock a new customer coupon.</p>
+<div class="modal" id="newsletter_popup2" style="display:none;">
+  <div class="background-lightgray tac">
+  <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
+    <input type="hidden" name="g" value="Ai9wnf">
+    <div class="flex-container hide_on_submit">
+      <div class="third">
       </div>
-      <div class="klaviyo_fieldset hide_on_submit">
-      <div class="klaviyo_field_group">
-        <input type="email" id="newsletter_popup_$email" class="newsletter_email" placeholder="email" name="email">
+      <div class="two-thirds accent-padding">
+        <p class="nm klaviyo_header_close tar clickable">X</p>
+        <div class="accent-padding border-white">
+          <h3 class="text-green nm">first order</h3>
+          <h2 class="nm">discount</h2>
+        </div>
+        <p><span class="text-green">Enter your information to instantly unlock a new customer coupon.</span></p>
+        <input type="email" id="newsletter_popup_$email" class="newsletter_email" name="email">
+        <div class="klaviyo_form_actions">
+          <button type="submit" class="klaviyo_submit_button"><span>let's go!</span></button> 
+        </div>
+        <p class="text-green">We give away <b>FREE</b> shoes every week so be sure to follow us on social for your chance to win!</p>
       </div>
-      </div>   
-      <div class="klaviyo_fine_print"></div> 
-      <div class="klaviyo_form_actions hide_on_submit">
-          <button type="submit" class="klaviyo_submit_button">
-          <span>let's go!</span>
-          </button> 
-      </div> 
-      <div class="kbelow">
-      <p>We give away <em>FREE</em> shoes<br> every week so be sure to<br> follow us on social for your<br> chance to win!</p>
-      </div>
-      <div class="klaviyo_below_submit" ></div>
-      </div>
+    </div>
    </form>
-  <div class="success_message" ></div> 
-  <div class="error_message" ></div>
-   </div>
+    <div class="success_message"></div> 
+    <div class="error_message ib fr"></div>
+  </div>
 </div> 
  
 <script>
 $(document).ready(function(){ 
-  var outboundId = readCookie('_ob_pub-f67b07728b81077a03e0efa47ee44c17');
  setTimeout(function() {
   if ($('.klaviyo_modal:visible').length == 0) {
      KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
     delay_seconds: 0,
-    success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 15% off orders over $60 USD</div><div class='klaviyo_header'>WELCOME15</div></div>",
+    success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you!</h2><h3>Use the discount code below to receive<br>15% off your first order!</h3></div><h2 class='text-green'>WELCOME15</h2></div>",
      success: function ($form) {
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
       $form.find('.hide_on_submit').hide();
-      
-
     },
   }); 
   };
@@ -56,33 +44,26 @@ $(document).ready(function(){
 </script>
 
 {% comment %} Exit Intent {% endcomment %}
-<div class="klaviyo_modal" id="exit_offer" style="display:none;">
-   <div class="klaviyo_inner exitpop">
-   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
+<div class="modal" id="exit_offer" style="display:none;">
+  <div class="background-lightgray accent-padding tac exitpop">
+  <p class="tar nm klaviyo_header_close clickable">X</p>
    <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
-      <input type="hidden" name="g" value="PUyKK8"> 
-   <div class="hide_on_submit">
-      <div class="klaviyo_fieldset">
-        <p class="klaviyo_header hide_on_submit extra-title">wait!</p> 
-        <p class="klaviyo_subheader hide_on_submit">Get 10% off your first $30 order.<br> You'll also receive <b>exclusive discounts</b> directly to your email!</p>
-      </div>
+    <input type="hidden" name="g" value="PUyKK8"> 
+    <div class="hide_on_submit">
+      <h1 class="accent-padding border-white nm">Wait!</h1> 
+      <p class="text-green">Get 10% off your first $30 order.<br> You'll also receive <b>exclusive discounts</b> directly to your email!</p>
       <div class="klaviyo_fieldset hide_on_submit">
       <div class="klaviyo_field_group">
-        <input type="email" id="newsletter_popup_$email" placeholder="Email" name="email"></div>
+        <input type="email" id="newsletter_popup_$email" name="email"></div>
       </div> 
-      <div class="klaviyo_fine_print"></div>
       <div class="klaviyo_form_actions hide_on_submit">
-          <button type="submit" class="klaviyo_submit_button">
-          <span>Get my discount!</span>
-          </button>
+        <button type="submit" class="klaviyo_submit_button"><span>Get my discount!</span></button>
       </div>
-      <div class="klaviyo_below_submit" ></div>
-      </div>
+    </div>
    </form>
-  <div class="success_message" ></div>
-  <div class="error_message" ></div>
-
-   </div>
+   <div class="success_message" ></div>
+   <div class="error_message ib" style="margin-top: -20px;"></div>
+  </div>
 </div>
 
 <script>
