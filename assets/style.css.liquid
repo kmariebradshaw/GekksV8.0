@@ -51,6 +51,10 @@ body { margin: 0; color: #545359;overflow-x: hidden;}
   display: flex; 
   align-items: center; 
 } 
+.flex-container-no { 
+  display: flex; 
+  align-items: center; 
+} 
 .half { 
   width: 50%;
   padding: 20px; 
@@ -79,7 +83,7 @@ ul {
 .border-lightgray { border: 2px solid #F9F7F7; } 
 .border-white { border: 2px solid #fff; } 
 @media only screen and (min-width: 1100px) {
-  h1 { font-size: 72pt; } 
+  h1 { font-size: 67pt; } 
   h2 { font-size: 40pt; } 
   .accent-word { font-size: 24pt; } 
   h3{ font-size: 16pt; } 
@@ -93,7 +97,7 @@ ul {
 
 }
 @media only screen and (min-width: 800px) and (max-width: 1099px) {
-    h1 { font-size: 64pt; } 
+    h1 { font-size: 57pt; } 
   h2 { font-size: 36pt; } 
   .accent-word { font-size: 20pt; } 
   h3{ font-size: 14pt; } 
@@ -115,26 +119,33 @@ ul {
     width: 100%; 
     padding: 20px 0 0 0; 
   }
+  body .contact-us .flex-container {     
+    background-position: top;
+    background-size: 80%; 
+  }
   .flex-container { flex-direction: column; }
   .index-padding { padding: 2.5% 5%; }
   .index-sections { margin-top: 87px}
   nav ul li {margin: 0 5px; } 
   h3{ font-size: 14pt; } 
-  p, table { font-size: 12pt; }
   main.contact-us form input[type=submit] { font-size: 14pt; }
- 
 }
 @media only screen and (min-width: 589px) and (max-width: 799px) {
-  h1 { font-size: 46pt; } 
+  h1 { font-size: 43pt; } 
   h2 { font-size: 30pt; } 
+    p, table { font-size: 12pt; }
+
   .accent-word { font-size: 18pt; } 
   .button {font-size: 16pt;} 
   .page-header, .accent-padding { padding: 15px; } 
+    body #installation-page iframe {height: 300px;}
+
 }
 @media only screen and (max-width: 588px) {
-  h1 { font-size: 24pt; } 
+  h1 { font-size: 22pt; } 
   h2 { font-size: 16pt; } 
-  .accent-word { font-size: 18pt; } 
+  p, table { font-size: 10pt; }
+  .accent-word { font-size: 14pt; } 
   .button {font-size: 16pt;} 
   #faq div section h2.text-green {
     padding-left: 20px;
@@ -146,6 +157,15 @@ ul {
     display: inline-block;
     padding-right: 10px;
   }
+  section .accent-image { max-width: 75px;}
+  section .instructions {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 10px;
+  }
+  body #installation-page iframe {height: auto;}
 }
 /* header */
 @media only screen and (min-width: 589px) {
