@@ -3,8 +3,10 @@
 <script type="text/javascript">
     KlaviyoSubscribe.attachToForms('#email_signup', {
       hide_form_on_success: true, 
-       success_message: "your discount code is on its way!"
-  });
+      success_message: "<div class='success_feedback'><div class='accent-padding border-white'><h2>Thank you!</h2><h3>Your discount code is on the way!</h3></div>",   
+      success: function ($form) {
+         $form.find('.hide_on_submit').hide();
+      },  });
   KlaviyoSubscribe.attachToForms('#email_signup-desktop', {
       hide_form_on_success: true, 
       success_message: "<div class='success_feedback'><div class='accent-padding border-white'><h2>Thank you!</h2><h3>Your friend will receive their code shortly. In the <br>meantime, here is yours!</h3></div><h2 class='text-green'>GKK82030</h2></div>",       
@@ -17,20 +19,23 @@
 <div class="modal" id="k_id_modal" style="display:none;">
   <div class="background-lightgray accent-padding tac">
     <p class="tar nm klaviyo_header_close clickable">X</p>
-    <form id="email_signup" class="klaviyo_bare_embed_MfRBWZ" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+    <form id="email_signup" class="klaviyo_bare_embed_MfRBWZ hide_on_submit" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
       <input type="hidden" name="g" value="MfRBWZ">
       <h3 class="tac text-green nmt">refer a friend</h3>
-      <h2 class="accent-padding border-white nm">Give $5 <br> Get $5</h2>
-      <p class="tac text-green">give a friend $5 off their first order,<br> and you'll get $5 off your next order directly to <br>your inbox.</p>
-      <a href="sms:?body=5%20dollars%20off%20at%20Gekks%20Use%20Coupon%20Code%20GKK82057%20at%20www.mygekks.com" id="textfriend" onclick="ga('send', 'event', 'Refer', 'Mobile', 'Text');">
+      <h2 class="hide_on_submit accent-padding border-white nm">Give $5 <br> Get $5</h2>
+      <p class="hide_on_submit tac text-green">give a friend $5 off their first order,<br> and you'll get $5 off your next order directly to <br>your inbox.</p>
+      <a class="hide_on_submit" href="sms:?body=5%20dollars%20off%20at%20Gekks%20Use%20Coupon%20Code%20GKK82057%20at%20www.mygekks.com" id="textfriend" onclick="ga('send', 'event', 'Refer', 'Mobile', 'Text');">
         <div id="text-friend clickable"><h3 class="nmb">click to text a friend</h3></div>
       </a> 
-      <input type="email" value="" name="email" id="k_id_email" />
+      <input class="hide_on_submit" type="email" value="" name="email" id="k_id_email" />
        <div class="klaviyo_form_actions">
           <button type="submit" class="klaviyo_submit_button">
             <span id="submit-span">Submit</span>
           </button>
       </div>
+    <p id="nophone" style="display: none;">please text a friend before submitting</p>
+    <div class="error_message"></div>
+    <div class="success_message" ></div>
   </div>
 </div>
 
@@ -39,9 +44,7 @@
         </div>
         <div class="klaviyo_below_submit"></div>
       </form>
-      <div id="nophone" style="display: none;">please text a friend before submitting</div>
-      <div class="error_message" style="text-tranform:lowercase;"></div>
-      <div class="success_message" style="font-size: 14pt;" ></div>
+
     </div>
   </div>
 
