@@ -138,8 +138,7 @@ ul {
   .accent-word { font-size: 18pt; } 
   .button {font-size: 16pt;} 
   .page-header, .accent-padding { padding: 15px; } 
-    body #installation-page iframe {height: 300px;}
-
+  body #installation-page iframe {height: 300px;}
 }
 @media only screen and (max-width: 588px) {
   h1 { font-size: 22pt; } 
@@ -653,7 +652,12 @@ table .lg { background-color: #F9F7F7; }
 .accent-section .half, #care-instructions .half { height: 440px; } 
  /* care-instructions */
 #refresh { background-image: url("{{'placeholder.png' |asset_url}}");}
-#complete { background-image: url("{{'placeholder.png'| asset_url}}");} 
+#complete { 
+  background-image: url("{{'completerefresh2.jpg'| asset_url}}");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+} 
 #washing-instructions img { 
   border-radius: 100%;
   vertical-align: middle; 
