@@ -41,7 +41,7 @@ form button {
 .jce { justify-content: flex-end; }
 .page-header, .accent-padding { padding: 20px; } 
 .clickable { cursor: pointer; }
-p, textarea, td, ul, li { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
+p, textarea, td, ul, li, .error_message, .success_message { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
 body { margin: 0; color: #545359;overflow-x: hidden;}
 .text-green { color: #6DCDB8; } 
 .text-white { color: #fff; }
@@ -805,6 +805,7 @@ vertical-align: middle;
     font-size: 16pt;
     line-height: 1.5;
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .modal .klaviyo_submit_button {
@@ -817,4 +818,3 @@ vertical-align: middle;
     width: 100%;
 }
 .klaviyo_header_close { color: white; }
-
