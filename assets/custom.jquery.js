@@ -43,7 +43,12 @@ $('body').on('click touchend', function(e) {
       $(this).parent().parent().hide();
       $('.modal').hide();
     });
-
+$('body').click(function (event) 
+{
+   if(!$(event.target).closest('.modal').length && !$(event.target).is('.modal')) {
+     $(".modal").hide();
+   }     
+});
 
 // desktop sub-nav
 $('.sub-nav-header').on('click mouseover', function() {
