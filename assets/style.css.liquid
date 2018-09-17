@@ -45,6 +45,7 @@ p, textarea, td, ul, li, .error_message, .success_message { font-family: 'Gilroy
 body { margin: 0; color: #545359;overflow-x: hidden;}
 .text-green { color: #6DCDB8; } 
 .text-white { color: #fff; }
+.text-lightgray { color:  #F9F7F7; }
 .tac { text-align: center; } 
 .fw { width: 100%;}
 .flex-container { 
@@ -164,6 +165,8 @@ ul {
 @media only screen and (max-width: 588px) {
   h1 { font-size: 22pt; } 
   h2 { font-size: 16pt; } 
+  .sizing-chart td, .sizing-chart tr { padding: 5px; }
+
   p, table { font-size: 10pt; }
   .accent-word { font-size: 14pt; } 
   .button {font-size: 16pt;} 
@@ -202,6 +205,8 @@ body .endorsements-features ul li img {
   body>header nav ul li a {font-size: 14pt; line-height: 65px; } 
   body>header nav ul .desktop-sub-nav li a {font-size: 12pt; }
   .mo { display: none !important; } 
+  .sizing-chart td, .sizing-chart tr { padding: 7px; }
+
 }
 header {
     position: fixed;
@@ -1403,6 +1408,10 @@ vertical-align: middle;
   transform: translate(-50%, -50%);
   position: fixed;
 }
+.sizing-chart {
+  background-color: #fff;
+  width: fit-content;
+}
 .modal input[type=email] {
     width: 100%;
     font-size: 16pt;
@@ -1420,7 +1429,6 @@ vertical-align: middle;
     text-transform: lowercase;
     width: 100%;
 }
-.klaviyo_header_close { color: white; }
 #newsletter_popup2  .third{ 
   background-image: url("{{'popup.jpg' | asset_url}}"); 
   background-size: cover;
