@@ -264,18 +264,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="https://www.pinterest.com/gekksliners/" _target="blank"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" /></a>
      	</div>
         <div id="footer-nav">
+          <div id="nav-wrap">
+                 <ul>
+                <h3>company</h3>
+                {% for link in linklists.footer-1.links limit: 4 offset: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+              </ul>
               <ul>
                 <h3>help</h3>
                 {% for link in linklists.footer-1.links limit: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
               </ul>
                 <ul>
-                <h3>company</h3>
-                {% for link in linklists.footer-1.links limit: 4 offset: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
-              </ul>
-                 <ul>
                 <h3>shop</h3>
                 {% for link in linklists.footer-1.links limit: 3 offset: 9%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
               </ul>
+            </div>
           	<div id="footer-aside">
               <div id="referafriend" class="background-darkgray" onclick="ga('send', 'event', 'Refer', 'Footer', 'Click');"><h3 class="text-green">refer a friend</h3></div>
                 <form action="https://manage.kmail-lists.com/subscriptions/subscribe?g=Buguta" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">

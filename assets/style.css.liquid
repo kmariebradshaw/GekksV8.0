@@ -120,12 +120,19 @@ ul {
     width: 100%; 
     padding: 20px 0 0 0; 
   }
+  #footer-aside {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+  #footer-n
   #key-features .title-border { margin: 0 auto; }
   #key-features h2 { text-align: center; }
   body .contact-us .flex-container {     
     background-position: top;
     background-size: 80%; 
   }
+  #nav-wrap { text-align: center; }
   .index-padding-bo { padding-top: 0; padding-left: 2.5%; padding-right: 2.5%; padding-bottom: 2.5%; }
 
   #product form {
@@ -198,7 +205,8 @@ body .endorsements-features ul li img {
     padding: 5px;
     max-width: 55px;
 }
-
+footer ul li a, footer ul li { font-size: 8pt;  }
+footer ul { margin: 5px; }
 }
 /* header */
 @media only screen and (min-width: 589px) {
@@ -281,7 +289,7 @@ nav ul li {
 /* footer */
 footer ul { 
   display: inline-block; 
-  margin: 20px;
+  margin: 10px;
   vertical-align: top; 
 } 
 footer ul h3 {
@@ -298,13 +306,8 @@ footer .copywrite {
   text-transform: uppercase; 
   margin-bottom: 0; 
 } 
-#footer-nav { margin-left: 30px; }
 #footer-aside {
-    display: inline-block;
-    margin: 0px 50px;
     text-align: center;
-    width: 60%;
-    float: right;
     max-width: 800px;
 }
 footer img { 
@@ -319,7 +322,7 @@ footer form input[type="email"] {
     width: 85%;
     box-sizing: border-box;
     line-height: 2;
-    font-size: 16pt;
+    font-size: 14pt;
     font-family: Gilroy;
     font-weight: bolder;
     background: transparent;
@@ -328,9 +331,8 @@ footer form input[type="email"] {
 footer form input[type="submit"] {
     width: 15%;
     text-align: center;
-    box-sizing: border-box;
-    font-size: 16pt;
-  	border: 2px solid white; 
+    font-size: 14pt;
+  	border: 1px solid white; 
     margin-left: -5px;
     color: #545359;
     background-color: #fff;
@@ -340,9 +342,9 @@ footer form input[type="submit"] {
     cursor: pointer;
     text-decoration: none!important;
     transition: all .35s ease-in-out;
-    padding: 0 20px;
     position: relative;
     z-index: 100;
+    box-sizing: border-box;
     -webkit-appearance: none!important;
 }
 
@@ -1011,6 +1013,18 @@ body .up-label-vis:after {
       text-align: left;
       padding-left: 15px;
       position: relative;
+  }
+  #footer-aside {
+    margin: 0px 20px;
+    width: 39%;
+    float: right;
+    display: inline-block;
+
+}
+  #footer-nav { margin-left: 20px; }
+  footer #nav-wrap { 
+    width: fit-content;
+    display: inline-block;
   }
   .index-padding-bo { padding-top: 0; padding-left: 10%; padding-right: 10%; padding-bottom: 5%; }
 
