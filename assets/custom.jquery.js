@@ -1,3 +1,43 @@
+// shoe diagram on how it works page
+$('.text-solution').click(function(){
+  var $this = $(this)
+  $this.siblings().removeClass('up-label-vis').removeClass('label-vis').children('.info-label').hide();
+  if ($this.hasClass('text-solution-below')) {
+    $this.toggleClass('up-label-vis');
+  } 
+  else {
+   $this.toggleClass('label-vis');
+  }
+  $this.children('.info-label').toggle(); 
+});
+
+$('.do-text div').click(function(){
+  if ($(this).parent().parent().hasClass('do-text-below')) {
+    $(this).parent().siblings('.do-benefit').toggleClass('border-left');
+      $(this).toggleClass('rotate');
+       $(this).parent().siblings('.do-benefit').toggleClass('invis');
+
+
+  } 
+  else {
+    $(this).toggleClass('rotate');
+    $(this).siblings('.do-benefit').toggleClass('invis');
+  }
+});
+
+$(document).ready(function() {
+  if (window.width < 800) {
+$('body').on('click touchend', function(e) {
+    var target = $(e.target);
+    if(!target.is('.text-solution') ){
+       if ( $('.info-label').is(':visible') ) {
+        $('.info-label').hide(); 
+        $('.text-solution').removeClass('label-vis');
+        $('.text-solution-below').removeClass('up-label-vis');
+    }
+  }
+});
+}});
 // popup close
     $('.klaviyo_header_close').on('click', function() {
       $(this).parent().parent().hide();
