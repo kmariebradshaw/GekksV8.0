@@ -650,6 +650,475 @@ table .lg { background-color: #F9F7F7; }
   width: 80%; 
 } 
 .accent-section .half, #care-instructions .half { height: 440px; } 
+
+/* how it works / tech page shoe diagram*/
+#tongue-fasten, #moisture-wick, #no-show { box-shadow: 5px 5px 5px lightgrey; }
+
+#heel-fasten, #odor-killing {    box-shadow: 5px 0px 5px lightgrey; }
+#int-wrapper, #int-wrapper-do {
+  margin: 0 auto;
+  text-align: center;
+  background: url("{{'sneaker-neon.png' | asset_url}}");
+      background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.text-solution {
+   position: relative;
+    text-align: center;
+    padding: 10px 5px;
+    display: inline-block;
+    height: auto;
+    line-height: normal;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+#int-wrapper div p  {
+    display: inline-block;
+}
+
+#int-wrapper .text-solution p {
+  line-height: normal;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width:589px) {
+.label-vis:after, .up-label-vis:after {
+    left: calc(50% - 10px);
+    top: 70px;
+}
+#int-wrapper-do { display: none; }
+
+#no-show {
+  margin-top: 55px;
+}
+
+#tongue-fasten {
+  left: -64px;
+    top: 79px;
+   }
+
+   #moisture-wick {
+    right: -30px;
+    top: 79px;
+   }
+
+   #odor-killing {
+   left: -85px; 
+bottom: 102px;}
+  #heel-fasten {
+    left: 10px;
+    bottom: 101px;
+}
+
+.slb:before { margin-top: 20px; }
+
+.info-label {width: 300px;}
+
+body .text-solution-below:before { margin-top: -55px; }
+
+body .card-photo {
+    height: 75px;
+    width: 75px;
+  }
+
+ .text-solution:before {
+    top: 25px;
+    width: 20px;
+    height:20px;
+    line-height: 20px;
+    font-size: 16pt;
+}
+
+body .up-label-vis:after {
+  top: -56px;
+}
+
+  .text-solution {
+    font-size: 8pt;
+    width: 66px;
+}
+#int-wrapper {
+    width: 320px;
+    height: 285px;
+    margin-top: 50px;
+}
+
+  #int-wrapper .plus-more p {
+    line-height: 20px;
+    font-size: 29px;
+}
+
+#tb-one {
+    top: 40px;
+    left: -18px;
+}
+
+#tb-two {
+    top: 30px;
+    right: 21px;
+}
+ 
+ #tb-five {
+    top: 144px;
+    right: 25px;
+}
+
+ #tb-three {
+    top: 87px;
+    left: 60px;
+}
+
+ #tb-four {
+    top: 195px;
+    right: 230px;
+}
+ #atf-word{
+  font-size: 20pt;
+ }
+ }
+
+ #atf-word{
+  text-align: center;
+ }
+ .text-solution:before {
+  margin-top: 20px;
+    background-color: #6DCDB8;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: white;
+    content: "+";
+    display: block;
+    font-weight: 300;
+    left: calc(50% - 10px);
+    position: absolute;
+    cursor: pointer;
+        transition: -webkit-transform .1s;
+    transition: transform .1s;
+    transition: transform .1s,-webkit-transform .1s;
+}
+
+.label-vis:before, .up-label-vis:before {
+      transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    -ms-transform: translateY(45deg);
+-webkit-transform: translateY(45deg);
+-moz-transform: translateY(45deg);
+-o-transform: translateY(45deg);
+transform: translateY(45deg);
+}
+
+.info-label {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background: white;
+    padding: 20px;
+    text-align: left;
+}
+ 
+b { font-weight: 700; }
+
+.label-vis:after, .up-label-vis:after {
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    z-index: 5;
+}
+
+body .up-label-vis:after {
+  transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+    -ms-transform: translateY(180deg);
+-webkit-transform: translateY(180deg);
+-moz-transform: translateY(180deg);
+-o-transform: translateY(180deg);
+transform: translateY(180deg);
+}
+
+.card-photo {
+    border-radius: 50%;
+    border: 2px solid #6DCDB8;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+.card-text {
+    margin-top: 5px;
+    max-width: 63%;
+    display: inline-block;
+    margin-left: 5%;
+    float: right;
+    font-weight: lighter;
+}
+
+
+@media only screen and (min-width: 589px) and (max-width: 799px) {
+#tongue-fasten {
+    left: -80px;
+    top: 139px;
+}
+
+#no-show {
+    top: 139px;
+    left: 55px;
+}
+
+#moisture-wick {
+    right: -30px;
+    top: 139px;
+}
+
+#odor-killing {
+    left: -165px;
+    bottom: 157px;
+}
+
+#heel-fasten {
+    left: 10px;
+    bottom: 156px;
+}
+
+.slb:before { margin-top: 45px; }
+
+.card-photo {
+    height: 130px;
+    width: 130px;
+  }
+
+  #int-wrapper {
+    width: 590px;
+    height: 450px;
+}
+
+.text-solution {
+    font-size: 16pt;
+    width: 160px;
+}
+
+  #int-wrapper .plus-more p {
+    line-height: 20px;
+    font-size: 29px;
+}
+
+#tb-one {
+    top: 70px;
+    left: -70px;
+}
+
+#tb-two {
+    top: 15px;
+    right: 85px;
+}
+
+#tb-five {
+    top: 250px;
+    right: 120px;
+}
+ #tb-three  {
+    top: 130px;
+    left: -10px;
+}
+
+#tb-four {
+    top: 255px;
+    right: 140px;
+}
+ #atf-word{ 
+  font-size: 30pt;
+  margin-top: 5%;
+ }
+ .text-solution:before {
+    top: 50px;
+        width: 30px;
+    height:30px;
+    line-height: 30px;
+    font-size: 30pt;
+}
+
+body .text-solution-below:before { margin-top: -115px; }
+
+.info-label {width: 500px;}
+
+.label-vis:after, .up-label-vis:after {
+    left: calc(50% - 5px);
+    top: 130px;
+}
+
+body .up-label-vis:after {
+  top: -85px;
+}
+
+#int-wrapper-do { display: none; }
+
+}
+
+@media only screen and (min-width: 800px) {
+  #int-wrapper { display: none; }
+  #int-wrapper-do .do-text{ 
+    display: inline-block;
+    border-left: 2px solid #6DCDB8;
+      max-width: 25%;
+      text-align: left;
+      padding-left: 15px;
+      position: relative;
+  }
+
+  body #int-wrapper-do .do-text-below { border-left: none; }
+
+  body #int-wrapper-do .do-text-below .b-title, body #int-wrapper-do .do-text-below .do-explain { border-left: 2px solid #6DCDB8; padding-left: 10px; }
+
+  body .do-text-below .do-benefit { padding-left: 10px;     margin-top: 0;}
+  #int-wrapper-do { height: 800px; width: 800px; margin-top: 7%; margin-bottom: 7%;}
+
+  .do-explain, .do-benefit { 
+    font-weight: lighter;
+    margin-top: 10px;
+    line-height: normal;
+    font-size: 11pt;
+} 
+  .b-title { font-size: 14pt; line-height: normal; }
+  .do-benefit b { font-weight: normal; }
+
+  .border-left { border-left: 2px solid #6DCDB8;}
+  #do-no-show {
+    left: -5px;
+    top: 56px;
+    height: 275px;
+}
+
+  #do-tongue-fasten {
+    left: 30px;
+    height: 250px;
+    top: 41px;
+}
+
+  #do-moisture-wick {
+    right: -75px;
+    height: 250px;
+    top: 117px;
+}
+
+.invis {     visibility: hidden;
+ }
+
+  #do-odor-killing {
+    top: 175px;
+    right: 55px;
+}
+
+body .do-text-below .do-benefit-hide  {
+    padding-left: 10px;
+    background: transparent;
+    border-left: 2px solid #6DCDB8;
+    border-radius: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.do-text div, .do-plus {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #6DCDB8;
+    font-size: 17pt;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 5%;
+    color: white;
+}  
+
+body .do-plus { margin-top: 0; }
+#do-odor-killing .b-title { padding-top: 100px; }
+  
+  #do-heel-fasten {
+    left: -125px;
+    top: 158px;
+}
+
+#do-moisture-wick {
+    right: -69px;
+    height: 250px;
+    top: 117px;
+}
+
+#do-odor-killing {
+    top: 175px;
+    right: 60px;
+}
+
+.rotate { 
+   transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: translateY(45deg);
+-webkit-transform: translateY(45deg);
+-moz-transform: translateY(45deg);
+-o-transform: translateY(45deg);
+transform: translateY(45deg);
+ }
+
+#do-heel-fasten .b-title { padding-top: 100px; }
+
+#do-heel-fasten .do-explain, #do-odor-killing .do-explain { margin-top: 0; padding-top: 10px; }
+
+}
+
+@media only screen and (min-width: 1000px){
+  #do-heel-fasten .b-title {
+    border-top: 2px solid #6DCDB8;
+    width: 90px;
+    white-space: nowrap;
+  }
+
+  #do-tongue-fasten {
+    left: 30px;
+    height: 270px;
+    top: 25px;
+}
+
+#do-heel-fasten {
+    left: -243px;
+    top: 125px;
+}
+
+#do-no-show {
+    left: -215px;
+    top: 63px;
+    height: 275px;
+    border-bottom: 2px solid #6DCDB8;
+}
+#atf-word {
+    font-size: 54pt;
+    margin-top: 3%;
+}
+
+#do-moisture-wick {
+    border-left: none !important;
+    border-right: 2px solid #6DCDB8;
+    padding-right: 10px;
+    border-bottom: 2px solid #6DCDB8;
+}
+
  /* care-instructions */
 #refresh { background-image: url("{{'placeholder.png' |asset_url}}");}
 #complete { 
