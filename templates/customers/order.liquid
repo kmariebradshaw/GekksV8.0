@@ -1,44 +1,55 @@
-    <main id="account">	     
-	    <section class="order">
-    	    <div class="wrap clearfix">
-        	    <div class="twothirds">
-            	    <header>
-            	        <h1>Order <span>{{ order.name }}</span></h1>
-            	    </header>
+<main id="account-order" class="customer">       
+  <section class="index-padding flex-container">
+    <div class="third accent-padding">
+      <div class="title-border"></div>
+        <h2>Your Account</h2>
+        <ul>
+          <li><h3><a href="/account" class="text-green"">your orders</a></h3></li>
+          <li><h3><a href="/account/addresses" class="text-green">view addresses</a></h3></li>
+          <li><h3><a href="/pages/contact-us" class="text-green">contact Gekks</a></h3></li>
+          <li><h3><a href="/account/logout" class="text-green" id="customer_logout_link">logout</a></h3></li>
+        </ul>
+      </div>
+      <div class="two-thirds accent-padding background-lightgray">
+        <div class="accent-padding">
+        <h3 class="text-green nmb">Order <span>{{ order.name }}</span></h3>
+        {% if order.cancelled %}
+          <p class="subscript nm"><span>Order cancelled on {{ order.cancelled_at | date: "%B %d, %Y %I:%M%p" }}</span></p>
+        {% endif %}
+          <p class="subscript nm"><span>Placed on {{ order.created_at | date: "%B %d, %Y %I:%M%p" }}</span></p>
+          <p class="subscript nm"><span>Payment Status: {{ order.financial_status }}</span></p>
+          <p class="subscript nm"><span>Fulfillment Status: {{ order.fulfillment_status }}</span></p>
+        </div>
+          <div class="flex-container">
+           <div class="half">
+              <p class="nmb"><span>Billing Address</span></p>
+              <p class="subscript nm">{{ order.billing_address.name }}<br/>
+              {% if order.billing_address.company != '' %}{{ order.billing_address.company }}<br/>{% endif %}
+              {{ order.billing_address.street }}<br/>
+              {{ order.billing_address.city }}, {{ order.billing_address.province }}<br/>
+              {{ order.billing_address.country }} {{ order.billing_address.zip }}<br/>
+              {{ order.billing_address.phone }}</p>
+           </div>
+          {% if order.shipping_address %}
+           <div class="half">
+            <p class="nmb"><span>Shipping Address</span></p>
+            <p class="subscript nm">{{ order.shipping_address.name }}<br/>
+              {% if order.shipping_address.company != '' %}{{ order.shipping_address.company }}<br/>{% endif %}
+            {{ order.shipping_address.street }}<br/>
+            {{ order.shipping_address.city }}, {{ order.shipping_address.province }}<br/>
+            {{ order.shipping_address.country }} {{ order.shipping_address.zip }}<br/>
+            {{ order.shipping_address.phone }}</p>
+          </div>
+         </div>
+         {% endif %}
+      </div>
+   </section>
+</main>  
+
+
+              
                     
-                    <div class="info">
-                        {% if order.cancelled %}
-            	        <p class="canceled">Order cancelled on <strong>{{ order.cancelled_at | date: "%B %d, %Y %I:%M%p" }}</strong></p>
-                        <p><small>{{ order.cancel_reason }}</small></p>
-                        {% endif %}
-                        <p>Placed on <strong>{{ order.created_at | date: "%B %d, %Y %I:%M%p" }}</strong></p>
-                        <p>Payment Status: <strong class="status status_{{ order.financial_status }}">{{ order.financial_status }}</strong></p>
-                        <p>Fulfillment Status: <strong class="status status_{{ order.fulfillment_status }}">{{ order.fulfillment_status }}</strong></p>
-                    </div>
-                    
-                    <div class="clearfix addresses">
-                        <div class="half">
-                            <h3>Billing Address</h3>
-                            <p>{{ order.billing_address.name }}<br/>
-                            {% if order.billing_address.company != '' %}{{ order.billing_address.company }}<br/>{% endif %}
-                            {{ order.billing_address.street }}<br/>
-                            {{ order.billing_address.city }}, {{ order.billing_address.province }}<br/>
-                            {{ order.billing_address.country }} {{ order.billing_address.zip }}<br/>
-                            {{ order.billing_address.phone }}</p>
-                        </div>
-                        {% if order.shipping_address %}
-                        <div class="half">
-                            <h3>Shipping Address</h3>
-                            <p>{{ order.shipping_address.name }}<br/>
-                              {% if order.shipping_address.company != '' %}{{ order.shipping_address.company }}<br/>{% endif %}
-                            {{ order.shipping_address.street }}<br/>
-                            {{ order.shipping_address.city }}, {{ order.shipping_address.province }}<br/>
-                            {{ order.shipping_address.country }} {{ order.shipping_address.zip }}<br/>
-                            {{ order.shipping_address.phone }}</p>
-                        </div>
-                        {% endif %}
-                    </div>
-                    
+ 
                     <table class="desktop">
                         <thead>
                             <tr>
