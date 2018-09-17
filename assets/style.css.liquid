@@ -565,7 +565,7 @@ select { height: 40px; }
   display: inline-block; 
   padding-right: 20px;
 } 
-.contact-us form input[type="text"], .customer form input[type="text"], .customer form input[type="email"], .customer form input[type="password"] {
+.contact-us form input[type="text"], .customer form input[type="text"], .customer form select, .customer form input[type="email"], .customer form input[type="password"] {
     width: 66%;
     font-size: 12pt;
     line-height: 2;
@@ -574,6 +574,7 @@ select { height: 40px; }
     float: right;
     margin-top: 10px;
   	border: 0; 
+    box-sizing: border-box;
 }
 .contact-form {
     background: #F9F7F7;
@@ -1305,6 +1306,11 @@ vertical-align: middle;
     margin: 0 auto;
     min-width: 320px;
 }
+.customer form select {
+  border-radius: 0;
+  background-color: white;
+}
+#account-addresses form { width: 100%;  }
 .customer input[type=submit], .shopify-challenge__container input[type="submit"] {
     font-size: 16pt;
     line-height: 2;
