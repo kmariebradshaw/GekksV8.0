@@ -612,15 +612,22 @@ main.contact-us textarea {
  .accent-image {  max-width: 250px; } #air-gaps { margin-bottom: -100px; }  .instructions  {
 width: 80%;     display: block;     margin: 0 auto;     max-width:
 800px; } 
+#installation-page .page-header {background-image: url("{{'Installation_Header.jpg' | asset_url}}");}
 
 /*  how it works / tech page  */ 
+.page-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+#hiw-page .page-header {background-image: url("{{'Howitworks_header.jpg' | asset_url}}");}
 #plasticbottles { background-image: url("{{'plasticbottles.png' | asset_url}}");  }
 #recycledresin { background-image: url("{{'recycledresin.png' | asset_url}}"); }
 #polyester { background-image: url("{{'polyester.png' | asset_url}}"); }
 #hiw-page .accent-section div {
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom right;
+  background-position: inherit;
 }
 #repreve { 
   background-image: url("{{'' | asset_url}}"); 
