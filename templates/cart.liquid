@@ -8,6 +8,7 @@
         {% endif %}
       {% if cart.item_count > 0 %}
       <form action="/cart" method="post">
+        <div class="side-bar-form">
           {% for item in cart.items %}
         <div class="flex-container border-lightgray">
             <div class="quarter accent-padding">
@@ -29,7 +30,7 @@
               </div>
             </div>
           {% endfor %}
-        </form>
+        </div>
         <div class="quarter background-lightgray accent-padding">
           <h3 class="text-green tac">order summary</h3>
           <div class="index-padding">
@@ -42,6 +43,7 @@
             {{ content_for_additional_checkout_buttons }}
           {% endif %}
         </div>
+        </form>
 
             {% if settings.allow_note == 'yes' %}
             <div class="note index-padding-to tac">
