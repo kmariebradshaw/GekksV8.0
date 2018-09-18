@@ -103,7 +103,7 @@ ul {
   .index-padding-so { padding: 1px 10%; }
 
     h1 { font-size: 57pt; } 
-  h2 { font-size: 34pt; } 
+  h2 { font-size: 32pt; } 
   .accent-word { font-size: 20pt; } 
   h3{ font-size: 14pt; } 
   p, table { font-size: 12pt; } 
@@ -220,7 +220,11 @@ ul {
 @media only screen and (max-width: 588px) {
   h1 { font-size: 22pt; } 
   h2 { font-size: 16pt; } 
+  .info-label#no-show { margin-top: 28px !important;}
     #take-the-quiz { padding: 20px;} 
+  }
+.accent-section .half, #care-instructions .half { height: 240px; } 
+#tb-two p:first-of-type, #tb-three p:first-of-type { margin-top: 0; }
 
   .sizing-chart td, .sizing-chart tr { padding: 5px; }
   p, table { font-size: 10pt; }
@@ -247,8 +251,9 @@ ul {
     padding-right: 10px;
   }
   body .icon-display li {
-    width: 42%;
+    width: 45%;
     min-width: 0;
+    margin: 5px;
   }
   .do { display: none !important; }
   section .accent-image { max-width: 75px;}
@@ -279,6 +284,8 @@ footer ul { margin: 5px; }
   #newsletter_popup2  .third{ height: 500px;}
   #mission { padding: 50px; } 
   #take-the-quiz { padding: 100px;} 
+  .accent-section .half, #care-instructions .half { height: 440px; } 
+
 }
 header {
     position: fixed;
@@ -727,7 +734,6 @@ table .lg { background-color: #F9F7F7; }
   margin: 0 auto; 
   width: 80%; 
 } 
-.accent-section .half, #care-instructions .half { height: 440px; } 
 
 /* how it works / tech page shoe diagram*/
 #tongue-fasten, #moisture-wick, #no-show { box-shadow: 5px 5px 5px lightgrey; }
@@ -792,10 +798,10 @@ table .lg { background-color: #F9F7F7; }
 
    #odor-killing {
    left: -85px; 
-bottom: 102px;}
+bottom: 115px;}
   #heel-fasten {
     left: 10px;
-    bottom: 101px;
+    bottom: 115px;
 }
 
 .slb:before { margin-top: 20px; }
@@ -828,7 +834,7 @@ body .up-label-vis:after {
 #int-wrapper {
     width: 320px;
     height: 285px;
-    margin-top: 50px;
+    margin: 50px 0;
 }
 
   #int-wrapper .plus-more p {
@@ -1030,7 +1036,6 @@ transform: translateY(180deg);
         width: 30px;
     height:30px;
     line-height: 30px;
-    font-size: 30pt;
 }
 
 body .text-solution-below:before { margin-top: -115px; }
