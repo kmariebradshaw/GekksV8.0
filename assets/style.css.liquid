@@ -120,10 +120,28 @@ ul {
 @media only screen and (max-width: 799px) {
   .ndo-plus { display: none !important; }
   .mo-plus { display: inline-block !important; }
-  #review-details { 
+  #review-details {  
     margin-left: 20px; 
     margin-top: -4px;
   }
+      body .mobile-nav1 {
+    display: inline-block !important;
+    overflow: hidden;
+    width: 100%;
+    right: 0;
+    position: fixed;
+    max-width: 300px;
+    top: 70px;
+    background: white;
+    border-left: 1px solid #F9F7F7 ;
+}
+.logo, .cart-icon { margin-top: 15px; }
+    body>header nav {
+    max-height: 90vh;
+    overflow: scroll;
+    max-width: 350px;
+}
+  .desktop-nav { display: none; }
   .customer .third { 
     text-align: center; 
     max-width: 700px;
@@ -257,7 +275,11 @@ margin: 10px;
 .cart-page .line-item-details input {
     font-size: 10pt;
     width: 10px;
-}
+  }
+        .mobile-nav li a {
+        font-size: 10pt;
+        font-weight: 300;
+    }
 .customer form{ padding: 10px; }
 
 .button {    
