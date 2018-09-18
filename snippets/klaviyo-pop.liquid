@@ -2,11 +2,11 @@
   <div class="background-lightgray tac">
   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
     <input type="hidden" name="g" value="Ai9wnf">
-    <div class="flex-container hide_on_submit">
+    <div class="flex-container-no hide_on_submit">
       <div class="third">
       </div>
       <div class="two-thirds accent-padding">
-        <p class="nm klaviyo_header_close tar clickable">X</p>
+        <p class="nm klaviyo_header_close tar clickable text-white">✕</p>
         <div class="accent-padding border-white">
           <h3 class="text-green nm">first order</h3>
           <h2 class="nm">discount</h2>
@@ -21,7 +21,6 @@
     </div>
    </form>
     <div class="success_message"></div> 
-    <div class="error_message ib fr"></div>
   </div>
 </div> 
  
@@ -46,7 +45,7 @@ $(document).ready(function(){
 {% comment %} Exit Intent {% endcomment %}
 <div class="modal" id="exit_offer" style="display:none;">
   <div class="background-lightgray accent-padding tac exitpop">
-  <p class="tar nm klaviyo_header_close clickable">X</p>
+  <p class="tar nm klaviyo_header_close clickable text-white">✕</p>
    <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
     <input type="hidden" name="g" value="PUyKK8"> 
     <div class="hide_on_submit">
@@ -74,7 +73,7 @@ $(document).ready(function(){
       function leaveFromTop(e){
         if ($('.klaviyo_modal:visible').length == 0 && (e.clientY < 0 ) && (!executed)){
             KlaviyoSubscribe.attachToModalForm('#exit_offer', {
-              success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below to receive 10% off your first order over $30 USD</div><div class='klaviyo_header'>GEKKS10</div></div>",
+              success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you!</h2><h3>Use the discount code below to receive 10% off your first order over $30 USD</h3><h2 class='text-green'>GEKKS10</h2></div>",
               ignore_cookie: true, 
               delay_seconds: 0.1,
               success: function ($form) {

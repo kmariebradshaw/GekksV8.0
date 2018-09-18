@@ -4,7 +4,7 @@
   <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}">
   <section id="product-images">
      {% unless product.title == "Gift Cards" %}
-        <div id="thumbnails">
+        <div id="thumbnails" class="ndo-plus">
           <ul>
             {% for image in product.images limit: 1 %}
             <li><img src="{{ image | product_img_url: 'compact' }}" class="border-lightgray"/></li>
@@ -16,6 +16,16 @@
         </div>
       {% endunless %} 
       <img src="{{ product.featured_image.src | product_img_url: '2000x2000' }}" alt="{{ product.title }}" id="featured-image"/>
+        <div id="thumbnails" class="mo-plus" style="display: none;">
+          <ul>
+            {% for image in product.images limit: 1 %}
+            <li><img src="{{ image | product_img_url: 'compact' }}" class="border-lightgray"/></li>
+            {% endfor %}
+            {% for image in product.images limit: 5 offset: 2 %}
+            <li><img src="{{ image | product_img_url: 'compact' }}"/></li>
+            {% endfor %} 
+          </ul>
+        </div>
   </section>
   
   {% include 'product-add-to-cart' %}
@@ -35,13 +45,17 @@
     <h2>Give Gekks a Go</h2>
     <ul class="icon-display">
       <li><img src="{{'sweat.svg' | asset_url}}" alt="Sweat Reducing"/><br><span class="text-green">reduces foot sweat & odor</span><br><p class="subscript">antimicrobial yarn eliminates the sockless stench</p></li> 
-      <li><img src="{{'comfortable.svg' | asset_url}}" alt="Comfortable" /><br><span class="text-green">comfortable</span><br><p class="subscript">55% polyester, 39% nylon, 6% silver coated nylon</p></li> 
+      <li class="do"><img src="{{'comfortable.svg' | asset_url}}" alt="Comfortable" /><br><span class="text-green">comfortable</span><br><p class="subscript">55% polyester, 39% nylon, 6% silver coated nylon</p></li> 
       <li><img src="{{'longlasting.svg' | asset_url}}" alt="Long Lasting" /><br><span class="text-green">long lasting</span><p class="subscript">adhesive pads come with two layers ot make your Gekks and your soles last longer</p></li> 
     </ul>
     <ul class="icon-display">
       <li><img src="{{'convenient.svg' | asset_url}}" alt="Convenient"/><br><span class="text-green">convenient</span><p class="subscript">slip in and out barefoot using our patented fastening system</p></li> 
-      <li><img src="{{'ecofriendly.svg' | asset_url}}" alt="Eco-Friendly"/><br><span class="text-green">eco-friendly</span><p class="subscript">REPREVE yarn to help you reduce your carbon footprint</p></li> 
+      <li class="do"><img src="{{'ecofriendly.svg' | asset_url}}" alt="Eco-Friendly"/><br><span class="text-green">eco-friendly</span><p class="subscript">REPREVE yarn to help you reduce your carbon footprint</p></li> 
       <li><img src="{{'fashionforward.svg' | asset_url}}" alt="Fashion Forward"/><br><span class="text-green">fashion forward</span><p class="subscript">rock that sockless style with all your shoe choices</p></li> 
+    </ul>
+    <ul class="icon-display mo">
+      <li><img src="{{'ecofriendly.svg' | asset_url}}" alt="Eco-Friendly"/><br><span class="text-green">eco-friendly</span><p class="subscript">REPREVE yarn to help you reduce your carbon footprint</p></li> 
+      <li><img src="{{'comfortable.svg' | asset_url}}" alt="Comfortable" /><br><span class="text-green">comfortable</span><br><p class="subscript">55% polyester, 39% nylon, 6% silver coated nylon</p></li> 
     </ul>
   </section>
   <section class="index-padding-bo tac" id="product-masonry">

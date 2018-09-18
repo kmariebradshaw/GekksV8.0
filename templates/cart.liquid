@@ -10,7 +10,7 @@
       <form action="/cart" method="post">
         <div class="side-bar-form">
           {% for item in cart.items %}
-        <div class="flex-container border-lightgray">
+        <div class="flex-container-no border-lightgray">
             <div class="quarter accent-padding">
               <a href="{{ item.url}}">
                 <img src="{{ item.product.featured_image | product_img_url: 'large' }}"  alt="{{ item.product.title }}" class="fw">

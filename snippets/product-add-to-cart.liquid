@@ -10,20 +10,14 @@
     {% if product.available %} 
     <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}">
       <p id="product-price-{{ product.id }}">{{ product.price | money }}</p>
-      {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<p  class="subscript" id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</p>{% endif %}
-    </div>  
-      {% else %}
-        <meta itemprop="priceCurrency" content="{{ shop.currency }}">                          
-        <link itemprop="availability" href="http://schema.org/OutOfStock">
-        <p><span>Sold Out</span></p>
-      {% endif %}
+      {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<p style="display: inline-block;" class="subscript" id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</p>{% endif %}
       {% unless product.title == "Select" or product.title == "Gift Cards" %} 
-   	  <div id="review-details">
+      <div id="review-details">
         <div class="prodrating">
           {% if product.title == "Ballet Flats" or product.type == "Closet Pack" or product.title == "Heels & Wedges" %}
             <span class="pf">
           {% else %}
-          	<span>
+            <span>
           {% endif%}
             ☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
         </div>
@@ -36,7 +30,13 @@
           </div>
         </div>
        </div>
+    </div>  
       {% endunless %}
+      {% else %}
+        <meta itemprop="priceCurrency" content="{{ shop.currency }}">                          
+        <link itemprop="availability" href="http://schema.org/OutOfStock">
+        <p><span>Sold Out</span></p>
+      {% endif %}
   </section>
   
   {% if product.available and product.variants.size > 1 and product.type != "Gift Card"%}
@@ -75,13 +75,14 @@
   {% if product.title == "Gift Cards" %}
     <div class="spacer"></div>
   {% else %}
-    <p class="subscript clickable">sizing chart</p>
+    <p class="subscript clickable" id="size-chart">sizing chart</p>
   {% endif %}
   <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="background-green text-white"><span>add to cart</span></button>
 </form>
 
-<div style="display: none;">
-  <div class="index-padding">
+<div style="display: none;" id="display-size" class="sizing-chart border-lightgray modal">
+  <div class="accent-padding">
+   <p class="nm klaviyo_header_close tar clickable text-lightgray">✕</p>
   <table>
     <tr>
       <th colspan="2" class="blank-row"></th>
@@ -92,28 +93,28 @@
     <tr class="lg">
       <td rowspan="2" class="table-title"><span>mens</span></td>
       <td class="table-title lg">US</td>
-      <td>6.5 - 8</td>
-      <td>8.5 - 11</td>
+      <td>6.5-8</td>
+      <td>8.5-11</td>
       <td>11.5+</td>
     </tr>
     <tr class="dg">
       <td class="table-title">UK</td>
-      <td>39 - 41</td>
-      <td>42 - 44</td>
+      <td>39-41</td>
+      <td>42-44</td>
       <td> 44+ </td>
     </tr>
     <tr class="lg">
       <td rowspan="2" class="table-title"><span>womens</span></td>
       <td class="table-title lg">US</td>
-      <td>5 - 6.5</td>
-      <td>7 - 8.5</td>
-      <td>9 - 11.5</td>
+      <td>5-6.5</td>
+      <td>7-8.5</td>
+      <td>9-11.5</td>
     </tr>
     <tr class="dg">
       <td class="table-title">UK</td>
-      <td>35 - 37</td>
-      <td>38 - 39</td>
-      <td>40 - 42</td>
+      <td>35-37</td>
+      <td>38-39</td>
+      <td>40-42</td>
     </tr>
   </table>
 </div>
@@ -160,4 +161,6 @@
 </script>
 {% endif %}
 {% endunless %} 
+{% else %}
+</form>
 {% endif %} 

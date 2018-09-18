@@ -1,3 +1,9 @@
+// sizing chart
+$('#size-chart').click( function() {
+  $('#display-size').fadeIn(); 
+  console.log(' I hear ya ')
+});
+
 // shoe diagram on how it works page
 $('.text-solution').click(function(){
   var $this = $(this)
@@ -44,6 +50,12 @@ $('body').on('click touchend', function(e) {
       $('.modal').hide();
     });
 
+$('body').click(function (event) {
+   if(!$(event.target).closest('.modal').length && !$(event.target).is('.modal') && !$(event.target).is('#referafriend h3') && !
+    $(event.target).is('#size-chart')) {
+     $(".modal").hide(); 
+   }    
+});
 
 // desktop sub-nav
 $('.sub-nav-header').on('click mouseover', function() {
@@ -86,7 +98,7 @@ $('.switch-button').click(function(){
           display = 'https://sibepher.sirv.com/Gekk%20Loafer%20(1-26)/Gekk%20Loafer%20(1-26).spin';
           $(this).parent().parent().addClass('current-switch').siblings().removeClass('current-switch');
           break; 
-      }
+      } 
       $('.shoe-switch').text('see in shoe')
       $('.Sirv').attr('src', display); 
     }); 
