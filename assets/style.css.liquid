@@ -70,12 +70,7 @@ ul {
     background: #6DCDB8;
     height: 5px;
 }
-.button {    
-  text-transform: none;
-  display: inline-block;
-  padding: 10px;
-  width: 250px; 
-}
+
 .background-lightgray { background-color: #F9F7F7; }  
 .background-green { background-color: #6DCDB8 }
 .background-darkgray { background-color: #545359 } 
@@ -128,6 +123,13 @@ ul {
   #review-details { 
     margin-left: 20px; 
     margin-top: -4px;
+  }
+  #atf1  div { margin: 0 auto; text-align: center;} 
+
+  body #index-page #atf1 {
+    background-image: url({{'m-atf.jpg' | asset_url }}); 
+     background-position: center;
+    background-size: cover;
   }
   .latest-news .third { 
     width: 100%;
@@ -247,14 +249,19 @@ margin: 10px;
     font-size: 10pt;
     width: 10px;
 }
-
+.button {    
+  text-transform: none;
+  display: inline-block;
+  padding: 5px;
+  width: 100px; 
+}
 .accent-section .half, #care-instructions .half { height: 240px; } 
 #tb-two p:first-of-type, #tb-three p:first-of-type { margin-top: 0; }
 
   .sizing-chart td, .sizing-chart tr { padding: 5px; }
   p, table { font-size: 10pt; }
   .accent-word { font-size: 14pt; } 
-  .button {font-size: 16pt;} 
+  .button {font-size: 13pt;} 
   #faq div section h2.text-green {
     padding-left: 20px;
     cursor: pointer;
@@ -315,6 +322,12 @@ footer ul { margin: 5px; }
 .line-item-details, .price-details { width: 40%;  }
 .cart-page .line-item-details input {
     font-size: 14pt;
+}
+.button {    
+  text-transform: none;
+  display: inline-block;
+  padding: 10px;
+  width: 250px; 
 }
 }
 header {
@@ -454,14 +467,13 @@ footer form input[type="submit"] {
 footer input::placeholder { color: #fff; }
 /* index page */
 #atf1 {
-  text-align: center;
-  background: #6DCDB8;
-  color: white; 
+  text-align: left;
+  background: #fff;
+  color: #6DCDB8;
 } 
 #shop-w:hover, #shop-m:hover { 
   filter: brightness(0.90);
      }
-#atf1  div { margin: 0 auto; } 
 /* icon display also used on product pages */
 .icon-display {text-align: center;} 
 .icon-display li {
@@ -1094,6 +1106,13 @@ body .up-label-vis:after {
       text-align: left;
       padding-left: 15px;
       position: relative;
+  }
+  #atf1  div { margin: 5%; } 
+
+  #atf1 {
+    background-image: url({{'datf.jpg' | asset_url }}); 
+     background-position: center;
+    background-size: cover;
   }
   .latest-news .third { 
   padding: 20px; 
