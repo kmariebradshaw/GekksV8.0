@@ -4,7 +4,7 @@
   <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}">
   <section id="product-images">
      {% unless product.title == "Gift Cards" %}
-        <div id="thumbnails">
+        <div id="thumbnails" class="ndo-plus">
           <ul>
             {% for image in product.images limit: 1 %}
             <li><img src="{{ image | product_img_url: 'compact' }}" class="border-lightgray"/></li>
@@ -16,6 +16,16 @@
         </div>
       {% endunless %} 
       <img src="{{ product.featured_image.src | product_img_url: '2000x2000' }}" alt="{{ product.title }}" id="featured-image"/>
+        <div id="thumbnails" class="mo-plus" style="display: none;">
+          <ul>
+            {% for image in product.images limit: 1 %}
+            <li><img src="{{ image | product_img_url: 'compact' }}" class="border-lightgray"/></li>
+            {% endfor %}
+            {% for image in product.images limit: 5 offset: 2 %}
+            <li><img src="{{ image | product_img_url: 'compact' }}"/></li>
+            {% endfor %} 
+          </ul>
+        </div>
   </section>
   
   {% include 'product-add-to-cart' %}

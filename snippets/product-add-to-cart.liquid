@@ -10,20 +10,19 @@
     {% if product.available %} 
     <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}">
       <p id="product-price-{{ product.id }}">{{ product.price | money }}</p>
-      {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<p  class="subscript" id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</p>{% endif %}
-    </div>  
+      {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<p style="display: inline-block;" class="subscript" id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</p>{% endif %}
       {% else %}
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">                          
         <link itemprop="availability" href="http://schema.org/OutOfStock">
         <p><span>Sold Out</span></p>
       {% endif %}
       {% unless product.title == "Select" or product.title == "Gift Cards" %} 
-   	  <div id="review-details">
+      <div id="review-details">
         <div class="prodrating">
           {% if product.title == "Ballet Flats" or product.type == "Closet Pack" or product.title == "Heels & Wedges" %}
             <span class="pf">
           {% else %}
-          	<span>
+            <span>
           {% endif%}
             ☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
         </div>
@@ -36,6 +35,7 @@
           </div>
         </div>
        </div>
+    </div>  
       {% endunless %}
   </section>
   
