@@ -90,7 +90,7 @@ pintrk('track', 'pagevisit');
     <meta name="keywords" content="">
     <title>{% if template == 'index' %}Gekks™ | The Innovative No Show Sock for Flats, Loafers, & Sneakers {% elsif template == '404' %}Page Not Found | {{ shop.name }}{% else %}{{ page_title }}{% endif %}</title>
     <link rel="canonical" href="{{ canonical_url }}">
-    <link rel="icon" type="image/png" href="{{ 'Gekks-Favicon.png' | asset_url }}">
+    <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
     
     {{ 'style.css' | asset_url | stylesheet_tag }}
     {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
