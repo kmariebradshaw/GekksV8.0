@@ -1,3 +1,11 @@
+// hamburger nav
+$(document).ready(function(){
+  $('#hamburger').click(function(){
+    $(this).toggleClass('open');
+    $('.mobile-nav1').toggle();
+  });
+});
+
 // sizing chart
 $('#size-chart').click( function() {
   $('#display-size').fadeIn(); 
