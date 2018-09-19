@@ -132,8 +132,10 @@ ul {
     display: block;
     text-align: left;
     line-height: 1.5;
-}
+  }
+  #washing h3 { padding: 10px; }
 
+#washing-instructions h3 { text-align: center; }
 .mobile-nav1 .childlink li a { font-weight: 300; }
 .collection-prod span { float: right; }
 #nav-social a img { max-width: 30px; margin: 10px; }
@@ -1230,6 +1232,10 @@ body .up-label-vis:after {
       padding-left: 15px;
       position: relative;
   }
+  #washing-instructions img { 
+  height: 250px; 
+  }
+  #washing .accent-image { margin: 20px; } 
   #ch { height: 80vh; }
   .mo-plus { display: none; }
     nav ul li, .desktop-sub-nav {line-height: 65px !important; font-size: 14pt;} 
@@ -1440,7 +1446,12 @@ transform: translateY(45deg);
 }
 }
  /* care-instructions */
-#refresh { background-image: url("{{'placeholder.png' |asset_url}}");}
+#refresh { 
+  background-image: url("{{'sanitizerrefresh.jpg' |asset_url}}");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 #complete { 
   background-image: url("{{'completerefresh2.jpg'| asset_url}}");
   background-position: center;
@@ -1450,7 +1461,6 @@ transform: translateY(45deg);
 #washing-instructions img { 
   border-radius: 100%;
   vertical-align: middle; 
-  height: 250px; 
 }
 #washing{
   background-image: url("{{'washingmachine.gif' |asset_url}}");
@@ -1458,6 +1468,7 @@ transform: translateY(45deg);
   background-size: contain;
   background-repeat: no-repeat;
 }
+#washing-instructions h3 { margin-left: 10px; }
 /*about us page*/
 .year-highlight { 
   border-top: 2px solid #6DCDB8;

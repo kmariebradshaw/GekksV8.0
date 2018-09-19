@@ -1,10 +1,16 @@
+<style>
+  .half { width: 50%; }
+  @media only screen and (max-width: 588px) {
+    #care-instructions .half { height: 300px; }
+  }
+</style>
 <main id="care-instructions">	     
   <section class="background-green tac page-header">
     <h1 class="text-white nmb">Give  Gekks Love</h1>
     <h2 class="nmt">How to Care for your Gekks</h2>
   </section>
-    <section class="flex-container">
-      <div class="half flex-container index-padding">
+    <section class="flex-container-no">
+      <div class="half flex-container-no index-padding">
         <div>
           <div class="title-border"></div>
           <h2>Refresh your Gekks</h2>
@@ -14,10 +20,10 @@
       <div class="half background-beige" id="refresh">
       </div>
     </section>
-    <section class="flex-container">
+    <section class="flex-container-no">
       <div class="half background-beige" id="complete">
       </div>
-      <div class="half flex-container index-padding">
+      <div class="half flex-container-no index-padding">
         <div>
           <div class="title-border"></div>
           <h2><span class="ttu">Complete</span> refresh</h2>
@@ -25,8 +31,8 @@
         </div>
       </div>  
     </section>
-    <section class="flex-container">
-       <div class="half flex-container index-padding">
+    <section class="flex-container-no">
+       <div class="half flex-container-no index-padding">
         <div> 
           <div class="title-border"></div>
           <h2>Washing your Gekks</h2>
@@ -39,22 +45,17 @@
       </div>
     </section>
   <section class="index-padding" id="washing-instructions">
-    <div class="flex-container jcs">
+    <div class="flex-container jcs accent-padding">
       <img src="{{'washing01.jpg' | asset_url}}" class="accent-image"/>
       <h3 class="text-green">Peel slowly to smoothly remove your Gekks.</h3>
     </div>
-    <div class="flex-container jcc">
+    <div class="flex-container jcc accent-padding">
       <img src="{{'washing02.jpg' | asset_url}}" class="accent-image"/>
       <h3 class="text-green">Fold sticky pads onto themselves <br> protecting lint in the dryer.</h3>
     </div>
-    <div class="flex-container jce">
+    <div class="flex-container jce accent-padding">
       <img src="{{'washing03.jpg' | asset_url}}" class="accent-image"/>
       <h3 class="text-green">Ready to be washed in cold water.</h3>
     </div>
   </section>
 </main>
-
-<!-- temp -->
-<style>
-  .accent-image { margin: 20px; } 
-</style>
