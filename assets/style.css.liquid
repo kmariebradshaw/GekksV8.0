@@ -30,6 +30,7 @@ form button {
     font-size: 14pt;
     line-height: 2;
 }
+form input[type=submit], .modal .klaviyo_submit_button { border: none; }
 .ib { display: inline-block; }
 .spacer { height: 30px; }
 .nmb { margin-bottom: 0; } 
@@ -99,16 +100,14 @@ ul {
 }
 @media only screen and (min-width: 800px) and (max-width: 1099px) {
   .index-padding-so { padding: 1px 10%; }
-
-    h1 { font-size: 57pt; } 
+  h1 { font-size: 57pt; } 
   h2 { font-size: 32pt; } 
   .accent-word { font-size: 20pt; } 
   h3{ font-size: 14pt; } 
   p, table { font-size: 12pt; } 
-.index-padding { padding: 2.5% 5%; } 
+  .index-padding { padding: 2.5% 5%; } 
   .endorsements-features ul li img  { padding: 10px;}
   .icon-display li {margin: 10px;}
-
   .button {font-size: 16pt;} 
   .index-sections { margin-top: 87px}
   nav ul li {margin: 0 15px; } 
@@ -134,12 +133,11 @@ ul {
     line-height: 1.5;
   }
   #washing h3 { padding: 10px; }
-
-#washing-instructions h3 { text-align: center; }
-.mobile-nav1 .childlink li a { font-weight: 300; }
-.collection-prod span { float: right; }
-#nav-social a img { max-width: 30px; margin: 10px; }
-      body .mobile-nav1 {
+  #washing-instructions h3 { text-align: center; }
+  .mobile-nav1 .childlink li a { font-weight: 300; }
+  .collection-prod span { float: right; }
+  #nav-social a img { max-width: 30px; margin: 10px; }
+  body .mobile-nav1 {
     overflow: hidden;
     width: 250px;
     right: 0;
@@ -148,7 +146,7 @@ ul {
     background: white;
     border-left: 1px solid #F9F7F7 ;
     border-bottom: 1px solid #F9F7F7 ;
-}
+  }
 #hamburger {
   display: inline-block !important; 
   width: 40px;
