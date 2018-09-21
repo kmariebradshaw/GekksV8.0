@@ -16,6 +16,7 @@
         </div>
       {% endunless %} 
       <img src="{{ product.featured_image.src | product_img_url: '2000x2000' }}" alt="{{ product.title }}" id="featured-image"/>
+      {% unless product.title == "Gift Cards" %}
         <div id="thumbnails" class="mo-plus" style="display: none;">
           <ul>
             {% for image in product.images limit: 1 %}
@@ -26,6 +27,7 @@
             {% endfor %} 
           </ul>
         </div>
+        {% endunless %}
   </section>
   
   {% include 'product-add-to-cart' %}
