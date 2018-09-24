@@ -86,6 +86,8 @@ pintrk('track', 'pagevisit');
  
     {% else %}
     <meta name="description" content="{{ shop.description }}">
+    <meta property="og:image" content="{{'m-atf.jpg' | asset_url}}" />
+
     {% endif %}
     <meta name="keywords" content="">
     <title>{% if template == 'index' %}Gekks™ | The Innovative No Show Sock for Flats, Loafers, & Sneakers {% elsif template == '404' %}Page Not Found | {{ shop.name }}{% else %}{{ page_title }}{% endif %}</title>
