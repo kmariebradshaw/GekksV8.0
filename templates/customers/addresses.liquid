@@ -29,8 +29,8 @@
         <input type="text" id="address_city_new" name="address[city]" value="{{form.city}}" size="40"><br>
         <h3 class="text-green"><label for="address_country_new">Country</label></h3>
         <select id="address_country_new" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select><br>
-        <h3 class="text-green"><label for="address_province_new" style="margin-top: 15px;">State</label></h3>
-        <select id="address_province_new" name="address[province]" data-default="{{form.province}}"></select>
+        <div id="address_province_container_new"><h3 class="text-green"><label for="address_province_new" style="margin-top: 15px;">State</label></h3>
+        <select id="address_province_new" name="address[province]" data-default="{{form.province}}"></select></div>
         <h3 class="text-green"><label for="address_zip_new">Zip</label></h3>
         <input type="text" id="address_zip_new" class="short" name="address[zip]" value="{{form.zip}}">
         <h3 class="text-green"><label for="address_phone_new">Phone</label></h3>

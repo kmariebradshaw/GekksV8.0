@@ -78,6 +78,54 @@
     <p class="subscript clickable" id="size-chart">sizing chart</p>
   {% endif %}
   <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="background-green text-white"><span>add to cart</span></button>
+  {% unless product.title == "Select" or product.title == "Gift Cards" %}
+    {% assign select = collections.all.products[6]%}
+    <div class="example-shoes border-beige">
+      <p class="tac nm">Shoes these work in</p>
+       <div class="scrollp leftp text-beige clickable">◀</div>
+      <div class="shoe-wrapper">
+         {% case product.title %}
+          {% when "Ballet Flats" %}
+            {% for image in select.images offset: 103 limit: 15 %}
+             <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+            {% endfor %}
+          {% when "Loafers & Slip-Ons" %}
+           {% if product.collections.first.title ==  "Women" %} 
+            {% for image in select.images offset: 118 limit: 6 %}
+              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+            {% endfor %}
+            {% else %}
+               {% for image in select.images offset: 95 limit: 7 %}
+               <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+               {% endfor %}
+            {% endif %}
+          {% when "Sneakers & Lace-Ups" %}
+           {% if product.collections.first.title == "Women" %}
+            {% for image in select.images offset: 125 limit: 7%}
+              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+            {% endfor %}
+          {% else %}
+            {% for image in select.images offset: 87 limit: 8 %}
+              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+            {% endfor %}             
+          {% endif %}
+          {% when "Women's Closet Pack" %}
+            {% for image in select.images offset: 132 limit: 9 %}
+              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+            {% endfor %}  
+            {% when "Men's Closet Pack" %}
+            {% for image in select.images offset: 141 limit: 8 %}
+              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+            {% endfor %}                               
+            {% when "Heels & Wedges" %}
+            {% for image in select.images offset: 174 limit: 9 %}
+              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+            {% endfor %} 
+          {% endcase %}
+       </div>
+       <div class="scrollp rightp text-beige clickable">▶</div>
+    </div>
+  {% endunless %}
 </form>
 
 <div style="display: none;" id="display-size" class="sizing-chart border-lightgray modal">
@@ -123,6 +171,15 @@
 {% unless product.title == "Select" %} 
 {% if product.available %}
 <script>
+   $('.scrollp').on("click", function() { 
+    var wrapper = $('.shoe-wrapper'); 
+    if ($(this).hasClass('rightp')) { 
+      $(wrapper).animate( { scrollLeft: '+=300' });
+    }
+    else {
+      $(wrapper).animate({scrollLeft: '-=300'});  
+    }
+    }); 
 
   var selectCallback_{{ product.id }} = function(variant, selector) {
 
