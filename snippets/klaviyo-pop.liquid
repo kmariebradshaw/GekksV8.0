@@ -26,9 +26,7 @@
  
 <script>
 $(document).ready(function(){ 
-         console.log(sessionStorage.welcomeShown)
   if (sessionStorage.welcomeShown != 1) {
-    console.log('hit')
     setTimeout(function() {
       if ($('.klaviyo_modal:visible').length == 0) {
         KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {

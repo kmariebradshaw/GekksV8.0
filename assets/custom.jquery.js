@@ -9,7 +9,6 @@ $(document).ready(function(){
 // sizing chart
 $('#size-chart').click( function() {
   $('#display-size').fadeIn(); 
-  console.log(' I hear ya ')
 });
 
 // shoe diagram on how it works page
@@ -96,7 +95,6 @@ $('.switch-button').click(function(){
         case "switch-to-flat": 
           display = 'https://sibepher.sirv.com/Geek%20Flats%20NEW/Geek%20Flats%20NEW.spin'
           $(this).parent().parent().addClass('current-switch').siblings().removeClass('current-switch');
-        console.log($(this).parent().parent())
           break;
         case "switch-to-sneaker":
           display = 'https://sibepher.sirv.com/Gekk%20Sneaker%20NEW/Gekk%20Sneaker%20NEW.spin';
