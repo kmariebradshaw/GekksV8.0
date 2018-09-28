@@ -81,8 +81,8 @@
   {% unless product.title == "Select" or product.title == "Gift Cards" %}
     {% assign select = collections.all.products[6]%}
     <div class="example-shoes border-beige">
-      <p class="tac nm">Shoes these work in</p>
-       <div class="scrollp leftp text-beige clickable">◀</div>
+      <p class="tac nm">Examples Of Shoes These Work In</p>
+      <div class="scrollp leftp text-beige clickable">➤</div>
       <div class="shoe-wrapper">
          {% case product.title %}
           {% when "Ballet Flats" %}
@@ -123,14 +123,14 @@
             {% endfor %} 
           {% endcase %}
        </div>
-       <div class="scrollp rightp text-beige clickable">▶</div>
+       <div class="scrollp rightp text-beige clickable">➤</div>
     </div>
   {% endunless %}
 </form>
 
 <div style="display: none;" id="display-size" class="sizing-chart border-lightgray modal">
   <div class="accent-padding">
-   <p class="nm klaviyo_header_close tar clickable text-lightgray">✕</p>
+   <p class="nm klaviyo_header_close tar clickable">✕</p>
   <table>
     <tr>
       <th colspan="2" class="blank-row"></th>
@@ -180,6 +180,7 @@
       $(wrapper).animate({scrollLeft: '-=300'});  
     }
     }); 
+
 
   var selectCallback_{{ product.id }} = function(variant, selector) {
 

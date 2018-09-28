@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 // sizing chart
 $('#size-chart').click( function() {
-  $('#display-size').fadeIn(); 
+  $('#display-size').fadeIn();  
 });
 
 // shoe diagram on how it works page
@@ -65,7 +65,7 @@ $('body').click(function (event) {
 });
 
 // desktop sub-nav
-$('.sub-nav-header').on('click mouseover', function() {
+$('.sub-nav-header').on('click mouseover', function(event) {
   event.preventDefault();
   var subnav = $(this).next('.sub-nav')
   $('.sub-nav').not(subnav).hide(); 
@@ -318,3 +318,5 @@ $('.collection-prod').click(function() {
   $(this).css(':after', 'transform:rotate(90deg)')
   $(this).children('span').text($(this).children('span').text() == '>' ? 'v' : '>')
 });
+
+
