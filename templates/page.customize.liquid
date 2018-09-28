@@ -7,8 +7,9 @@
   display: inline-block;
   border-radius: 100%;
 }
+#ch { min-height: fit-content; }
 .modal { display: none !important; }
-.content { max-width: 100%; }
+.content { max-width: 100%;}
 #sockless-style .problems { border-radius: 15px; }
 .problems img { max-width: 100px; }
 
@@ -27,7 +28,6 @@
     box-sizing: border-box;
     min-height: fit-content;
   }
-  #og-gif { width: 280px; max-width: 100%; }
   .return { margin-top: 20px; }
   #sockless-style .clickable.problems {
     border: 2px solid #F9F2ED;
@@ -42,7 +42,6 @@
 }
 @media only screen and (min-width: 589px) and (max-width: 799px) {
     .button { width: 300px; }
-
 }
 
 @media only screen and (max-width: 588px) {
@@ -99,7 +98,7 @@
 <section class="flex-container-no jcc tac index-padding background" id="ch">
   <section class="content">
     <img src="{{'jlogo.png' | asset_url}}" alt="Gekks" id="flowgo"/>
-    <h2 class="nmt">Say goodbye<br> to stinky, smelly, <br>and sweat feet.</h2>
+    <h2 class="nmt">Say goodbye<br> to sticky, smelly, <br>and sweaty feet.</h2>
     <div class="button clickable border-green text-green background-white"><span>Show me how!</span></div>
   </section>
   <section class="content" style="display: none;" id="sockless-style">
@@ -114,9 +113,9 @@
     <div class="button clickable border-green text-green"><span>Solve my problems.</span></div>
     <div class="clickable subscript return"><span>← back</span></div>
   </section>
-  <section class="content" style="display: none;" id="gekks-in-action">
+  <section class="content fw" style="display: none;" id="gekks-in-action">
     <h2 class="nmb">Gekks in action.</h2>
-    <img src="{{'original.gif' | asset_url}}" class="accent-padding" id="og-gif" /><br>
+    <img src="{{'original.gif' | asset_url}}" class="accent-padding fw" id="og-gif"  /><br>
     <a href="/?sh=d"><div class="button clickable border-green text-green"><span>I'm ready.</span></div></a>
     <div class="clickable subscript return"><span>← back</span></div>
   </section>

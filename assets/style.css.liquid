@@ -16,13 +16,13 @@ $darkgray = #545359;
  */
 a {
   color: #545359; 
-	text-transform: lowercase; 
+  text-transform: lowercase; 
   text-decoration: none;
 } 
 #CartContainer { display: none; }  
 div { box-sizing: border-box; } 
 html { padding-bottom: 0 !important; } 
-nav,h1,h2,h3,h4,h5,a, span, input, th { font-family: 'Gilroy', sans-serif; font-weight: 900; }
+nav,h1,h2,h3,h4,h5,a, span, input, th, select { font-family: 'Gilroy', sans-serif; font-weight: 900; }
 .ajaxified-cart-feedback, .subscript,.p1 { font-size: 10pt; } 
 main {padding-top: 87px}
 form button {
@@ -138,6 +138,7 @@ ul {
     display: block;
     text-align: left;
     line-height: 1.5;
+    font-size: 14pt;
   }
     #CartContainer { top: 85px;}
 
@@ -237,7 +238,7 @@ ul {
 .logo, .cart-icon { margin-top: 15px; }
     body>header nav {
     max-height: 90vh;
-    overflow: scroll;
+    overflow-y: scroll;
     max-width: 350px;
 }
   .desktop-nav { display: none; }
@@ -471,7 +472,7 @@ header {
     position: fixed;
     width: 100%;
     background: white;
-  	top: 0; 
+    top: 0; 
     z-index: 999; 
     height: fit-content;
     box-shadow: 1px 1px 1px #F9F7F7;
@@ -516,8 +517,8 @@ nav ul li {
 } 
 .sub-nav li, .sub-nav li a { line-height: 1.5 !important; }
 .desktop-nav .childlink .sub-nav-header a { 
-	font-weight: 900; 
-   	font-size: 14pt; 
+  font-weight: 900; 
+    font-size: 14pt; 
 } 
 .cart .cart-icon {
     position: absolute;
@@ -533,7 +534,7 @@ nav ul li {
       border-radius: 100%;
       width: 7px;
       font-size: 10pt;
-  	  background-color: #6DCDB8; 
+      background-color: #6DCDB8; 
 }
 /* footer */
 footer ul { 
@@ -581,7 +582,7 @@ footer form input[type="submit"] {
     width: 15%;
     text-align: center;
     font-size: 14pt;
-  	border: 1px solid white; 
+    border: 1px solid white; 
     margin-left: -5px;
     color: #545359;
     background-color: #fff;
@@ -615,7 +616,7 @@ footer input::placeholder { color: #fff; }
     display: inline-block;
     width: 20%;
     text-align: center;
-  	vertical-align: top; 
+    vertical-align: top; 
 }
 .icon-display img { width: 80%; margin: 0 auto; } 
 /* also used on product pages see 'endorsed' snippets */
@@ -692,12 +693,13 @@ footer input::placeholder { color: #fff; }
 /* product pages */
 .shoe-wrapper {
    width: 82%;
-    overflow: auto;
+    overflow: scroll;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     display: inline-block;
     vertical-align: middle;
     margin: 0 5px;
+    -ms-overflow-style: none;
   }
 .shoe-count {
     display: inline-block;
@@ -710,14 +712,15 @@ footer input::placeholder { color: #fff; }
     cursor: pointer;
     display: inline-block;
     }
+    .leftp { transform: rotate(180deg); }
   .shoe-wrapper::-webkit-scrollbar { 
     display: none !important;
-  }
+  }  
   .shoe-count img { width: 100%;  }
   .example-shoes { 
     margin: 20px auto; 
     padding: 20px 20px 0 20px;
-  }
+  } 
  #thumbnails {
    display: inline-block; 
    vertical-align: middle; 
@@ -756,7 +759,7 @@ footer input::placeholder { color: #fff; }
    position: absolute;
    color: #6DCDB8; 
    overflow: hidden; 
-  	width: 45%; 
+    width: 45%; 
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
@@ -811,16 +814,16 @@ footer input::placeholder { color: #fff; }
     font-size: 10pt;
     font-weight: bolder;
     background: white;
-  	color: #6DCDB8; 
-  	border: 2px solid #6DCDB8; 
+    color: #6DCDB8; 
+    border: 2px solid #6DCDB8; 
     padding: 5px;
-  	text-transform: lowercase; 
+    text-transform: lowercase; 
       -webkit-appearance: none;
     -moz-appearance: none;
     background-position: right 50%;
     background-repeat: no-repeat;
     background-image: url("{{'select-drop-down.png' | asset_url}}"); 
-  	padding: .5em;
+    padding: .5em;
     padding-right: 1.5em;
     border-radius: 0;
     background-size: 20px; 
@@ -853,7 +856,7 @@ select { height: 40px; }
     padding: 5px;
     float: right;
     margin-top: 10px;
-  	border: 0; 
+    border: 0; 
     box-sizing: border-box;
 }
 .contact-form {
@@ -893,7 +896,7 @@ main.contact-us textarea {
  .accent-image {  max-width: 250px; } #air-gaps { margin-bottom: -100px; }  .instructions  {
 width: 80%;     display: block;     margin: 0 auto;     max-width:
 800px; } 
-#installation-page .page-header {background-image: url("{{'Installation_Header.jpg' | asset_url}}");}
+#installation-page .page-header {background-image: url("{{'Installation_Header.png' | asset_url}}");}
 
 /*  how it works / tech page  */ 
 .page-header {
@@ -1671,7 +1674,7 @@ body .btn { background: #6DCDB8; text-transform: lowercase; font-weight: 900; ma
 .grid__item.three-quarters p { margin-bottom: 0; }
 .grid__item.three-quarters p a { display: block; }
 .grid__item.three-quarters button {
-    width: fit-content;
+    width: 20px;
     background: none;
 }
 .ajaxcart__qty-num {

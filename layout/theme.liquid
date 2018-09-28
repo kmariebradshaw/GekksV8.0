@@ -27,48 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <!-- End Google Tag Manager -->
     <meta name="google-site-verification" content="dqBuFf83axVS4nOnWuFVrQtjyiGfdbX01o-rh7F4Pq0" />
-<!--  Snapchat Pixel  -->
-<script type='text/javascript'>
-  (function(win, doc, sdk_url){
-  if(win.snaptr) return;
-  var tr=win.snaptr=function(){
-  tr.handleRequest? tr.handleRequest.apply(tr, arguments):tr.queue.push(arguments);
-};
-  tr.queue = [];
-  var s='script';
-  var new_script_section=doc.createElement(s);
-  new_script_section.async=!0;
-  new_script_section.src=sdk_url;
-  var insert_pos=doc.getElementsByTagName(s)[0];
-  insert_pos.parentNode.insertBefore(new_script_section, insert_pos);
-})(window, document, 'https://sc-static.net/scevent.min.js');
 
-  snaptr('init','d307064e-5049-46e7-8c45-6f196c0b049f',{
-  'user_email':'<USER-EMAIL>'
-})
-  snaptr('track','PAGE_VIEW') 
-</script>
-<!-- End Snapchat  -->
-<!--   Pinterest Pixel   -->
-<script>
-!function(e){if(!window.pintrk){window.pintrk = function () {
-window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-      n=window.pintrk;n.queue=[],n.version="3.0";var
-      t=document.createElement("script");t.async=!0,t.src=e;var
-      r=document.getElementsByTagName("script")[0];
-      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
-pintrk('load', '2615164668106', {em: '<user_email_address>'});
-pintrk('page');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none;" alt=""
-      src="https://ct.pinterest.com/v3/?tid=2615164668106&pd[em]=<hashed_email_address>&noscript=1" />
-</noscript>
-    
- <script>
-pintrk('track', 'pagevisit');
-</script>
-<!-- end Pinterest Tag -->
 
     <meta charset="utf-8">
     <meta name="robots" content="index, follow, archive">
@@ -95,21 +54,18 @@ pintrk('track', 'pagevisit');
     <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
     
     {{ 'style.css' | asset_url | stylesheet_tag }}
-    {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'jquery.min.js' | asset_url }}"></script>
     <script src="{{ 'custom.jquery.js' | asset_url }}" defer></script>
-    <script src="{{'jquery.mobile.custom.min.js' | asset_url}}"></script> 
     <script src="{{  'main.js' | asset_url }}" defer></script>
     <script src="{{  'option_selection.js' | shopify_asset_url }}" defer></script>
     <script src="{{ 'ajax-cart.js'  | asset_url }}" defer></script>
     <script src="{{ 'modernizr.min.js' | asset_url }}" defer></script>
     <script src="{{ 'handlebars.min.js' | asset_url }}" defer></script>
-    <script src="{{ 'slick.min.js' | asset_url }}" defer></script>
-    <script src="{{'klaviyo.js' | asset_url}}"></script>
+    <script src="{{'klaviyo.js' | asset_url}}" ></script>
     <script src="{{ 'jquery.easing.1.3.min.js' | asset_url }}" defer></script>
     
 
-   <script src="https://scripts.sirv.com/sirv.js"></script>
+   <script src="https://scripts.sirv.com/sirv.js" defer></script>
 
     {% include 'ajax-cart-template' %}
 
@@ -238,8 +194,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               {% endfor %}
          
               <div id="nav-social" class="accent-padding">
-          		<a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'fb.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
           		<a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'ig.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
+              <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'fb.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
           		<a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
         	  </div>
             </ul>
@@ -266,8 +222,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <footer class="background-green">
       	<div class="social-icons">
-          <a href="https://www.facebook.com/GekksLowCutLiners/" target="_blank"><img src="{{'fb.png' | asset_url}}" alt="Facebook" /></a>
           <a href="https://www.instagram.com/gekks_go_sockless/?hl=en" target="_blank""><img src="{{'ig.png' | asset_url}}" alt="Instagram" /></a>
+          <a href="https://www.facebook.com/GekksLowCutLiners/" target="_blank"><img src="{{'fb.png' | asset_url}}" alt="Facebook" /></a>
           <a href="https://www.pinterest.com/gekksliners/" target="_blank"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" /></a>
      	</div>
         <div id="footer-nav">
@@ -326,6 +282,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     <script>$("#referafriend").click(function(){/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?document.getElementById("k_id_modal").style.display="inline-block":document.getElementById("desktop_refer_k").style.display="inline-block"});</script>
 
-    <script>$(document).ready(function(){checkForDiscount();});</script>
+    <script>$(document).ready(function(){checkForDiscount();});
+
+  </script>
   </body>
 </html>
