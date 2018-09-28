@@ -18,12 +18,7 @@ var items=[],item={},data={},source=$("#CartTemplate").html(),template=Handlebar
 item={key:cartItem.key,line:index+1,url:cartItem.url,img:prodImg,name:cartItem.product_title,variation:cartItem.variant_title,properties:cartItem.properties,itemAdd:cartItem.quantity+1,itemMinus:cartItem.quantity-1,itemQty:cartItem.quantity,price:Shopify.formatMoney(cartItem.price,settings.moneyFormat),vendor:cartItem.vendor,linePrice:Shopify.formatMoney(cartItem.line_price,settings.moneyFormat),originalLinePrice:Shopify.formatMoney(cartItem.original_line_price,settings.moneyFormat),discounts:cartItem.discounts,discountsApplied:cartItem.line_price===cartItem.original_line_price?false:true};items.push(item);});data={items:items,note:cart.note,totalPrice:Shopify.formatMoney(cart.total_price,settings.moneyFormat),totalCartDiscount:cart.total_discount===0?0:{{'cart.general.savings_html'|t:price:'[savings]'|json}}.replace('[savings]',Shopify.formatMoney(cart.total_discount,settings.moneyFormat)),totalCartDiscountApplied:cart.total_discount===0?false:true}
 $cartContainer.append(template(data));cartCallback(cart);};var _showFeedback=function(success,html,$formContainer){$('.ajaxified-cart-feedback').remove();
 
-checkForDiscount();
-snaptr('track','ADD_CART'); 
-pintrk('track', 'addtocart', {
-  value: '{{cart.total_price }}', 
-currency: 'USD'
-});                                                                                                                   
+                                                                                                                  
 
 
 var feedback='<p class="ajaxified-cart-feedback '+success+'">'+html+'</p>';$('.is-added').after(feedback);$('.ajaxified-cart-feedback').slideDown();};cartCallback=function(cart){$body.removeClass('drawer--is-loading');$body.trigger('afterCartLoad.ajaxCart',cart);$('#CartContainer').slideDown().delay(7000).slideUp();_showFeedback('success',' added to cart! <a href="/cart" class="text-green">View Cart.</a>',$formContainer);if(window.Shopify&&Shopify.StorefrontExpressButtons){Shopify.StorefrontExpressButtons.initialize();}};adjustCart=function(){$body.on('click','.ajaxcart__qty-adjust',function(){if(isUpdating){return;}
