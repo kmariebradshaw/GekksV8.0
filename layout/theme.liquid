@@ -181,7 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
                       {% endfor %}
                       </ul>
-                    </li>
+                    </li> 
               {% elsif link.title == "Log In" %}
                <li style="margin-top: 30px;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
               {% else %}
@@ -191,12 +191,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               {% for link in linklists.mobile-nav-1.links offset:9 limit:1 %}
                 <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-              {% endfor %}
+              {% endfor %} 
          
               <div id="nav-social" class="accent-padding">
-          		<a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'ig.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
-              <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'fb.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
-          		<a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
+          		<a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'Instagram_darkgray.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
+              <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'facebook_darkgrey.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
+          		<a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest_darkgrey.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
         	  </div>
             </ul>
           </nav>
