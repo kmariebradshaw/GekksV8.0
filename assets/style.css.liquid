@@ -46,6 +46,7 @@ form input[type=submit], .modal .klaviyo_submit_button, form button { border: no
 .jcs { justify-content: flex-start; }
 .jcc { justify-content: center; }
 .jce { justify-content: flex-end; }
+.ais { align-items: flex-start !important; }
 .clickable { cursor: pointer; }
 p, textarea, td, ul, li, .error_message, .success_message { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
 body { margin: 0; color: #545359;overflow-x: hidden;}
@@ -176,6 +177,7 @@ ul {
     line-height: 1.5;
     font-size: 14pt;
   }
+
     #CartContainer { top: 85px;}
 
   #washing h3 { padding: 10px; }
@@ -400,7 +402,30 @@ margin: 10px;
   .endorsements-features ul li img  { max-width:  75px;}
   .icon-display li {margin: 10px;}
       #atf1 {min-height: 450px;} 
-
+      .about-us div .connecter {
+    margin: 0 -10px;
+}
+#brothers {
+    width: 120px;
+    margin-top: 145px;
+    margin-left: 125px;
+}
+#justin-fam {
+    width: 80px;
+    margin-top: 120px;
+    margin-left: 150px;
+}
+#iz {
+    width: 60px;
+    margin-top: -65px;
+    margin-left: -90px;
+}
+#boys {
+    width: 100px;
+    margin-top: 85px;
+    margin-left: -170px;
+}
+  body #timeline .half { padding: 10px; width: 50%; }
 }
 @media only screen and (max-width: 588px) {
   h1 { font-size: 22pt; } 
@@ -1307,6 +1332,7 @@ body .up-label-vis:after {
       padding-left: 15px;
       position: relative;
   }
+  .about-us  div .connecter {margin: -20px;}
   #CartContainer { top: 85px;}
   #washing-instructions img { 
   height: 250px; 
@@ -1550,6 +1576,14 @@ transform: translateY(45deg);
   border-top: 2px solid #6DCDB8;
   display: inline-block;
 }
+.about-us  div .connecter {
+    background: #F9F2ED;
+    height: 2px;
+    width: 40px;
+    display: inline-block;
+    margin-top: 0 !important;
+    vertical-align: middle;
+}
 #timeline p { 
   max-width: 350px;
   display: inline-block;
@@ -1562,15 +1596,6 @@ transform: translateY(45deg);
 #spacer-timeline { margin: 50px 0; } 
 .third { width: 33.33%; }
 .about-us .third { margin: 20px; }
-.about-us  div .connecter {
-    background: #F9F2ED;
-    height: 2px;
-    width: 40px;
-    display: inline-block;
-    margin-top: 0 !important;
-    vertical-align: middle;
-    margin: -20px;
-}
 #shoe-down  {
     width: 500px;
     transform: rotate(210deg);
