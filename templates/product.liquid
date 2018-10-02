@@ -2,6 +2,26 @@
   <meta itemprop="name" content="{{ product.title }}">
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
   <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}">
+    {% unless product.title == "Gift Cards" or product.title == "Select" %}
+  <section class="flex-container-no background-green mo-plus accent-padding fw tac">
+            {% capture product_collection_url %}{{ product.url | within: collection }}{% endcapture %}
+            {% for collection in product.collections %}
+              {% if collection.title == "Women"%}
+                {% for link in linklists.product-sub-nav1.links %}
+                  {% unless link.url == product_collection_url %}
+                    <a href="{{ link.url }}" class="accent-padding subscript" id="sub-nav" onclick="ga('send', 'event', 'Product', 'Click', 'Green Sub Nav');">{{ link.title | escape }}</a>
+                  {% endunless %}
+                {% endfor %}
+              {% elsif collection.title == "Men" %}
+                {% for link in linklists.product-sub-nav1-men.links %}
+                  {% unless link.url == product_collection_url%}
+                    <a href="{{ link.url }}" class="accent-padding subscript" id="sub-nav" onclick="ga('send', 'event', 'Product', 'Click', 'Green Sub Nav');">{{ link.title | escape }}</a>
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+    {% endunless %}
+  </section>
   <section id="product-images">
      {% unless product.title == "Gift Cards" %}
         <div id="thumbnails" class="ndo-plus">
