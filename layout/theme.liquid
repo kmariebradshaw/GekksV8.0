@@ -122,6 +122,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
   })();
   </script>
+  <!-- start inspectlet -->
+  <script type="text/javascript">
+(function() {
+window.__insp = window.__insp || [];
+__insp.push(['wid', 300505337]);
+var ldinsp = function(){
+if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=300505337&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+setTimeout(ldinsp, 0);
+})();
+</script>
 <!-- Start of mygekks Zendesk Widget script -->
 <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="mygekks.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
 /*]]>*/</script>
@@ -181,7 +191,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
                       {% endfor %}
                       </ul>
-                    </li>
+                    </li> 
               {% elsif link.title == "Log In" %}
                <li style="margin-top: 30px;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
               {% else %}
@@ -191,12 +201,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               {% for link in linklists.mobile-nav-1.links offset:9 limit:1 %}
                 <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-              {% endfor %}
+              {% endfor %} 
          
               <div id="nav-social" class="accent-padding">
-          		<a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'ig.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
-              <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'fb.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
-          		<a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
+          		<a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'Instagram_darkgray.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
+              <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'facebook_darkgrey.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
+          		<a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest_darkgrey.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
         	  </div>
             </ul>
           </nav>

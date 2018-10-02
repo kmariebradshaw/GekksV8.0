@@ -40,7 +40,7 @@
   </section>
   
   {% if product.available and product.variants.size > 1 and product.type != "Gift Card"%}
-   {% include 'swatch' with 'Color' %}
+    {% include 'swatch' with 'Color' %}
   {% endif %}
   {% if product.available %}
     <meta itemprop="priceCurrency" content="{{ shop.currency }}">
@@ -171,6 +171,7 @@
 {% unless product.title == "Select" %} 
 {% if product.available %}
 <script>
+    $('.swatch').prepend("<p id='color-label'>color:</p>")
    $('.scrollp').on("click", function() { 
     var wrapper = $('.shoe-wrapper'); 
     if ($(this).hasClass('rightp')) { 
