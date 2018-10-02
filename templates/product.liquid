@@ -67,7 +67,7 @@
 </main>
 <script>
   $('.color').change(function() {
-    if ('{{product.title}}' == "Heels & Wedges") {
+    if ("{{product.title}}" == "Heels & Wedges") {
       if ($(this).hasClass('nude')) {
         var src = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Heel_3_2000x2000.jpg?v=1529528675"
         $('#featured-image').attr("src", src)
@@ -76,7 +76,7 @@
         $('#featured-image').attr("src","//cdn.shopify.com/s/files/1/0424/0893/products/Womens_BlackHeel_2000x2000.jpg?v=1529528675")
       }
     }
-    else if ('{{product.title}}' == "Ballet Flats") {
+    else if ("{{product.title}}" == "Ballet Flats") {
       if ($(this).hasClass('nude')) {
         $('#featured-image').attr("src","//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Flat_Bare_2000x2000.jpg?v=1529418978")
       }
