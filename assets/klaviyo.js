@@ -199,8 +199,6 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
                                 a.find(".klaviyo_submit_button").attr("disabled", !0)
                             },
                             success: function(c, e, g) {
-                                snaptr('track','SIGN_UP'); 
-								pintrk('track', 'signup');
                                 fbq('track', 'CompleteRegistration', {currency: 'USD', value: 0});
                                 a.parent().find(".success_message, .error_message").hide();
                                 a.find(".klaviyo_submit_button").attr("disabled", !1);
