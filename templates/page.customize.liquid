@@ -1,4 +1,6 @@
 <style>
+  iframe { display: none !important; }
+
 .bubble {
   width: 20px;
   height: 20px;
@@ -7,15 +9,20 @@
   display: inline-block;
   border-radius: 100%;
 }
-#ch { min-height: fit-content; }
+#ch { height: fit-content; }
 .modal { display: none !important; }
-.content { max-width: 100%;}
+.content { width: 100%;}
 #sockless-style .problems { border-radius: 15px; }
 .problems img { max-width: 100px; }
 
 #flowgo {
   width: 80%;
   max-width: 300px;
+}
+#flow-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 @media only screen and (max-width: 799px) {
   #ch { 
@@ -28,6 +35,9 @@
     box-sizing: border-box;
     min-height: fit-content;
   }
+  #problems {     max-width: 400px;
+    margin: 20px auto;
+}
   .return { margin-top: 20px; }
   #sockless-style .clickable.problems {
     border: 2px solid #F9F2ED;
@@ -35,6 +45,8 @@
     width: 100%;
     margin: 5px;
     align-items: center;
+    height: 60px;
+    padding: 10px;
   }
   .problems img { max-width: 50px; margin: -10px 0;}
   #sockless-style h2 { margin-bottom: 0; }
@@ -89,37 +101,40 @@
   #og-gif { max-width: 600px; }
 }
 #someone-purchased, #launcher { display: none !important; }
+
 </style>
 <section id="progress" class="tac mo-plus fw">
   <div class="bubble background-green"></div>
   <div class="bubble"></div>
   <div class="bubble"></div>
 </section>
+<span class="close mo-plus" id="flow-close"><a href="/?sh=d" class="text-lightgray">✕</a></span>
 <section class="flex-container-no jcc tac index-padding background" id="ch">
   <section class="content">
     <img src="{{'jlogo.png' | asset_url}}" alt="Gekks" id="flowgo"/>
     <h2 class="nmt">Say goodbye<br> to sticky, smelly, <br>and sweaty feet.</h2>
-    <div class="button clickable border-green text-green background-white"><span>Show me how!</span></div>
+    <div class="button clickable border-green text-green background-white" onclick="ga('send', 'event', 'Education', 'Progress', 'Flow Start');"><span>Show me how!</span></div>
   </section>
   <section class="content" style="display: none;" id="sockless-style">
     <h2>Tap your sockless style problems.</h2>
-    <div class="flex-container index-padding">
-      <div class="problems clickable" data-solution="Gekks are knit with odor killing yarn (the same yarn used by the military and NASA!)"><img src="{{'odorfree.svg' | asset_url}}" /><br><span class="text-green">foot odor</span></div>
-      <div class="problems clickable" data-solution="Gekks lock and stay INSIDE your shoes."><img src="{{'Flow_sockadjustment.svg' | asset_url}}" /><br><span class="text-green">constant sock adjustments</span></div>
+    <div class="flex-container" id="problems">
+      <div class="problems clickable" onclick="ga('send', 'event', 'Education', 'Problems', 'Foot Smell');" data-solution="Gekks are knit with odor killing yarn (the same yarn used by the military and NASA!)"><img src="{{'odorfree.svg' | asset_url}}" /><br><span class="text-green">foot odor</span></div>
+      <div class="problems clickable" onclick="ga('send', 'event', 'Education', 'Problems', 'Sock Adjustment');" data-solution="Gekks lock and stay INSIDE your shoes."><img src="{{'Flow_sockadjustment.svg' | asset_url}}" /><br><span class="text-green">constant sock adjustments</span></div>
   
-      <div class="problems clickable" data-solution="Gekks provide sock comfort in the front and blister protection in the back."><img src="{{'Flow_heelblisters.svg' | asset_url}}" /><br><span class="text-green">heel blisters</span></div>
-      <div class="problems clickable" data-solution="Gekks stay inside your shoes. Never search for socks again."><img src="{{'Flow_sockdrawer.svg' | asset_url}}" /><br><span class="text-green">searching the "sock drawer"</span></div>
+      <div class="problems clickable" data-solution="Gekks provide sock comfort in the front and blister protection in the back." onclick="ga('send', 'event', 'Education', 'Problems', 'Heel Blisters');"><img src="{{'Flow_heelblisters.svg' | asset_url}}" /><br><span class="text-green">heel blisters</span></div>
+      <div class="problems clickable" onclick="ga('send', 'event', 'Education', 'Problems', 'Searching');" data-solution="Gekks stay inside your shoes. Never search for socks again."><img src="{{'Flow_sockdrawer.svg' | asset_url}}" /><br><span class="text-green">searching the "sock drawer"</span></div>
     </div>
-    <div class="button clickable border-green text-green"><span>Solve my problems.</span></div>
+    <div class="button clickable border-green text-green" onclick="ga('send', 'event', 'Education', 'Progress', 'Solve My Problems');"><span>Solve my problems.</span></div>
     <div class="clickable subscript return"><span>← back</span></div>
   </section>
   <section class="content fw" style="display: none;" id="gekks-in-action">
     <h2 class="nmb">Gekks in action.</h2>
     <img src="{{'original.gif' | asset_url}}" class="accent-padding fw" id="og-gif"  /><br>
-    <a href="/?sh=d"><div class="button clickable border-green text-green"><span>I'm ready.</span></div></a>
+    <a href="/?sh=d" onclick="ga('send', 'event', 'Education', 'Progress', 'Flow End');"><div class="button clickable border-green text-green"><span>I'm ready.</span></div></a>
     <div class="clickable subscript return"><span>← back</span></div>
   </section>
 </section>
+
 
 <script>
   $('#ch .button').click(function() {
