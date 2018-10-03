@@ -1,4 +1,6 @@
 <style>
+  iframe { display: none !important; }
+
 .bubble {
   width: 20px;
   height: 20px;
@@ -16,6 +18,11 @@
 #flowgo {
   width: 80%;
   max-width: 300px;
+}
+#flow-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 @media only screen and (max-width: 799px) {
   #ch { 
@@ -95,6 +102,7 @@
   <div class="bubble"></div>
   <div class="bubble"></div>
 </section>
+<span class="close mo-plus" id="flow-close"><a href="/?sh=d" class="text-lightgray">✕</a></span>
 <section class="flex-container-no jcc tac index-padding background" id="ch">
   <section class="content">
     <img src="{{'jlogo.png' | asset_url}}" alt="Gekks" id="flowgo"/>
