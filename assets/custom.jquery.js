@@ -86,6 +86,37 @@ $('#thumbnails ul li img').click(function() {
   $(this).addClass('border-lightgray').parent().siblings().children().removeClass('border-lightgray'); 
   $('#featured-image').attr("src", src); 
 }); 
+var swipeLocation = 0 
+var thumbs = $("#thumbnails ul li").children().toArray()
+
+$('#featured-image').on("swipeleft", function(event) {
+  var currentSrc = $(this).attr("src"); 
+  $.each(thumbs, function(index, thumb) {
+    if ($(thumb).attr("src").replace("compact", "2000x2000") == currentSrc) {
+      swipeLocation = index 
+    }
+  }); 
+  if ((thumbs.length - 1)> swipeLocation) {
+swipeLocation += 1 
+  } 
+  $("#featured-image").attr("src", $(thumbs[swipeLocation]).attr("src").replace("compact", "2000x2000"))
+  $('#thumbnails ul li img').removeClass('border-lightgray')
+  $(thumbs[swipeLocation]).addClass('border-lightgray')
+ }); 
+            $('#featured-image').on("swiperight", function(event) {
+  var currentSrc = $(this).attr("src"); 
+  $.each(thumbs, function(index, thumb) {
+    if ($(thumb).attr("src").replace("compact", "2000x2000") == currentSrc) {
+      swipeLocation = index 
+    }
+  }); 
+  if (swipeLocation > 0) { 
+    swipeLocation -=1
+  } 
+  $("#featured-image").attr("src", $(thumbs[swipeLocation]).attr("src").replace("compact", "2000x2000"))
+   $('#thumbnails ul li img').removeClass('border-lightgray')
+  $(thumbs[swipeLocation]).addClass('border-lightgray')
+ }); 
 
 // 3-d shoe on index page 
 $('.switch-button').click(function(){

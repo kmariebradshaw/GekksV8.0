@@ -556,8 +556,9 @@ margin: 10px;
   }
   body #installation-page iframe {height: auto;}
 body .endorsements-features ul li img {
-    padding: 5px;
-    max-width: 15%;
+    padding: 10px;
+    max-width: 19%;
+    box-sizing: border-box;
 }
 body .endorsements-features ul li {
     display: inline;
@@ -766,10 +767,12 @@ footer input::placeholder { color: #fff; }
     text-align: center;
     vertical-align: top; 
 }
+#featured-image { touch-action: none; }
+
 .icon-display img { width: 80%; margin: 0 auto; } 
 /* also used on product pages see 'endorsed' snippets */
 .endorsements-features ul {
-    padding: 20px;
+    padding: 10px 0;
     width: 100%;
     text-align: center;
     box-sizing: border-box;
@@ -927,7 +930,7 @@ footer input::placeholder { color: #fff; }
   opacity: 0.4;
 }
 .swatch input:checked + label {
-  border: 2px solid #6DCDB8;
+  border: 3px solid #6DCDB8;
 } 
 .swatch input { 
   display:none;
