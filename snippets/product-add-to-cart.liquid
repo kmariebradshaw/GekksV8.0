@@ -14,6 +14,7 @@
       {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<p style="display: inline-block;" class="subscript" id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</p>{% endif %}
       {% unless product.title == "Select" or product.title == "Gift Cards" %} 
       <div id="review-details">
+      <a href="/pages/reviews">
         <div class="prodrating">
           {% if product.title == "Ballet Flats" or product.type == "Closet Pack" or product.title == "Heels & Wedges" %}
             <span class="pf">
@@ -31,6 +32,7 @@
           </div>
         </div>
        </div>
+     </a>
     </div>  
       {% endunless %}
       {% else %}
