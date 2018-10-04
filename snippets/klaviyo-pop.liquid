@@ -26,11 +26,12 @@
  
 <script>
 $(document).ready(function(){ 
-  if (sessionStorage.welcomeShown != 1) {
+  if (!sessionStorage.welcomeShown) {
     setTimeout(function() {
       if ($('.modal:visible').length == 0) {
         KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
           delay_seconds: 0,
+          ignore_cookie: true, 
           success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you!</h2><h3>Use the discount code below to receive<br>15% off your first order!</h3></div><h2 class='text-green'>WELCOME15</h2></div>",
      success: function ($form) {
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');

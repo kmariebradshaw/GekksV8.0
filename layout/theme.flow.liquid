@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head> 
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+                                         h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+                                         (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+                                        })(window,document.documentElement,'async-hide','dataLayer',4000,
+                                            {'GTM-5NSXTXW':true});</script>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWJVTQQ');
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google AdWords: 973442114 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-973442114"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-973442114');
+</script>
+<!-- End Google Tag Manager -->
+    <meta name="google-site-verification" content="dqBuFf83axVS4nOnWuFVrQtjyiGfdbX01o-rh7F4Pq0" />
+ 
+
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    {% assign maxmeta = 155 %}
+    {% if template contains 'product' %}
+    {% if template == 'collection' %}
+    <meta name="description" content="{{ collection.description | strip_html | strip_newlines | truncate: maxmeta | escape }}">
+    {% else %}
+    <meta name="description" content="{{ product.description | strip_html | strip_newlines | truncate: maxmeta | escape }}">
+    {% endif %}
+    {% elsif page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+   
+ 
+    {% else %}
+    <meta name="description" content="{{ shop.description }}">
+    <meta property="og:image" content="{{'m-atf.jpg' | asset_url}}" />
+
+    {% endif %}
+    <meta name="keywords" content="">
+    <title>{% if template == 'index' %}Gekks™ | The Innovative No Show Sock for Flats, Loafers, & Sneakers {% elsif template == '404' %}Page Not Found | {{ shop.name }}{% else %}{{ page_title }}{% endif %}</title>
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
+    
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    <script src="{{ 'custom.jquery.js' | asset_url }}" defer></script>
+    <script src="{{  'main.js' | asset_url }}" defer></script>
+    <script src="{{  'option_selection.js' | shopify_asset_url }}" defer></script>
+    <script src="{{ 'ajax-cart.js'  | asset_url }}" defer></script>
+    <script src="{{'klaviyo.js' | asset_url}}" ></script>
+    <script src="{{ 'modernizr.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'handlebars.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'jquery.easing.1.3.min.js' | asset_url }}" defer></script>
+     
+<script type="text/javascript" src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=ueKycW"></script>
+   <script src="https://scripts.sirv.com/sirv.js" defer></script>
+
+    {% include 'ajax-cart-template' %}
+
+    <script async>
+      jQuery(function($) {
+        ajaxCart.init({
+          formSelector: 'form[action="/cart/add"]',
+          cartContainer: '#CartContainer',
+          addToCartSelector: '[type="submit"]',
+          cartCountSelector: '.cart span',
+          cartCostSelector: '#CartCost',
+          moneyFormat: {{ shop.money_format | json }}
+        });
+        });
+
+        jQuery(document.body).on('afterCartLoad.ajaxCart', function(evt, cart) {
+          timber.RightDrawer.open();
+        });
+    </script>
+    <div id="CartContainer" class="hidden">
+      <div style="position: fixed; top:0; right: 0; border: 1px solid lightgray; border-radius: 50%;">X</div>
+    </div>
+    {% include 'referafriend' %}
+   
+    <script src="{{  'api.jquery.js' | shopify_asset_url }}" async></script>
+
+    {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+    {% endif %}
+    <script type="text/javascript">
+      var global_money_format = '{{ shop.money_format }}';
+    </script>
+    {% include 'head-fb-open-graph' %}
+    {{ content_for_header }}
+    <!-- orankl js -->
+    {% if template contains 'product' or template contains 'reviews' %} 
+    <script type="text/javascript">
+      (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://www.orankl.com/javascript?store_key=dc8e48a7-b20c-4472-b296-32446a08b070";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+    </script> 
+    {% endif %}
+    <!-- end orankl js -->
+    {% comment %}Klaivyo{% endcomment %}
+    <script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  _learnq.push(['account', 'pk_c257ee3a5e3b40251891c2148e1e6c4824']);
+
+  (function () {
+  var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
+  b.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'a.klaviyo.com/media/js/analytics/analytics.js';
+  var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
+  })();
+  </script>
+  <!-- start inspectlet -->
+  <script type="text/javascript">
+(function() {
+window.__insp = window.__insp || [];
+__insp.push(['wid', 300505337]);
+var ldinsp = function(){
+if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=300505337&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+setTimeout(ldinsp, 0);
+})();
+</script>
+<!-- Start of mygekks Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="mygekks.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
+/*]]>*/</script>
+<!-- End of mygekks Zendesk Widget script -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  </head>
+  <body class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '/', '-' | split: '.' }} {% if template == 'index' or page.handle == 'store' %}zoom-aware{% endif %}">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWJVTQQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    <header>
+      <div class="wrap cbb-ignored-image" style="text-align: center;">
+        <a href="/?sh=d">
+            <img src="{{'jlogo.png' | asset_url}}" alt="Gekks" class="logo" />
+        </a>
+        <div class="desktop" id="top-nav">
+          <nav>
+            <ul class="desktop-nav">
+              {% for link in linklists.main-menu.links %}
+                {% assign child_list_handle = link.title | handleize %}
+                {% if linklists[child_list_handle].links != blank %}
+                  <ul class="childlink desktop-sub-nav">
+                    {% for childlink in linklists[child_list_handle].links limit: 1 %}
+                      <li class="sub-nav-header"><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                    {% endfor %}
+                    <div class="sub-nav">
+                      {% for childlink in linklists[child_list_handle].links offset: 1 %}
+                      <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                    {% endfor %}
+                    </div>
+                  </ul>
+               {% else %}
+                <li class="no-sub"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endif %}
+             {% endfor %}  
+            </ul>
+            
+          
+    
+            
+            <ul class="mobile-nav1 accent-padding" style="display: none;">
+              {% for link in linklists.mobile-nav-1.links limit:9 %}
+                {% assign child_list_handle = link.title | handleize %}
+                  {% if linklists[child_list_handle].links != blank %}
+                    <li><a class="collection-prod" href="{{ link.url }}">{{ link.title | escape }} <span>></span></a>
+                      <ul class="childlink accent-padding" style="display: none;">
+                      {% for childlink in linklists[child_list_handle].links %}
+                        <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                      {% endfor %}
+                      </ul>
+                    </li> 
+              {% elsif link.title == "Log In" %}
+               <li style="margin-top: 30px;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% else %}
+                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endif %}
+              {% endfor %}
+
+              {% for link in linklists.mobile-nav-1.links offset:9 limit:1 %}
+                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endfor %} 
+         
+              <div id="nav-social" class="accent-padding">
+              <a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'Instagram_darkgray.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
+              <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'facebook_darkgrey.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
+              <a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest_darkgrey.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
+            </div>
+            </ul>
+          </nav>
+            <div class="customer-portal">
+              {% if customer %}
+                <a href="/account/"><img src="{{'login.png' | asset_url}}" alt="View Account"/></a>
+              {% else %}
+                <a href="/account/login"><img src="{{'login.png' | asset_url}}" alt="Login/Register"/></a>
+              {% endif %}
+            </div>
+              <a href="/cart/" class="cart"><span>{{ cart.item_count }}</span> <image class="cart-icon" src="{{'shoppingbag.svg' | asset_url}}" style="margin-bottom: -11px;"/></a>
+            <div id="hamburger" style="display: none;">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+         </div>
+      </div>
+    </header>
+
+    {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
+    
+    <footer class="background-green">
+        <div class="social-icons">
+          <a href="https://www.instagram.com/gekks_go_sockless/?hl=en" target="_blank""><img src="{{'ig.png' | asset_url}}" alt="Instagram" /></a>
+          <a href="https://www.facebook.com/GekksLowCutLiners/" target="_blank"><img src="{{'fb.png' | asset_url}}" alt="Facebook" /></a>
+          <a href="https://www.pinterest.com/gekksliners/" target="_blank"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" /></a>
+      </div>
+        <div id="footer-nav">
+          <div id="nav-wrap">
+                 <ul>
+                <h3>company</h3>
+                {% for link in linklists.footer-1.links limit: 4 offset: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+              </ul>
+              <ul>
+                <h3>help</h3>
+                {% for link in linklists.footer-1.links limit: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+              </ul>
+                <ul>
+                <h3>shop</h3>
+                {% for link in linklists.footer-1.links limit: 3 offset: 9%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+              </ul>
+            </div>
+            <div id="footer-aside">
+              <div id="referafriend" class="background-darkgray" onclick="ga('send', 'event', 'Refer', 'Footer', 'Click');"><h3 class="text-green">refer a friend</h3></div>
+                <form action="https://manage.kmail-lists.com/subscriptions/subscribe?g=Buguta" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+                  <input type="email" value="" name="EMAIL" class="required email email_update border-white" id="mce-EMAIL" placeholder="sign up for exclusive deals">
+                  <input type="submit" value="go" name="subscribe" id="mc-embedded-subscribe">
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response"></div>
+                    <div class="response" id="mce-success-response"></div>
+                  </div>
+              </form>
+            </div>
+          </div>
+        <h3 class="copywrite tac text-white background-darkgray">© {{ shop.name }} {{ 'now' | date: '%Y' }}</h3>
+    </footer>
+    
+    <!-- Google Code for Remarketing Tag -->
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 973442114;
+      var google_custom_params = window.google_tag_params;
+      var google_remarketing_only = true;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+      <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/973442114/?value=0&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>    
+    <!-- END Google Code for Remarketing Tag --> 
+    
+    {% if template contains 'reviews' %}{{ 'reviews.css' | asset_url | stylesheet_tag }}{% endif %}
+    
+    <script>jQuery(function(){jQuery(".swatch :radio").change(function(){var t=jQuery(this).closest(".swatch").attr("data-option-index"),e=jQuery(this).val();jQuery(this).closest("form").find(".single-option-selector").eq(t).val(e).trigger("change")})});</script>
+    
+    {% include 'remove-sold-out' %}
+    {% include 'linked-options' %}
+        
+    <script>$("#referafriend").click(function(){/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?document.getElementById("k_id_modal").style.display="inline-block":document.getElementById("desktop_refer_k").style.display="inline-block"});</script>
+
+    <script>$(document).ready(function(){checkForDiscount();});
+
+  </script>
+  </body>
+</html>

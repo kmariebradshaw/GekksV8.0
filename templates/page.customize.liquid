@@ -1,4 +1,7 @@
-<style>section{text-align: center; min-height: fit-content; height: 100vh;display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; margin-top: 5vh;}section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin-left: 10%; margin-right: 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #6DCDB8; color: white; width: 75%; padding: 15px 0px; font-size: 16pt; cursor: pointer; margin: 0 auto; margin-bottom: 5vh; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 70%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{margin-top: 5vh; text-align: left;}#flow-back ul li{padding: 10px; border: 2px solid #F9F7F7; border-radius: 20px; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #6DCDB8 !important;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt !important; margin-top: 3vh; font-weight: bolder !important;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}#progress-bar{width: 16.666%; background-color: #6DCDB8; height: 13px;}.green{color: #6DCDB8; background-color: white; display: inline;}#intro-title{font-size: 45pt !important; text-transform: lowercase !important;}.clicked{background-color: #F9F7F7 !important;}#close{position: absolute; right: 10px; top:10px; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px; margin-top: 5vh;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto;}#problem-info li{padding: 10px; border: none !important; margin: 0 5px; font-size: 12pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid #F9F7F7; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color:#6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}
+{% layout 'theme.flow' %} 
+
+
+<style>section{text-align: center; min-height: fit-content; height: 100vh;display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; }section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin: 50px 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #6DCDB8; color: white; width: 75%; padding: 15px 0px; font-size: 16pt; cursor: pointer; margin: 0 auto; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 70%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{margin: 50px 0 35px 0; text-align: left;}#flow-back ul li{padding: 10px; border: 2px solid #F9F7F7; border-radius: 20px; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #6DCDB8 !important;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt !important; margin-top: 3vh; font-weight: bolder !important;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}#progress-bar{width: 16.666%; background-color: #6DCDB8; height: 13px;}.green{color: #6DCDB8; background-color: white; display: inline;}#intro-title{font-size: 45pt !important; text-transform: lowercase !important;}.clicked{background-color: #F9F7F7 !important;}#close{position: absolute; right: 10px; top:10px; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px; margin-top: 5vh;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto;}#problem-info li{padding: 10px; border: none !important; margin: 0 5px; font-size: 14pt !important; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid #F9F7F7; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color:#6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}
  
 b { font-weight: 600; }
 .flow-r {
@@ -70,7 +73,6 @@ body #page-flow-wrap:after, .clearfix:after {
     width: 45%;
     margin-left: 30px;
     background: white;
-    margin-top: -45px;
 }
 
 #result-info-flow h1 { 
@@ -122,10 +124,10 @@ body section #step-five {
 #page-flow-wrap {
     margin-top: 115px;
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 #flow-back { 
-    margin-top: 118px;
+    margin-top: 156px;
 } 
 .sgblogo { display: none; }
 
@@ -181,9 +183,7 @@ body section #til { width: 61%; margin: 0 auto; }
     margin: 0 auto;
 }
 #step-two .fbutton {
-    
-    margin-top: 40px;
-    width: 45%;
+        width: 45%;
 
 }
 
@@ -383,7 +383,7 @@ margin-top: 5px; }
 .back-card .sbutton {
     border: 2px solid #F9F2ED !important;
     text-align: center;
-    background-color: #F9F2ED;
+    background-color: #F9F2ED !important;
 }
 @media only screen and (min-width:801px) {
         .flip-container, .front, .back-card {
@@ -420,7 +420,7 @@ margin-top: 5px; }
     body section ul li div { font-size: 12pt; }
     body section div h1 {font-size: 15pt !important;}
     body section div .sgblogo { max-width: 110px !important;}
-    body section #problem-info li { font-size: 14pt !important; }
+    body section #problem-info li { font-size: 15pt !important; }
     body section div #sub-til { font-size: 20pt !important; }
     body section #result-info-flow #rtitle { font-size: 34pt !important; }
 }
@@ -455,9 +455,7 @@ margin-top: 5px; }
                 <div>  
          <h1 id="intro-title">Hi <div class="green"> there</div></h1>
                     <h1>wish you could #gosockless without your feet smelling like rotten eggs? or your no-show socks sliding down all day?</h1>
-                    <div style="height: 2vh;"></div>
                     <h3>yeah, we did too, so we invented Gekks. the ultimate no-show sock.</h3>
-                    <div style="height: 10vh"></div> 
                     <div class="fbutton"><span>let's get started</span></div></div>
             </section>
             <section id="step-two-five" style="display:none;">
@@ -472,8 +470,7 @@ margin-top: 5px; }
                             <div>men's</div>
                         </li>
                     </ul>
-                    <div id="dw" style="height: 5vh;"></div>
-                    <div class="errors-s" style="height: 5vh;"></div>
+                    <div class="errors-s" style="height: 10px;"></div>
                     <h3 style="font-weight: normal;">did you know that the average person spends a month of their life searching for socks in their sock drawer?</h3>
                     <p id="wot"> what a waste of time.</p>
                     <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Basics');"><span>ready!</span></div>
@@ -537,7 +534,7 @@ margin-top: 5px; }
                         </div>
                     </div>
                     </ul>
-                    <div class="errors-s" style="height: 5vh; margin-top: 20px;"></div>
+                    <div class="errors-s"></div>
                     <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Problems');"><span>cool!</span></div>
                 </div>
             </section>
@@ -566,7 +563,7 @@ margin-top: 5px; }
             </section>
             <section id="step-four" style="display:none;">
                 <div> <img class="sgblogo" src="{{'jlogo.png' | asset_url}}" alt="Gekks" />
-                    <h3 style="margin-top:5vh;">almost done...</h3>
+                    <h3>almost done...</h3>
                     <h1>what shoe styles do you like to look sockless in?</h1>
                     <ul>
                         <li class="sbutton flats" onClick="ga('send', 'event', 'Education', 'Style', 'Flats');"><img src="{{'Gekks-Icon-Flats_NEW.png' | asset_url}}" />
@@ -608,7 +605,7 @@ margin-top: 5px; }
                     </div>
                     </div>
                     <div class="mo-plus" style="height: 5vh;"></div>
-                    <a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Let's Do It');">let's do it!</a>
+                    <a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Flow End');">let's do it!</a>
                     <a class="fbutton mo-plus" style="margin-bottom: 3vh;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
     
                     <center>
