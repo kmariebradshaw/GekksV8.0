@@ -458,6 +458,8 @@ margin: 10px;
     font-size: 10pt;
     width: 10px;
   }
+  .collections-grid { height: 250px; }
+
   #meet-the-team {
     width: 100%;
     box-sizing: border-box;
@@ -801,7 +803,7 @@ footer input::placeholder { color: #fff; }
 #interactive-gekks h3 { margin: 0; }
 .switch-button { color: #6DCDB8 } 
 .current-switch h3 div { color: #545359; text-decoration: underline;}  
-#shop-w { background-image: url("{{'shop-women.jpg' | asset_url}}"); background-position: bottom left; } 
+#shop-w { background-image: url("{{'shop-women.jpg' | asset_url}}"); background-position: center; } 
 #shop-m { background-image: url("{{'shop-men.jpg' | asset_url }}"); background-position: bottom center; } 
 #lifestyle-w { background-image: url("{{'heels-lifestyle.jpg' | asset_url}}"); background-position: right; } 
 #lifestyle-m { background-image: url("{{'sneakers-lifestyle.jpg' | asset_url}}"); background-position: center; } 
@@ -856,6 +858,25 @@ footer input::placeholder { color: #fff; }
     margin: 0 5px;
     -ms-overflow-style: none;
   }
+.select-grid { height: 150px; }
+#shop-flats, #shop-sneakers, #shop-loafers, #shop-heels, #shop-mens-loafers, #shop-mens-sneakers {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#shop-mens-loafers { background-position: center !important; }
+.select-grid > div:hover { opacity: 0.8; }
+#shop-flats { background-image: url("{{'select-flats.jpg' | asset_url}}"); }
+#shop-sneakers { background-image: url("{{'select-sneakers.jpg' | asset_url}}"); }
+#shop-loafers { background-image: url("{{'select-loafers.jpg' | asset_url}}"); }
+#shop-mens-loafers { background-image: url("{{'shop-mens-loafers.jpg' | asset_url}}"); }
+#shop-mens-sneakers { background-image: url("{{'shop-mens-sneakers.jpg' | asset_url}}"); }
+
+#shop-heels { background-image: url("{{'select-heels.jpg' | asset_url}}"); }
 .shoe-count {
     display: inline-block;
     margin: 1%;
@@ -1322,6 +1343,7 @@ transform: translateY(180deg);
     top: 139px;
     left: 55px;
 }
+.collections-grid { height: 400px; }
 #moisture-wick {
     right: -30px;
     top: 139px;
@@ -1641,7 +1663,15 @@ transform: translateY(45deg);
     border-bottom: 2px solid #6DCDB8;
 }
 }
+@media only screen and (min-width: 800px) and (max-width: 1299px) {
+  .collections-grid { height: 300px; }
+
+}
+@media only screen and (min-width: 1300px) {
+  .collections-grid { height: 500px; }
+}
  /* care-instructions */
+}
 #refresh { 
   background-image: url("{{'sanitizerrefresh.jpg' |asset_url}}");
   background-position: center;

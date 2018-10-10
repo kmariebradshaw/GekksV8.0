@@ -41,11 +41,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% endif %}
     {% elsif page_description %}
   <meta name="description" content="{{ page_description | escape }}">
-   
+   <meta property="og:image" content="{{preview.png | asset_url}}" />
+
  
     {% else %}
     <meta name="description" content="{{ shop.description }}">
-    <meta property="og:image" content="{{'m-atf.jpg' | asset_url}}" />
+   <meta property="og:image" content="{{preview.png | asset_url}}" />
 
     {% endif %}
     <meta name="keywords" content="">

@@ -1,51 +1,47 @@
- 
-<!-- spurit_po-added -->
-{% include 'spurit_po-collection-snippet' %}
-<!-- /spurit_po-added -->
-<main id="page" class="{{ collection.handle }}">	     
-  <section class="content">
-    <div class="wrap">
-
-      <div>
-        {% paginate collection.products by 12 %}
-        {% if collection.products.size > 0 %}
-        <div id="product-grid" class="clearfix">
-          {% for product in collection.products %}
-          {% include 'product-grid-item' %}
-          {% endfor %}
-        </div>
+ <main>
+  <div class="fw accent-padding">
+    {% if collection.title == "Men" %}
+     <div class="flex-container collections-grid clickable">
+        <div class="half" id="shop-mens-loafers"><h2><a href="/products/loafer-version" class="text-white">Shop Loafers</a></h2></div>
+        <div class="half" id="shop-mens-sneakers"><h2><a href="/products/sneaker-version" class="text-white">Shop Sneakers</a></h2></div>
       </div>
-      {% endif %}
-      <center>
-        <h3 id="ror">read our reviews</h3>
-        {% if collection.title == "Women" %}
-          <div class="rorr"><img src="{{'coll-review.jpg' | asset_url}}" class="do"/></div>
-          <div class="rorr"><img src="{{'coll-reviews-m1.jpg' | asset_url}}" class="mo"/></div>
-          <div class="rorr"><img src="{{'coll-reviews2.jpg' | asset_url}}" class="mo"/></div>
-        {% else %}
-          <div class="rorr"><img src="{{'men-reviews-des.png' | asset_url}}" class="do"/></div>
-          <div class="rorr"><img src="{{'men-reviews-m1.png' | asset_url}}" class="mo"/></div>
-          <div class="rorr"><img src="{{'men-review-m2.png' | asset_url}}" class="mo"/></div>
-        {% endif %}
-        <a href="/pages/reviews"><h5>see more</h5></a>
-      </center>
-      {% if paginate.pages > 1 %}
-      {% include 'pagination' %}    
-      {% endif %}
-      {% endpaginate %}
-    </div>
+    {% else %}
+      <div class="flex-container collections-grid clickable">
+        <div class="half" id="shop-flats"><h2><a href="/products/flats-version" class="text-white">Shop Flats</a></h2></div>
+        <div class="half" id="shop-sneakers"><h2><a href="/products/womens-sneaker-version" class="text-white">Shop Sneakers</a></h2></div>
+      </div>
+      <div class="flex-container collections-grid clickable">
+        <div class="half" id="shop-loafers"><a href="/products/womens-loafer-version" class="text-white"><h2>Shop Loafers</h2></a></div>
+        <div class="half" id="shop-heels"><a href="/products/heels" class="text-white"><h2>Shop Heels</h2></a></div>
+      </div>
+    {% endif %}
+</div>
+  <section class="fw endorsements-features" id="featured">   
+    <ul class="background-beige">
+      <li><p>endorsed by</p></li>
+      {% if collection.title == "Men" %}
+        {% include 'endorsed_by_m' %}
+      {% else %}
+        {% include 'endorsed_by_w' %} 
+      {% endif %} 
+    </ul>
+  </section>
+  <section id="key-features" class="index-padding">
+    <div class="title-border"></div>
+    <h2>Give Gekks a Go</h2>
+    <ul class="icon-display">
+      <li><img src="{{'sweat.svg' | asset_url}}" alt="Sweat Reducing"/><br><span class="text-green">stench control</span><br><p class="subscript">antimicrobial yarn eliminates the sockless stench</p></li> 
+      <li class="do"><img src="{{'comfortable.svg' | asset_url}}" alt="Comfortable" /><br><span class="text-green">comfortable</span><br><p class="subscript">55% polyester, 39% nylon, 6% silver coated nylon</p></li> 
+      <li><img src="{{'longlasting.svg' | asset_url}}" alt="Long Lasting" /><br><span class="text-green">long lasting</span><p class="subscript">adhesive pads come with two layers to make your Gekks and your soles last longer</p></li> 
+    </ul>
+    <ul class="icon-display">
+      <li><img src="{{'convenient.svg' | asset_url}}" alt="Convenient"/><br><span class="text-green">convenient</span><p class="subscript">slip in and out barefoot using our patented fastening system</p></li> 
+      <li class="do"><img src="{{'ecofriendly.svg' | asset_url}}" alt="Eco-Friendly"/><br><span class="text-green">eco-friendly</span><p class="subscript">REPREVE yarn to help you reduce your carbon footprint</p></li> 
+      <li><img src="{{'fashionforward.svg' | asset_url}}" alt="Fashion Forward"/><br><span class="text-green">fashion forward</span><p class="subscript">rock that sockless style with all your shoe choices</p></li> 
+    </ul>
+    <ul class="icon-display mo">
+      <li><img src="{{'ecofriendly.svg' | asset_url}}" alt="Eco-Friendly"/><br><span class="text-green">eco-friendly</span><p class="subscript">REPREVE yarn, made from recycled bottles, to help you reduce your carbon footprint</p></li> 
+      <li><img src="{{'comfortable.svg' | asset_url}}" alt="Comfortable" /><br><span class="text-green">comfortable</span><br><p class="subscript">55% polyester, 39% nylon, 6% silver coated nylon</p></li> 
+    </ul>
   </section>
 </main>
-
-    <script>
-    if ( $(window).width() > 588) {      
-      $(document).on('ready', function(){
-        $(".half-grid-item").css({'height':($(".half-grid-item .product-grid").height()  +'px')});
-        $(".whole-grid-item").css({'height':($(".whole-grid-item .product-grid").height()  +'px')});
-      });
-      $(window).on("resize", function () {
-        $(".half-grid-item").css({'height':($(".half-grid-item .product-grid").height()  +'px')});
-        $(".whole-grid-item").css({'height':($(".whole-grid-item .product-grid").height()  +'px')});
-      });
-    }
-  </script> 
