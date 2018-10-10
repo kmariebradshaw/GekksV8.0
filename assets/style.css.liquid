@@ -856,6 +856,21 @@ footer input::placeholder { color: #fff; }
     margin: 0 5px;
     -ms-overflow-style: none;
   }
+.select-grid { height: 150px; }
+#shop-flats, #shop-sneakers, #shop-loafers, #shop-heels {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.select-grid > div:hover { opacity: 0.8; }
+#shop-flats { background-image: url("{{'select-flats.jpg' | asset_url}}"); }
+#shop-sneakers { background-image: url("{{'select-sneakers.jpg' | asset_url}}"); }
+#shop-loafers { background-image: url("{{'select-loafers.jpg' | asset_url}}"); }
+#shop-heels { background-image: url("{{'select-heels.jpg' | asset_url}}"); }
 .shoe-count {
     display: inline-block;
     margin: 1%;
