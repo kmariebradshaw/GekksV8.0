@@ -501,6 +501,7 @@ margin-top: 5px; }
                     <h3 style="font-weight: normal;">did you know that the average person spends a month of their life searching for socks in their sock drawer?</h3>
                     <p id="wot"> what a waste of time.</p>
                     <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Basics');"><span>ready!</span></div>
+                 <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                 </div>
             </section>
             <section id="step-two" class="prob-select-first" style="display:none;">
@@ -563,7 +564,9 @@ margin-top: 5px; }
                     </ul>
                     <div class="errors-s"></div>
                     <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Problems');"><span>cool!</span></div>
+                <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                 </div>
+
             </section>
               <section class="continue" style="display: none;" id="more-than-one-prob-sel">
              <div>
@@ -577,6 +580,7 @@ margin-top: 5px; }
                </ul>
                <div style="height: 3vh;"></div>
                <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');"><span>got it!</span></div>
+               <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                </div>
              </section>
             <section class="continue" id="step-three" style="display:none;">
@@ -586,6 +590,7 @@ margin-top: 5px; }
                     <img src="{{'updated-be.gif' | asset_url }}" alt="Slip in and Out Barefoot" class="fw"/>
                     <div style="height:4vh;"></div>
                     <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Problem-Feedback');"><span>solve my problems</span></div>
+                <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                 </div>
             </section>
             <section id="step-four" style="display:none;">
@@ -604,6 +609,7 @@ margin-top: 5px; }
                     </ul>
                     <div class="errors-s"></div>
                     <div class="fbutton" id="rcalc" onClick="ga('send', 'event', 'Education', 'Progress', 'Style');"><span>show my results</span></div>
+                <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                 </div>
             </section>
  
@@ -645,6 +651,8 @@ margin-top: 5px; }
                     </center>
                     </div>
                     </div>
+
+
             </section>
         </div>
     </section>
@@ -790,16 +798,12 @@ $(document).on("ready", function() {
     })
 }); 
 
-// $('.flipper').click(function(){
-//     // if ( $(this).children().children().first().hasClass('highlight')) {
-//     $(this).toggleClass('flipped'); 
-//     console.log('toggle') 
-//   // } 
-// });
 $('.flip-container').click(function () {
       $(this).children('.flipper').toggleClass('flipped'); 
 })
-
+$('.back').click(function() {
+  $(this).parent().parent().hide().prev().fadeIn();
+})
 
 </script>
 
