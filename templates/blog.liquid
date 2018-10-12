@@ -1,54 +1,67 @@
-<section class="page blog">
-  <aside class="align-right">
-    <a href="{{ blog.url }}.atom"><i class="fa fa-rss-square fa-lg"></i></a>
-  </aside>
-  <h2 class="theme">{{ blog.title }}</h2>
-    <aside class="meta center">
-    {% if current_tags %}
-      Viewing entries tagged "{{ current_tags.first }}"
-    {% endif %}
-    </aside>
-	<div class="blog-content">
-      {% if blog.articles.size > 0 %}
-		{% paginate blog.articles by 5 %}
-          {% for article in blog.articles %}
-            <article>
-                <h3><a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a></h3>
-              
-              	<p class="meta-top">
-                    {% if article.author %}by {{ article.author }} <span class="separator">|</span> {% endif %}
-                    {{ article.published_at | date: "%B %d, %Y" }}
-                    {% if article.comments_enabled? %}
-                    <span class="separator">|</span> <a href="{{ article.url }}#comments" title="{{ article.title | escape }} Comments" class="comment_count">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }} </a>
-                    {% endif %}
-                </p>
 
-                {% if article.excerpt != blank %}
-                  {{ article.excerpt }}
-              		
-                  <p>
-                      <br/>
-                      <a href="{{ article.url }}">Read full post &rarr;</a>
-                  </p>
-                {% else %}
-                    {{ article.content }} 
-                {% endif %}
-    
-                <p class="meta">
-                    {% for tag in article.tags %}
-                    	{% if forloop.index0 == 0 %}
-                  		<span class="label">Tagged: </span>
-                    	{% endif %}
-                    	<a href="{{ shop.url }}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} tagged {{ tag | escape }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
-                    {% endfor %}
-                </p>
-            </article>
-            <div class="hr"></div>
-      		{% endfor %}
-          {% include 'pagination' %}
-		{% endpaginate %}
+<main id="blog-template" class="blog"> 
+  <section class="background-green tac index-padding page-header">
+    <h2 class="text-white nm">Welcome to</h2>
+    <h1 class="nm text-white">The Gekks Blog</h1>
+  </section>
+    {% for article in blog.articles %}
+      {% assign highlight = article.content | split: '.'%} 
+      {% assign even_or_odd = forloop.index | modulo:2 %} 
+      {% if even_or_odd == 0 %}
+        <section class="flex-container-no fw background-beige index-padding blog-snippet" data-date="{{ article.published_at | date: '%B'}}">
+          <div class="half blog-description">
+            <div class="title-border"></div>
+            <h2 class="nmb"><a href="{{ article.url }}" title="{{ article.title | escape }}" class="text-green">{{ article.title }} </a></h2>
+            <p class="nm"><span>{{ article.author }}</span></p>
+            <p class="nmt">{{ article.published_at | date: "%B %d, %Y" }}</p>
+            <p class="do">{{ article.excerpt }}</p>
+            <h3 class="text-green do">"{{ highlight | first | strip_html }}"</h3>
+            <div class="blog-btn background-darkgray accent-padding tac"><a href="{{ article.url }}" class="text-green"><h3 class="nm">read more</h3></a></div>
+          </div>
+          <div class="half tac">
+            <img src="{{ article.image.src | img_url: '300x' }}" alt="{{article.title}}" />
+          </div>
+        </section>
       {% else %}
-      	<p class="center">There are no articles in this blog.</p>
+      <section class="flex-container-no fw index-padding blog-snippet" data-date="{{ article.published_at | date: '%B'}}">
+        <div class="half tac">
+            <img src="{{ article.image.src | img_url: '300x' }}" alt="{{article.title}}" />
+          </div>
+        <div class="half blog-description">
+          <div class="title-border"></div>
+           <h2 class="nmb"><a href="{{ article.url }}" title="{{ article.title | escape }}" class="text-green">{{ article.title }}</a></h2>
+           <p class="nm"><span>{{ article.author }}</span></p>
+           <p class="nmt">{{ article.published_at | date: "%B %d, %Y" }}</p>
+           <p class="do">{{ article.excerpt }}</p>
+            <h3 class="text-green do">"{{ highlight | first | strip_html }}."</h3>
+
+            <div class="blog-btn background-darkgray accent-padding tac"><a href="{{ article.url }}" class="text-green"><h3 class="nm">read more</h3></a></div>
+        </div>
+      </section>
       {% endif %}
-	</div>
-</section>
+      {% endfor %}
+  <section id="archive" class="background-beige accent-padding">
+    <h2 class="text-green nmb">Archives</h2>
+    <h2 class="nmt">
+      <span class="clickable text-green" data-date="June">June.</span>
+      <span class="clickable text-green" data-date="July">Jul.</span>
+      <span class="clickable text-green" data-date="August">Aug.</span>
+      <span class="clickable text-green" data-date="September">Sept.</span>
+      <span class="clickable text-green" data-date="October">Oct.</a></span>
+    </h2>
+</main>
+<script>
+  $('#archive span').click(function() {
+    var dateRange = $(this).attr('data-date');
+    $(this).addClass('current').siblings().removeClass('current')
+    $('.blog-snippet').each(function () {
+      if ($(this).attr('data-date') != dateRange) {
+        $(this).hide()
+      }
+      else {
+        $(this).show();
+      }
+    })
+  })
+  </script>
+
