@@ -9,13 +9,13 @@
       {% assign even_or_odd = forloop.index | modulo:2 %} 
       {% if even_or_odd == 0 %}
         <section class="flex-container-no fw background-beige index-padding blog-snippet" data-date="{{ article.published_at | date: '%B'}}">
-          <div class="half">
+          <div class="half blog-description">
             <div class="title-border"></div>
             <h2 class="nmb"><a href="{{ article.url }}" title="{{ article.title | escape }}" class="text-green">{{ article.title }} </a></h2>
             <p class="nm"><span>{{ article.author }}</span></p>
             <p class="nmt">{{ article.published_at | date: "%B %d, %Y" }}</p>
-            <p>{{ article.excerpt }}</p>
-            <h3 class="text-green">"{{ highlight | first | strip_html }}"</h3>
+            <p class="do">{{ article.excerpt }}</p>
+            <h3 class="text-green do">"{{ highlight | first | strip_html }}"</h3>
             <div class="blog-btn background-darkgray accent-padding tac"><a href="{{ article.url }}" class="text-green"><h3 class="nm">read more</h3></a></div>
           </div>
           <div class="half tac">
@@ -27,13 +27,13 @@
         <div class="half tac">
             <img src="{{ article.image.src | img_url: '300x' }}" alt="{{article.title}}" />
           </div>
-        <div class="half">
+        <div class="half blog-description">
           <div class="title-border"></div>
            <h2 class="nmb"><a href="{{ article.url }}" title="{{ article.title | escape }}" class="text-green">{{ article.title }}</a></h2>
            <p class="nm"><span>{{ article.author }}</span></p>
            <p class="nmt">{{ article.published_at | date: "%B %d, %Y" }}</p>
-           <p>{{ article.excerpt }}</p>
-            <h3 class="text-green">"{{ highlight | first | strip_html }}."</h3>
+           <p class="do">{{ article.excerpt }}</p>
+            <h3 class="text-green do">"{{ highlight | first | strip_html }}."</h3>
 
             <div class="blog-btn background-darkgray accent-padding tac"><a href="{{ article.url }}" class="text-green"><h3 class="nm">read more</h3></a></div>
         </div>
