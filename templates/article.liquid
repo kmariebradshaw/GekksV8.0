@@ -11,7 +11,26 @@
     <p class="nmt">{{ article.published_at | date: "%B %d, %Y" }}</p>
     {{ article.content }} 
   </section>
-  <section>
+  <section class="index-padding">
+    {% if blog.next_article %}
+      <p class="subscript tac">
+        {% for post in blog.articles %}
+          {% if post.url == blog.next_article %}
+            <a href="{{ post.url }}" title="{{ post.title | escape }}">{{ post.title }} &rarr;</a>
+          {% endif %}
+        {% endfor %}
+      </p>
+    {% endif %}
+    {% if blog.previous_article %}
+      <p class="subscript tac">
+        {% for post in blog.articles %}
+          {% if post.url == blog.previous_article %}
+            <a href="{{ post.url }}" title="{{ post.title | escape }}">&larr; {{ post.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </p>
+    {% endif %}
+    <p class="subscript tac"><a href="/blogs/news">all posts</a></p>
   </section>
 </main>
 
