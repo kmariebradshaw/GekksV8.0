@@ -1,7 +1,7 @@
 {% layout 'theme.flow' %} 
 
 
-<style>section{text-align: center; min-height: fit-content; height: 600px;display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; }section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin: 50px 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #6DCDB8; color: white; width: 75%; padding: 15px 0px; font-size: 16pt; cursor: pointer; margin: 0 auto; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 70%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{text-align: left;}#flow-back ul li{padding: 10px; border: 2px solid #F9F7F7; background: white;border-radius: 20px; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #6DCDB8 !important;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt !important; margin-top: 3vh; font-weight: bolder !important;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}#progress-bar{width: 16.666%; background-color: #6DCDB8; height: 13px;}.green{color: #6DCDB8; background-color: white; display: inline;}#intro-title{margin: 0 0 50px 0;font-size: 45pt !important; text-transform: lowercase !important;}.clicked{background-color: #F9F7F7 !important;}#close{position: absolute; right: 10px; top:10px; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto;}#problem-info li{padding: 10px; border: none !important; margin: 0 5px; font-size: 14pt !important; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid #F9F7F7; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color:#6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}
+<style>section{text-align: center; min-height: fit-content; height: 600px;display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; }section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin: 50px 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #6DCDB8; color: white; width: 75%; padding: 15px 0px; font-size: 16pt; cursor: pointer; margin: 0 auto; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 90%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{text-align: left;}#flow-back ul li{padding: 10px; border: 2px solid #F9F7F7; background: white;border-radius: 20px; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #6DCDB8 !important;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt !important; margin-top: 3vh; font-weight: bolder !important;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}#progress-bar{width: 16.666%; background-color: #6DCDB8; height: 13px;}.green{color: #6DCDB8; background-color: white; display: inline;}#intro-title{font-size: 45pt !important;}.clicked{background-color: #F9F7F7 !important;}#close{position: absolute; right: 10px; top:10px; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto !important;}#problem-info li{padding: 10px; border: none !important; margin: 0 5px; font-size: 14pt !important; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid #F9F7F7; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color:#6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}
  
 b { font-weight: 600; }
 .flow-r {
@@ -12,16 +12,11 @@ b { font-weight: 600; }
 .modal { display: none !important; }
   iframe { display: none !important; }
 
-@media only screen and (max-width: 799px) {
-    header { display: none; }
-  footer { display: none; }
 #step-one {
   background-image: url("{{'Pairs-01.svg' | asset_url}}");
   background-repeat: no-repeat;
   background-position: 100px bottom;
 }
-#step-two-five h1, #step-two-five h3:first-of-type, #step-four h3:first-of-type  { margin: 0; }
-#step-two-five h3:nth-of-type(2n), #wot, #step-four h1 { margin: 20px !important; }
 #step-two-five {
   background-image: url("{{'Pairs-02.svg' | asset_url}}");
   background-repeat: no-repeat;
@@ -37,6 +32,11 @@ b { font-weight: 600; }
   background-repeat: no-repeat;
     background-position: -25px 60px;
 }
+@media only screen and (max-width: 799px) {
+    header { display: none; }
+  footer { display: none; }
+#step-two-five h1, #step-two-five h3:first-of-type, #step-four h3:first-of-type  { margin: 0; }
+#step-two-five h3:nth-of-type(2n), #wot, #step-four h1 { margin: 20px !important; }
 #step-two ul{
     margin: 10px 0 20px 0;
 }
@@ -67,7 +67,7 @@ b { font-weight: 600; }
 .sub-info { text-align: center; margin: 10px 0; }
 
 @media only screen and (min-width: 801px) {
-ul{margin: 50px 0 35px 0; text-align: left;}
+#page-flow-wrap ul{margin: 50px 0 35px 0; text-align: left;}
 
 body #page-flow-wrap:after, .clearfix:after {
    content: " " !important;
@@ -127,10 +127,6 @@ body section #step-five {
 
 #step-two h1 { margin-bottom: 20px !important; }
 
-#step-one #intro-title { margin-top: 0px; }
-
-#step-one #intro-title:after { content: url("{{'Gekks-Icons.png' | asset_url}}"); margin-right: -25px;}
-
 #prog-head {
     position: relative;
     top: 143px;
@@ -147,25 +143,21 @@ body section #step-five {
     margin-top: 20px;
 }
 #page-flow-wrap {
-    margin-top: 115px;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 #flow-back { 
-    margin-top: 156px;
+    margin-top: 87px;
 } 
+#step-one { margin-top: -87px; }
 .sgblogo { display: none; }
 
-#step-one { 
-    margin-left: -7%;
- }
 
 body #problem-info li {
     font-size: 14pt;
 }
 
 #step-one h1 { 
-    text-align: left;
     font-size: 18pt;
  }
 
@@ -181,7 +173,7 @@ body #problem-info li {
     min-height: 46px;
 }
 
-#lost-prob-sel .fbutton, #heel-prob-sel .fbutton, #more-than-one-prob-sel .fbutton, #smell-prob-sel .fbutton, #slip-prob-sel .fbutton, #prob-fb-rex .fbutton {
+#lost-prob-sel .fbutton, #heel-prob-sel .fbutton, #more-than-one-prob-sel .fbutton, #smell-prob-sel .fbutton, #slip-prob-sel .fbutton, #prob-fb-rex .fbutton, #step-one .fbutton {
     width: 45%;
 }
 
@@ -250,28 +242,6 @@ body #step-five div h3 { font-size: 11pt; }
 body section .pres-log { 
 max-width: 7%; }
 
-body section #intro-title {
-    float: left;
-    text-align: right;
-    width: 45%;
-    font-size: 66pt !important;
-    margin-right: 7%;
-    line-height: 1;
-}
-
-#step-one h3 {
-    text-align: left;
-    width: 45%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 11pt;
-}
-
-#step-one .fbutton {
-    width: 46%;
-    float: right;
-}
 
 
 }
@@ -469,6 +439,19 @@ margin-top: 5px; }
 
     #result-info-flow h1 { margin-top: 50px !important; }
 }
+#intro-bubbles {
+  width: fit-content;
+  margin: 0 auto !important;
+}
+body #intro-bubbles li {
+    padding: 0;
+    border: none;
+    min-height: 0;
+    list-style: disc outside url("{{'teal_circle.png' | asset_url}}");
+    font-size: 12pt !important;
+    background: transparent;
+}
+#rprodp img { max-height: 150px; }
 </style>
 <section>
   <div>
@@ -478,9 +461,14 @@ margin-top: 5px; }
         <div>
             <section class="continue" id="step-one">
                 <div>  
-         <h1 id="intro-title">Hi <div class="green"> there</div></h1>
-                    <h1>wish you could #gosockless without your feet smelling like rotten eggs? or your no-show socks sliding down all day?</h1>
-                    <h3>yeah, we did too, so we invented Gekks. the ultimate no-show sock.</h3>
+         <h1 id="intro-title" class="nmb">Hi <div class="green"> there.</div></h1>
+                    <h1 style="font-weight: lighter;">wish you could <br> #gosockless without...</h1>
+                    <ul id="intro-bubbles">
+                      <li>your no show socks<br> sliding down all day?</li>
+                      <li>your feet smelling like <br> rotten eggs?</li>
+                      <li>constantly getting<br> blisters?</li>
+                    </ul>
+                    <h1>Yeah, we did too.<br>That's why we invented Gekks,<br><span class="text-green"> the ultimate no-show sock.</span></h3>
                     <div class="fbutton"><span>let's get started</span></div></div>
             </section>
             <section id="step-two-five" style="display:none;">
@@ -501,6 +489,7 @@ margin-top: 5px; }
                     <h3 style="font-weight: normal;">did you know that the average person spends a month of their life searching for socks in their sock drawer?</h3>
                     <p id="wot"> what a waste of time.</p>
                     <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Basics');"><span>ready!</span></div>
+                 <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                 </div>
             </section>
             <section id="step-two" class="prob-select-first" style="display:none;">
@@ -563,7 +552,9 @@ margin-top: 5px; }
                     </ul>
                     <div class="errors-s"></div>
                     <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Problems');"><span>cool!</span></div>
+                <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                 </div>
+
             </section>
               <section class="continue" style="display: none;" id="more-than-one-prob-sel">
              <div>
@@ -577,6 +568,7 @@ margin-top: 5px; }
                </ul>
                <div style="height: 3vh;"></div>
                <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');"><span>got it!</span></div>
+               <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                </div>
              </section>
             <section class="continue" id="step-three" style="display:none;">
@@ -586,6 +578,7 @@ margin-top: 5px; }
                     <img src="{{'updated-be.gif' | asset_url }}" alt="Slip in and Out Barefoot" class="fw"/>
                     <div style="height:4vh;"></div>
                     <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Problem-Feedback');"><span>solve my problems</span></div>
+                <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                 </div>
             </section>
             <section id="step-four" style="display:none;">
@@ -604,6 +597,7 @@ margin-top: 5px; }
                     </ul>
                     <div class="errors-s"></div>
                     <div class="fbutton" id="rcalc" onClick="ga('send', 'event', 'Education', 'Progress', 'Style');"><span>show my results</span></div>
+                <div class="back accent-padding"><span class="subscript text-lightgray">← Back</span></div>
                 </div>
             </section>
  
@@ -645,6 +639,8 @@ margin-top: 5px; }
                     </center>
                     </div>
                     </div>
+
+
             </section>
         </div>
     </section>
@@ -790,10 +786,12 @@ $(document).on("ready", function() {
     })
 }); 
 
-$('.flipper').click(function(){
-    if ( $(this).children().children().first().hasClass('highlight')) {
-    $(this).toggleClass('flipped');  
-  } 
-});
+$('.flip-container').click(function () {
+      $(this).children('.flipper').toggleClass('flipped'); 
+})
+$('.back').click(function() {
+  $(this).parent().parent().hide().prev().fadeIn();
+})
+
 </script>
 
