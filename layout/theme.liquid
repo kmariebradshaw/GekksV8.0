@@ -195,7 +195,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       </ul>
                     </li> 
               {% elsif link.title == "Log In" %}
-               <li style="margin-top: 30px;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                {% if customer %}
+                  <li style="margin-top: 30px;"><a href="/account">View Account</a></li>
+                {% else %}
+                  <li style="margin-top: 30px;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                {% endif %}
               {% else %}
                 <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
               {% endif %}
