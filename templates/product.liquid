@@ -35,6 +35,13 @@
           </ul>
         </div>
       {% endunless %} 
+      <div class="mo-plus fw" id="price-ab"><h3 class="tac nmb">{{ product.price | money }} <span style="text-decoration: line-through; color: gray;">{% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}{{ product.compare_at_price | money }}{% endif %}</span></h3>
+        {% if product.title == "Women's Closet Pack" %}
+          <p class="subscript tac nmt">Save $5 when you buy a closet pack!</p>
+        {% elsif product.title == "Men's Closet Pack" %}
+          <p class="subscript tac nmt">Save $4 when you buy a closet pack!</p>
+        {% endif %}
+      </div>
       <img src="{{ product.featured_image.src | product_img_url: '2000x2000' }}" alt="{{ product.title }}" id="featured-image"/>
       {% unless product.title == "Gift Cards" %}
         <div id="thumbnails" class="mo-plus" style="display: none;">
