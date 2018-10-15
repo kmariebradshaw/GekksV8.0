@@ -1,7 +1,7 @@
 {% layout 'theme.flow' %} 
 
 
-<style>section{text-align: center; min-height: fit-content; height: 600px;display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; }section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin: 50px 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #6DCDB8; color: white; width: 75%; padding: 15px 0px; font-size: 16pt; cursor: pointer; margin: 0 auto; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 90%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{text-align: left;}#flow-back ul li{padding: 10px; border: 2px solid #F9F7F7; background: white;border-radius: 20px; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #6DCDB8 !important;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt !important; margin-top: 3vh; font-weight: bolder !important;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}#progress-bar{width: 16.666%; background-color: #6DCDB8; height: 13px;}.green{color: #6DCDB8; background-color: white; display: inline;}#intro-title{font-size: 45pt !important;}.clicked{background-color: #F9F7F7 !important;}#close{position: absolute; right: 10px; top:10px; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto !important;}#problem-info li{padding: 10px; border: none !important; margin: 0 5px; font-size: 14pt !important; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid #F9F7F7; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color:#6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}
+<style>section{text-align: center; min-height: fit-content; height: 600px;display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; }section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin: 50px 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #6DCDB8; color: white; width: 75%; padding: 15px 0px; font-size: 16pt; cursor: pointer; margin: 0 auto; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{text-align: left;}#flow-back ul li{padding: 10px; border: 2px solid #F9F7F7; background: white;border-radius: 20px; margin: 5px; font-size: 10pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #6DCDB8 !important;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt !important; margin-top: 3vh; font-weight: bolder !important;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}#progress-bar{width: 16.666%; background-color: #6DCDB8; height: 13px;}.green{color: #6DCDB8; background-color: white; display: inline;}#intro-title{font-size: 45pt !important;}.clicked{background-color: #F9F7F7 !important;}#close{position: absolute; right: 10px; top:10px; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto !important;}#problem-info li{padding: 10px; border: none !important; margin: 0 5px; font-size: 14pt !important; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid #F9F7F7; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color:#6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #6DCDB8; margin-top: -10px; margin-right: 20px; font-weight: 700;}
  
 b { font-weight: 600; }
 .flow-r {
@@ -162,7 +162,8 @@ body #problem-info li {
  }
 
  #step-two ul { 
-    margin-bottom: 3vh;
+  max-width: 400px;
+  margin: 50px auto;
   }
 
   #step-two ul li {
@@ -319,7 +320,7 @@ max-width: 7%; }
 @media only screen and (min-width: 801px) {
 .mo-plus { display: none; }
   .flip-container { display: inline-block; }
-  body section ul .flip-b { width: 300px !important; }
+  body section ul .flip-b { width: 96% !important; }
 }
 
 .flip-container {
@@ -382,7 +383,7 @@ margin-top: 5px; }
 }
 @media only screen and (min-width:801px) {
         .flip-container, .front, .back-card {
-        width: 310px;
+        width: 100%;
         height: 78px;
     }
 }
@@ -391,10 +392,10 @@ margin-top: 5px; }
         width: 320px;
     }
     body section .flip-b {
-        width: 300px !important;
+        width: 96%;
     }
     .flip-container, .front, .back-card {
-        width: 310px;
+        width: 100%;
         height: 78px;
         margin: 0 auto;
     }
@@ -483,7 +484,6 @@ body #intro-bubbles li {
                             <div>men's</div>
                         </li>
                     </ul>
-                                        <div id="dw" style="height: 10px;"></div>
 
                     <div class="errors-s" style="height: 10px;"></div>
                     <h3 style="font-weight: normal;">did you know that the average person spends a month of their life searching for socks in their sock drawer?</h3>
@@ -506,7 +506,7 @@ body #intro-bubbles li {
                           </div>
                           <div class="back-card">
                             <li class="sbutton flip-b">
-                            <div>Gekks are knit with odor killing yarn</div>(the same yarn used by the military and NASA)</li>
+                            <div>Gekks are knit with odor killing yarn</div>(the same yarn used by the military & NASA)</li>
                           </div> 
                         </div>
                     </div>
@@ -540,7 +540,7 @@ body #intro-bubbles li {
                     <div class="flip-container">
                       <div class="flipper">
                         <div class="front">
-                        <li class="sbutton heel flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Blister');"><img src="{{'Icon-blister.svg' | asset_url}}" />
+                        <li class="sbutton heel flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Blister');"><img src="{{'Icon-blister.png' | asset_url}}" />
                             <div>heel blisters</div>your heels look like you got attacked
                             <br>by a 3-inch tall bear.</li>
                             </div>
@@ -587,7 +587,7 @@ body #intro-bubbles li {
                     <h1>what shoe styles do you like to look sockless in?</h1>
                     <ul>
                         <li class="sbutton flats" onClick="ga('send', 'event', 'Education', 'Style', 'Flats');"><img src="{{'Gekks-Icon-Flats_NEW.png' | asset_url}}" />
-                        <div>flats</div>ballet flats, short loafer, mary jane, etc.</li>
+                        <div>flats</div>ballet flats, mary jane, etc.</li>
                         <li class="sbutton heels" onClick="ga('send', 'event', 'Education', 'Style', 'Heels');"><img src="{{'Gekks-Icon-Heel_NEW.png' | asset_url}}" />
                         <div>heels</div>heels, wedges, pumps, etc.</li>
                         <li class="sbutton loaf" onClick="ga('send', 'event', 'Education', 'Style', 'Loafer');"><img src="{{'Gekks-Icon-Loafer_NEW.png' | asset_url}}" />
@@ -605,8 +605,8 @@ body #intro-bubbles li {
                 <div class="">
                     <div id="result-info-flow">
                     <h1>based on your answers,<br>the perfect Gekks for you are...</h1>
-                    <h1 id="rtitle"></h1>
-                    <h3 id="rftitle"></h3>
+                    <h1 id="rtitle" class="text-green nm" style="margin-top: 0 !important;"></h1>
+                    <h3 id="rftitle" class="nm"></h3>
                     <div id="rprodp"> <img src="{{'Icon-ballet-results.png' | asset_url}}" id="ballet-results" style="display:none;" /> <img src="{{'Gekks-Icon-Heels-Socks.png' | asset_url}}" id="heel-results" style="display:none;" /> <img src="{{'Icon-loafers-results.png' | asset_url}}" id="loaf-results" style="display:none;" /> <img src="{{'Icon-sneakers-results.png' | asset_url}}" id="sneaker-results" style="display:none;" /> <img src="{{'icon-mens-closet.png' | asset_url}}" id="mens-results" style="display:none;" /> <img src="{{'Gekks-Icons.png' | asset_url}}" id="womens-results" style="display:none;" /> </div>
                     <p id="rprodinfo"></p>
                     </div>
@@ -625,7 +625,6 @@ body #intro-bubbles li {
                        <div class="flow-r" id="last-slide" style="display: none;" ><p>I love these even more than I thought I would. The "sock" feels silky and lets my feet breathe.</p></div>
                     </div>
                     </div>
-                    <div class="mo-plus" style="height: 5vh;"></div>
                     <a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Flow End');">let's do it!</a>
                     <a class="fbutton mo-plus" style="margin-bottom: 3vh;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
     
@@ -717,7 +716,7 @@ $(document).on("ready", function() {
          }
         }
 
-        f.parent().parent().hasClass("continue") ? nextSlide(f) : "step-two-five" == f.parent().parent().attr("id") ? n || a ? nextSlide(f) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select an option</p>")) : "rcalc" == f.attr("id") ? r + i + l + heels > 0 ? (a ? (c = "women", r + i + l + heels > 1 ? (h = "womens-closet-pack", p = "women's closet pack", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", u = "(includes sneaker, loafer, and flats)", $("#womens-results").show()) : 1 == heels ? (h="heels", p="heels & wedges", d="our Gekks for Heels & Wedges are designed to fit perfectly in your heels without showing or moving around while protecting you against that embarassing foot odor, shoe damage, and blisters.", $("#heel-results").show()) : 1 == r ? (h = "flats-version", p = "ballet flats", d = "our Ballet Flat Gekks are designed to fit perfectly in your flats without showing or moving around while protecting you against that embarassing foot odor.", $("#ballet-results").show()) : 1 == l ? (h = "womens-sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "womens-loafer-version", p = "loafers & <br>slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())) : n && (c = "men", i + l > 1 ? (h = "mens-closet-pack", p = "men's closet pack", u = "(includes sneaker and loafer)", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", $("#mens-results").show()) : 1 == l ? (h = "sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "loafer-version", p = "loafers & <br> slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())), $("#rtitle").append(p), $("#rprodinfo").append(d), u.length > 1 && $("#rftitle").append(u), f.addClass("clicked"), productPage = "/collections/" + c + "/products/" + h + "?sh", createCookie("customGekks", productPage, 7), nextSlide(f)) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select one or more shoe styles</p>")) : "finalresult" == f.attr("id") && (window.location = productPage)
+        f.parent().parent().hasClass("continue") ? nextSlide(f) : "step-two-five" == f.parent().parent().attr("id") ? n || a ? nextSlide(f) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select an option</p>")) : "rcalc" == f.attr("id") ? r + i + l + heels > 0 ? (a ? (c = "women", r + i + l + heels > 1 ? (h = "womens-closet-pack", $('#result-info-flow h1').first().html("<h1 class='nm' style='font-size: 24pt;font-weight: bold;'>You've been paired</h1><span style='font-weight: 300;font-size: 14pt'>with more than one style, so we recommend our</span>" ),p = "women's <br>closet pack", d = "(includes one pair of Gekks for loafers, sneakers, and ballet flats)", u = "for the best value!", $("#womens-results").show()) : 1 == heels ? (h="heels", p="heels & wedges", d="our Gekks for Heels & Wedges are designed to fit perfectly in your heels without showing or moving around while protecting you against that embarassing foot odor, shoe damage, and blisters.", $("#heel-results").show()) : 1 == r ? (h = "flats-version", p = "ballet flats", d = "our Ballet Flat Gekks are designed to fit perfectly in your flats without showing or moving around while protecting you against that embarassing foot odor.", $("#ballet-results").show()) : 1 == l ? (h = "womens-sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "womens-loafer-version", p = "loafers & <br>slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())) : n && (c = "men", i + l > 1 ? (h = "mens-closet-pack", p = "men's closet pack", u = "(includes sneaker and loafer)", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", $("#mens-results").show()) : 1 == l ? (h = "sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "loafer-version", p = "loafers & <br> slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())), $("#rtitle").append(p), $("#rprodinfo").append(d), u.length > 1 && $("#rftitle").append(u), f.addClass("clicked"), productPage = "/collections/" + c + "/products/" + h + "?sh", createCookie("customGekks", productPage, 7), nextSlide(f)) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select one or more shoe styles</p>")) : "finalresult" == f.attr("id") && (window.location = productPage)
 
     }), $("ul li").on("click", function() {
         var h = $(this);
@@ -747,7 +746,7 @@ $(document).on("ready", function() {
                 i = 1;
                 break;
             case "sbutton woman highlight":
-                a = !0, n = !1, h.siblings().removeClass("highlight"), $("#dw").empty(), $("#dw").append("<p class='subscript'>*don’t worry, you can shop men once we craft the perfect Gekks for you.</p>"), $(".flats").removeClass("hidden"), $('.heels').removeClass("hidden");
+                a = !0, n = !1, h.siblings().removeClass("highlight"), $(".flats").removeClass("hidden"), $('.heels').removeClass("hidden");
                 break;
             case "sbutton woman":
                 a = !1, $(".flats").addClass("hidden"), $("#dw").empty(), $('.heels').addClass("hidden");
@@ -756,7 +755,7 @@ $(document).on("ready", function() {
                 n = !1, $("#dw").empty();
                 break;
             case "sbutton man highlight":
-                n = !0, a = !1, $("#dw").empty(), $("#dw").append("<p class='subscript'>*don’t worry, you can shop women once we craft the perfect Gekks for you.</p>"), h.siblings().removeClass("highlight"), $(".flats").addClass("hidden"), $('.heels').addClass("hidden");
+                n = !0, a = !1, h.siblings().removeClass("highlight"), $(".flats").addClass("hidden"), $('.heels').addClass("hidden");
                 break;
             case "sbutton slip flip-b highlight":
                 e = 1;
