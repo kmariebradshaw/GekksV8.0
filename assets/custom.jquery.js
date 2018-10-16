@@ -53,8 +53,9 @@ $('body').on('click touchend', function(e) {
 }});
 // popup close
     $('.klaviyo_header_close').on('click', function() {
-      $(this).parent().parent().hide();
-      $('.modal').hide();
+      // $(this).parent().parent().hide();
+      console.log('hit')
+      $(this).closest('.modal').hide();
     });
 
 $('body').click(function (event) {
@@ -81,7 +82,6 @@ $('.no-sub a').on('click mouseover', function() {
     $('header').css("height", "")
 })
 $('body').click(function (event) {
-  console.log($(event.target).parent().parent())
    if((!$(event.target).parent().parent().is('.desktop-sub-nav')) && (!$(event.target).parent().parent().is('.sub-nav'))) {
      $(".sub-nav").hide(); 
          $('header').css("height", "")
