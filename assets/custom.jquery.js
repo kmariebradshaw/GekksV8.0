@@ -80,6 +80,13 @@ $('.no-sub a').on('click mouseover', function() {
   $('.sub-nav').hide(); 
     $('header').css("height", "")
 })
+$('body').click(function (event) {
+  console.log($(event.target).parent().parent())
+   if((!$(event.target).parent().parent().is('.desktop-sub-nav')) && (!$(event.target).parent().parent().is('.sub-nav'))) {
+     $(".sub-nav").hide(); 
+         $('header').css("height", "")
+   }    
+});
 // thumbnail selection on product pages
 $('#thumbnails ul li img').click(function() {
   var src = $(this).attr("src").replace("compact", "2000x2000"); 
