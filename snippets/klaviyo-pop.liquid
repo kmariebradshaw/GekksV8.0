@@ -26,8 +26,11 @@
  
 <script>
 $(document).ready(function(){ 
+  var flowFinish = readCookie('flowFinish')
+  var gekksVisit = readCookie('gekksVisit')
   var newsletterModal = readCookie('newsletterModal')
-  if( !newsletterModal ) {
+  if ((flowFinish) && (gekksVisit) && !(newsletterModal)){
+    setTimeout(function(){
       if ($('.modal:visible').length == 0) {
         KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
           delay_seconds: 0,
@@ -40,6 +43,7 @@ $(document).ready(function(){
   }); 
   };
     createCookie("newsletterModal", "Displayed", 5)
+   }, 3000); 
   }
 }); 
 
