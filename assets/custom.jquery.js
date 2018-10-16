@@ -53,8 +53,9 @@ $('body').on('click touchend', function(e) {
 }});
 // popup close
     $('.klaviyo_header_close').on('click', function() {
-      $(this).parent().parent().hide();
-      $('.modal').hide();
+      // $(this).parent().parent().hide();
+      console.log('hit')
+      $(this).closest('.modal').hide();
     });
 
 $('body').click(function (event) {
@@ -80,6 +81,12 @@ $('.no-sub a').on('click mouseover', function() {
   $('.sub-nav').hide(); 
     $('header').css("height", "")
 })
+$('body').click(function (event) {
+   if((!$(event.target).parent().parent().is('.desktop-sub-nav')) && (!$(event.target).parent().parent().is('.sub-nav'))) {
+     $(".sub-nav").hide(); 
+         $('header').css("height", "")
+   }    
+});
 // thumbnail selection on product pages
 $('#thumbnails ul li img').click(function() {
   var src = $(this).attr("src").replace("compact", "2000x2000"); 
