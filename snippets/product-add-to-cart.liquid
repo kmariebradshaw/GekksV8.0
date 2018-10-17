@@ -85,7 +85,7 @@
     {% assign select = collections.all.products[6]%}
     <div class="example-shoes border-beige">
       <p class="tac nm">Examples Of Shoes These Work In</p>
-      <div class="scrollp leftp text-beige clickable">➤</div>
+      <div class="scrollp leftp text-beige clickable invis">➤</div>
       <div class="shoe-wrapper">
          {% case product.title %}
           {% when "Ballet Flats" %}
@@ -178,13 +178,30 @@
    $('.scrollp').on("click", function() { 
     var wrapper = $('.shoe-wrapper'); 
     if ($(this).hasClass('rightp')) { 
-      $(wrapper).animate( { scrollLeft: '+=300' });
+      $(wrapper).animate( { scrollLeft: '+=300' })
     }
     else {
       $(wrapper).animate({scrollLeft: '-=300'});  
     }
-    }); 
+  }); 
 
+$('.shoe-wrapper').scroll(function() {
+    var wrapper = $('.shoe-wrapper'); 
+    var $width = $(wrapper).outerWidth()
+    var $scrollWidth = $(wrapper)[0].scrollWidth; 
+    var $scrollLeft= $(wrapper).scrollLeft() 
+    if ($scrollWidth - $width == $scrollLeft) {
+      $('.rightp').addClass('invis');
+      $('.leftp').removeClass('invis');
+    }
+    else if ($scrollLeft === 0) {
+      $('.leftp').addClass('invis');
+      $('.rightp').removeClass('invis')
+    }
+    else {
+      $('.scrollp').removeClass('invis');
+    }
+}); 
 
   var selectCallback_{{ product.id }} = function(variant, selector) {
 
