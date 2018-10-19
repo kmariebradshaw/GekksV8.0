@@ -66,6 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="{{ 'handlebars.min.js' | asset_url }}" defer></script>
     <script src="{{ 'jquery.easing.1.3.min.js' | asset_url }}" defer></script>
          <script src="{{'jquery.mobile.custom.min.js' | asset_url}}"></script> 
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
    <script src="https://scripts.sirv.com/sirv.js" defer></script>
 
@@ -299,6 +300,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>$(document).ready(function(){checkForDiscount();});
 
+  </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+  duration: 800,
+})
   </script>
   </body>
 </html>
