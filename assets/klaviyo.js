@@ -190,7 +190,7 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
                                 } catch (l) {
             
                                     return KlaviyoSubscribe.log(l),
-                                        a.parent().children('.error_message').show().html(l), a.trigger("klaviyo.subscribe.error"), !1
+                                        a.find('.error_message').show().html(l), a.trigger("klaviyo.subscribe.error"), !1
             
 
                                 }

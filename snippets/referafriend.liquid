@@ -25,7 +25,7 @@
       <h2 class="hide_on_submit accent-padding border-white nm">Give $5 <br> Get $5</h2>
       <p class="hide_on_submit tac text-green">give a friend $5 off their first order,<br> and you'll get $5 off your next order directly to <br>your inbox.</p>
       <a class="hide_on_submit" href="sms:?body=5%20dollars%20off%20at%20Gekks%20Use%20Coupon%20Code%20GKK82057%20at%20www.mygekks.com" id="textfriend" onclick="ga('send', 'event', 'Refer', 'Mobile', 'Text');">
-        <div id="text-friend clickable"><h3 class="nmb">click to text a friend</h3></div>
+        <div id="text-friend clickable"><h3>click to text a friend</h3></div>
       </a> 
       <input class="hide_on_submit" type="email" value="" name="email" id="k_id_email" />
        <div class="klaviyo_form_actions">
@@ -34,8 +34,8 @@
           </button>
       </div>
     <p id="nophone" style="display: none;">please text a friend before submitting</p>
-    <div class="error_message"></div>
     <div class="success_message" ></div>
+           <p class="error_message subscript tac" style="display: none;"></p>
   </div>
 </div>
 
@@ -43,6 +43,7 @@
   
         </div>
         <div class="klaviyo_below_submit"></div>
+
       </form>
 
     </div>
@@ -65,8 +66,9 @@
             </button>
         </div>
       </div>
+         <p class="error_message subscript tac" style="display: none;"></p>
+
       </form>
-      <div class="subscript error_message"></div>
       <div class="success_message subscript" ></div>
     </div>
   </div>
@@ -82,11 +84,6 @@
   $('#textfriend').click(function() {
     text = 1 
     $('#nophone').hide();
-    setTimeout(function(){
-  $('#text-friend').addClass('lightgray');
-     document.getElementById("submit-span").style.backgroundColor = "#33ffcc";
-     document.getElementById("submit-refer").style.backgroundColor = "#33ffcc";
-    }, 1000); 
 
   }); 
   $('#k_id_modal .klaviyo_submit_button ').click(function(){
