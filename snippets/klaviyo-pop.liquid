@@ -17,11 +17,12 @@
           <button type="submit" class="klaviyo_submit_button"><span>let's go!</span></button> 
         </div>
         <p class="text-green hide_on_submit">We give away <b>FREE</b> shoes every week so be sure to follow us on social for your chance to win!</p>
+        <div class="error_message subscript" style="display: none;"></div> 
       </div>
     </div>
    </form>
    <p class='nm klaviyo_header_close tar clickable accent-padding' id="success-close" style="display: none;">✕</p>
-    <div class="success_message"></div> 
+    <div class="success_message"></div>
   </div>
 </div> 
  
@@ -49,6 +50,7 @@ $(document).ready(function(){
   }
 }); 
 
+
 </script>
 
 {% comment %} Exit Intent {% endcomment %}
@@ -68,9 +70,9 @@ $(document).ready(function(){
         <button type="submit" class="klaviyo_submit_button"><span>Get my discount!</span></button>
       </div>
     </div>
+   <p class="error_message subscript tac" style="display: none;"></p>
    </form>
    <div class="success_message" ></div>
-   <div class="error_message ib" style="margin-top: -20px;"></div>
   </div>
 </div>
 
@@ -92,7 +94,7 @@ $(document).ready(function(){
             }); 
             executed = true 
             sessionStorage.exitAttempted = 1          
-      };
+      }; 
     };
   };
 });

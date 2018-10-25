@@ -54,8 +54,6 @@ $('body').on('click touchend', function(e) {
 }});
 // popup close
     $('.klaviyo_header_close').on('click', function() {
-      // $(this).parent().parent().hide();
-      console.log('hit')
       $(this).closest('.modal').hide();
     });
 
