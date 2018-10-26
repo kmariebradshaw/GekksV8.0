@@ -10,10 +10,16 @@
     <p class="subscript">{{ product.description}}</p>
     {% if product.available %} 
     <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}">
-      <p id="product-price-{{ product.id }}">{{ product.price | money }}</p>
-      {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<p style="display: inline-block;" class="subscript" id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</p>{% endif %}
+      {% if product.title == "Women's Closet Pack" or product.title == "Men's Closet Pack" %}
+      <div class="closetpackprice ib">
+        <p id="product-price-{{ product.id }}">{{ product.price | money }}</p>
+        {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<p style="display: inline-block;" class="subscript" id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</p>{% endif %}
+      </div>
+      {% else %}
+        <p id="product-price-{{ product.id }}">{{ product.price | money }}</p>
+      {% endif %}
       {% unless product.title == "Select" or product.title == "Gift Cards" %} 
-      <div id="review-details">
+      <div id="review-details" class="ib">
       <a href="/pages/reviews">
         <div class="prodrating">
           {% if product.title == "Ballet Flats" or product.type == "Closet Pack" or product.title == "Heels & Wedges" %}
