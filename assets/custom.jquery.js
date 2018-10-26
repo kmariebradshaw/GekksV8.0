@@ -5,7 +5,6 @@ $(document).ready(function(){
     $('.mobile-nav1').toggle();
   });
 });
-// cart
 
 // sizing chart
 $('#size-chart').click( function() {
