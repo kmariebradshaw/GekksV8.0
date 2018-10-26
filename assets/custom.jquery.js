@@ -53,10 +53,9 @@ $('body').on('click touchend', function(e) {
 });
 }});
 // popup close
-    $('.klaviyo_header_close').on('click', function() {
-      $(this).closest('.modal').hide();
-    });
-
+$('.klaviyo_header_close').on('click', function() {
+  $(this).closest('.modal').hide();
+});
 $('body').click(function (event) {
    if(!$(event.target).closest('.modal').length && !$(event.target).is('.modal') && !$(event.target).is('#referafriend h3') && !
     $(event.target).is('#size-chart')) {

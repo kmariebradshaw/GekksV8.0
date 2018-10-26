@@ -228,6 +228,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
     
+   
     <footer class="background-green">
         <div class="social-icons">
           <a href="https://www.instagram.com/gekks_go_sockless/?hl=en" target="_blank""><img src="{{'ig.png' | asset_url}}" alt="Instagram" /></a>
@@ -238,7 +239,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div id="nav-wrap">
                  <ul>
                 <h3>company</h3>
-                {% for link in linklists.footer-1.links limit: 4 offset: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+                {% for link in linklists.footer-1.links limit: 5 offset: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
               </ul>
               <ul>
                 <h3>help</h3>
@@ -246,7 +247,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </ul>
                 <ul>
                 <h3>shop</h3>
-                {% for link in linklists.footer-1.links limit: 3 offset: 9%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+                {% for link in linklists.footer-1.links limit: 3 offset: 10%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
               </ul>
             </div>
             <div id="footer-aside">
@@ -263,6 +264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         <h3 class="copywrite tac text-white background-darkgray">© {{ shop.name }} {{ 'now' | date: '%Y' }}</h3>
     </footer>
+    
     
     <!-- Google Code for Remarketing Tag -->
     <script type="text/javascript">

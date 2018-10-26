@@ -164,15 +164,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <nav>
             <ul class="desktop-nav">
               {% for link in linklists.main-menu.links %}
-              	{% assign child_list_handle = link.title | handleize %}
-              	{% if linklists[child_list_handle].links != blank %}
-               	  <ul class="childlink desktop-sub-nav">
+                {% assign child_list_handle = link.title | handleize %}
+                {% if linklists[child_list_handle].links != blank %}
+                  <ul class="childlink desktop-sub-nav">
                     {% for childlink in linklists[child_list_handle].links limit: 1 %}
-                    	<li class="sub-nav-header"><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                      <li class="sub-nav-header"><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
                     {% endfor %}
                     <div class="sub-nav">
                       {% for childlink in linklists[child_list_handle].links offset: 1 %}
-                    	<li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                      <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
                     {% endfor %}
                     </div>
                   </ul>
@@ -212,10 +212,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               {% endfor %} 
          
               <div id="nav-social" class="accent-padding">
-          		<a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'Instagram_darkgray.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
+              <a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'Instagram_darkgray.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
               <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'facebook_darkgrey.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
-          		<a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest_darkgrey.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
-        	  </div>
+              <a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest_darkgrey.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
+            </div>
             </ul>
           </nav>
             <div class="customer-portal">
@@ -232,23 +232,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span></span>
               <span></span>
             </div>
-      	 </div>
+         </div>
       </div>
     </header>
 
-  	{{ content_for_layout }}
+    {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
     
     <footer class="background-green">
-      	<div class="social-icons">
+        <div class="social-icons">
           <a href="https://www.instagram.com/gekks_go_sockless/?hl=en" target="_blank""><img src="{{'ig.png' | asset_url}}" alt="Instagram" /></a>
           <a href="https://www.facebook.com/GekksLowCutLiners/" target="_blank"><img src="{{'fb.png' | asset_url}}" alt="Facebook" /></a>
           <a href="https://www.pinterest.com/gekksliners/" target="_blank"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" /></a>
-     	</div>
+      </div>
         <div id="footer-nav">
           <div id="nav-wrap">
                  <ul>
                 <h3>company</h3>
-                {% for link in linklists.footer-1.links limit: 4 offset: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+                {% for link in linklists.footer-1.links limit: 5 offset: 5%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
               </ul>
               <ul>
                 <h3>help</h3>
@@ -256,10 +256,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </ul>
                 <ul>
                 <h3>shop</h3>
-                {% for link in linklists.footer-1.links limit: 3 offset: 9%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+                {% for link in linklists.footer-1.links limit: 3 offset: 10%}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
               </ul>
             </div>
-          	<div id="footer-aside">
+            <div id="footer-aside">
               <div id="referafriend" class="background-darkgray" onclick="ga('send', 'event', 'Refer', 'Footer', 'Click');"><h3 class="text-green">refer a friend</h3></div>
                 <form action="https://manage.kmail-lists.com/subscriptions/subscribe?g=Buguta" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
                   <input type="email" value="" name="EMAIL" class="required email email_update border-white" id="mce-EMAIL" placeholder="sign up for exclusive deals">
@@ -269,7 +269,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="response" id="mce-success-response"></div>
                   </div>
               </form>
-          	</div>
+            </div>
           </div>
         <h3 class="copywrite tac text-white background-darkgray">© {{ shop.name }} {{ 'now' | date: '%Y' }}</h3>
     </footer>
