@@ -1,9 +1,9 @@
 <main id="not-found-page">	     
-  <section class="flex-container-no jcc">
-    <div>
+  <section class="flex-container-no jcc" id="four-flex">
+    <div class="tac">
       <h2 class="text-green tac">Uh-oh!</h2>
       <p class="tac">It looks like someone lost a <br>page... Who do you think did it?</p>
-      <section class="flex-container-no">
+      <section class="flex-container-no jcc">
         <div id="opal" class="accent-padding">
           <img src="{{'opal_guilty.png' | asset_url}}"  class="dog-portrait" />
           <div class="btn background-green clickable"><h3 class="text-white tac">Opal</h3></div>
@@ -13,11 +13,11 @@
           <div class="btn background-green clickable"><h3 class="text-white tac">Jasper</h3></div>
         </div>
         <div id="picci" class="accent-padding">
-          <img src="{{'picci.png' | asset_url}}" class="dog-portrait"  />
+          <img src="{{'picci_guilty.png' | asset_url}}" class="dog-portrait"  />
           <div class="btn background-green clickable"><h3 class="text-white tac">Picci</h3></div>
         </div>
         <div id="red" class="accent-padding">
-          <img src="{{'red_guilty.png' | asset_url}}" class="dog-portrait" />
+          <img src="{{'placeholder.png' | asset_url}}" class="dog-portrait" />
           <div class="btn background-green clickable"><h3 class="text-white tac">Red</h3></div>
         </div>
       </section>
@@ -26,4 +26,27 @@
   </section>
 </main>
 <script>
+  $('.btn').click(function() {
+      $(this).removeClass('background-green').addClass('background-lightgray')
+    switch ($(this).parent().attr("id")) {
+      case "opal":
+        $('#not-found-page h2').text('Guess again...'); 
+        $('#not-found-page p').html('Sweet, sweet Opal…she’s 60lbs of<br> pure love and kisses. Not guilty.')
+        break;
+      case "jasper":
+        $('#not-found-page h2').text('Oh, Jasper!'); 
+        $('#not-found-page p').html("He's a little new to the rules around<br> here. We apologize on his behalf, but<br> only until he's out of his pupply phase.")
+        $('#jasper img').attr("src", "{{'ohjasper.png' | asset_url}}").insertBefore('#not-found-page h2')
+        $(this).hide().parent().siblings().hide()
+          break;
+      case "picci":
+        $('#not-found-page h2').text('Guess again...'); 
+        $('#not-found-page p').html('Yeah…Picci’s kinda crazy but definitely<br> not crazy enough to steal a whole website page!')
+        break;
+      case "red":
+        $('#not-found-page h2').text('Guess again...'); 
+        $('#not-found-page p').html('Red’s size may be intimidating but<br> he only ever has big intentions to cuddle.')
+        break;
+    }
+  });
 </script>
