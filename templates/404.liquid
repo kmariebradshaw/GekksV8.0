@@ -1,20 +1,29 @@
-    <main id="page">	     
-	    <section class="content">
-    	    <div class="wrap">
-        	  
-        	        <h1>Page Not Found</h1>
-        	
-          
-        	    <div>
-        	        <p>We're sorry, but the page you are looking for could not be found.</p>
-        	        <p><a href="javascript:void(0)" onclick="window.history.back();return false;">Go back</a>, or search the website below.</p>
-        	        <div id="search-form">
-            	        <form action="/search" class="clearfix">
-                            <input type="text" name="q" placeholder="Find products" value="{{ search.terms }}">
-                            <input type="submit" value="Go">
-                        </form>
-                    </div>
-        	    </div>
-    	    </div>
-	    </section>
-    </main>
+<main id="not-found-page">	     
+  <section class="flex-container-no jcc">
+    <div>
+      <h2 class="text-green tac">Uh-oh!</h2>
+      <p class="tac">It looks like someone lost a <br>page... Who do you think did it?</p>
+      <section class="flex-container-no">
+        <div id="opal" class="accent-padding">
+          <img src="{{'opal_guilty.png' | asset_url}}"  class="dog-portrait" />
+          <div class="btn background-green clickable"><h3 class="text-white tac">Opal</h3></div>
+        </div>
+        <div id="jasper"class="accent-padding">
+          <img src="{{'jasper_guilty.png' | asset_url}}"  class="dog-portrait" />
+          <div class="btn background-green clickable"><h3 class="text-white tac">Jasper</h3></div>
+        </div>
+        <div id="picci" class="accent-padding">
+          <img src="{{'picci.png' | asset_url}}" class="dog-portrait"  />
+          <div class="btn background-green clickable"><h3 class="text-white tac">Picci</h3></div>
+        </div>
+        <div id="red" class="accent-padding">
+          <img src="{{'red_guilty.png' | asset_url}}" class="dog-portrait" />
+          <div class="btn background-green clickable"><h3 class="text-white tac">Red</h3></div>
+        </div>
+      </section>
+      <a href="/"><h5 class="text-green tac">or go back</h5></a>
+    </div>
+  </section>
+</main>
+<script>
+</script>
