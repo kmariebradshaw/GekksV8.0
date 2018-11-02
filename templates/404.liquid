@@ -1,7 +1,8 @@
 <main id="not-found-page">	     
   <section class="flex-container-no jcc" id="four-flex">
     <div class="tac">
-      <h1 class="text-green tac">Uh-oh!</h1>
+      <img src="{{'ohjasper.png' | asset_url}}" alt="You Guessed It!" style="display: none;" id="culprit" class="dog-portrait" />
+      <h1 class="text-green tac nmb">Uh-oh!</h1>
       <p class="tac">It looks like someone lost a <br>page... Who do you think did it?</p>
       <section class="flex-container-no jcc" id="inner-wrap">
         <div id="opal" class="accent-padding">
@@ -36,7 +37,8 @@
       case "jasper":
         $('#not-found-page h1').text('Oh, Jasper!'); 
         $('#not-found-page p').html("He's a little new to the rules around<br> here. We apologize on his behalf, but<br> only until he's out of his pupply phase.")
-        $('#jasper img').attr("src", "{{'ohjasper.png' | asset_url}}").insertBefore('#not-found-page h1')
+        $('#jasper img').hide()
+        $('#culprit').show();
         $(this).hide().parent().siblings().hide()
           break;
       case "picci":
