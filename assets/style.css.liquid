@@ -195,8 +195,9 @@ ul {
   .closetpackprice { display: none; }
   .swatch { text-align: center; } 
 
-    #CartContainer { top: 85px;}
+  #CartContainer { top: 85px; height: calc(100vh - 85px);}
 
+    #CartContainer form  {   height: calc(100vh - 215px);}
   #washing h3 { padding: 10px; }
   #washing-instructions h3 { text-align: center; }
   .mobile-nav1 .childlink li a { font-weight: 300; }
@@ -1481,7 +1482,9 @@ body .up-label-vis:after {
 }
   .swatch { text-align: left; } 
   .about-us  div .connecter {margin: -20px;}
-  #CartContainer { top: 87px;}
+  #CartContainer { top: 87px; height: calc(100vh - 87px);}
+      #CartContainer form  {   height: calc(100vh - 240px);}
+
   #washing-instructions img { 
   height: 250px; 
   }
@@ -1795,6 +1798,11 @@ transform: translateY(45deg);
     margin: 5px;
     font-weight: 300;
 }
+#close-cart {
+    display: inline-block;
+    text-align: right;
+    width: 63%;
+}
 
 .quarter { 
   width: 25%; 
@@ -1861,9 +1869,8 @@ body .additional-checkout-button {
   z-index: 9999;
   border-left: 1px solid  #F9F7F7;
   border-bottom: 1px solid  #F9F7F7;
-  max-height: 80vh;
-
 }
+#CartContainer form { min-height: fit-content; }
 .ajaxcart__inner { padding-bottom: 10px; }
 .grid__item.one-quarter { width: fit-content; display: inline-block; }
 .grid__item.one-quarter img { vertical-align: middle; }
