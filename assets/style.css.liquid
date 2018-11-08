@@ -1886,14 +1886,8 @@ body .btn { background: #6DCDB8; text-transform: lowercase; font-weight: 900; ma
     animation: slide-in 0.5s forwards;
     -webkit-animation: slide-in 0.5s forwards;
 }
-
-.slide-out {
-    animation: slide-out 0.5s forwards;
-    -webkit-animation: slide-out 0.5s forwards;
-}
 .darken {
     position: relative;
-    transition: all 1s;
 }
 header.darken { box-shadow: 1px 1px 1px #696969; }
 .darken:after {
@@ -1905,9 +1899,6 @@ header.darken { box-shadow: 1px 1px 1px #696969; }
     left:0;
     background:rgba(0,0,0,0.5);
     opacity: 1;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-   -moz-transition: all 0.5s;
 }  
 @keyframes slide-in {
     100% { transform: translateX(0%); }
@@ -1915,16 +1906,6 @@ header.darken { box-shadow: 1px 1px 1px #696969; }
 
 @-webkit-keyframes slide-in {
     100% { -webkit-transform: translateX(0%); }
-}
-    
-@keyframes slide-out {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(100%); }
-}
-
-@-webkit-keyframes slide-out {
-    0% { -webkit-transform: translateX(100%); }
-    100% { -webkit-transform: translateX(100%); }
 }
 /* Customer Flow */
 .customer form{

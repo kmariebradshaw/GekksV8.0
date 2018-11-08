@@ -1,8 +1,8 @@
  <script id="CartTemplate" type="text/template">
 {% raw %}
 <section class="accent-padding">
-  <h3 class="ib">Your Cart</h3>
-  <h3 id="close-cart" style="clickable" onclick="parentNode.style.display='none'">✕</h3>
+  <a href="/cart"><h3 class="ib">Your Cart</h3></a>
+  <h3 id="close-cart" onclick="cartClose();">✕</h3>
   <form action="/cart" method="post" novalidate class="border-lightgray ajaxcart  accent-padding">
     <div id="product-wrap">
       {{#items}}
