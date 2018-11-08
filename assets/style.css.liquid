@@ -195,9 +195,9 @@ ul {
   .closetpackprice { display: none; }
   .swatch { text-align: center; } 
 
-  #CartContainer { top: 85px; height: calc(100vh - 85px);}
+  #CartContainer { top: 0; height: 100vh;}
 
-    #CartContainer form  {   height: calc(100vh - 215px);}
+    #CartContainer form  {   height: calc(100vh - 130px);}
   #washing h3 { padding: 10px; }
   #washing-instructions h3 { text-align: center; }
   .mobile-nav1 .childlink li a { font-weight: 300; }
@@ -1482,8 +1482,8 @@ body .up-label-vis:after {
 }
   .swatch { text-align: left; } 
   .about-us  div .connecter {margin: -20px;}
-  #CartContainer { top: 87px; height: calc(100vh - 87px);}
-      #CartContainer form  {   height: calc(100vh - 240px);}
+  #CartContainer { top: 0px; height:  100vh;}
+      #CartContainer form  {   height: calc(100vh - 153px);}
 
   #washing-instructions img { 
   height: 250px; 
@@ -1799,11 +1799,12 @@ transform: translateY(45deg);
     font-weight: 300;
 }
 #close-cart {
-    display: inline-block;
-    text-align: right;
-    width: 63%;
+    float: right;
 }
-
+#product-wrap { 
+  overflow: scroll;
+  max-height: 400px;
+}
 .quarter { 
   width: 25%; 
 display: inline-block;
@@ -1865,11 +1866,17 @@ body .additional-checkout-button {
   overflow-y: auto;
   overflow-x: hidden;
   background-color: white;
-  max-width: 320px;
   z-index: 9999;
   border-left: 1px solid  #F9F7F7;
-  border-bottom: 1px solid  #F9F7F7;
+  background-image: url("{{'Pairs-04.svg' | asset_url}}"); 
+  background-position: -65px bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+      width: 45%;
+    min-width: 320px;
+    max-width: 450px;
 }
+#CartContainer form .flex-container-no .accent-padding { width: 50%; }
 #CartContainer form { min-height: fit-content; }
 .ajaxcart__inner { padding-bottom: 10px; }
 .grid__item.one-quarter { width: fit-content; display: inline-block; }
