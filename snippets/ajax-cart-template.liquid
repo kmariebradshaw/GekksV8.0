@@ -28,10 +28,13 @@
                 {{/if}}
               {{/each}}
             {{/properties}}
+
             {{/items}}
         </div>
       <div class="ajaxcart__footer index-padding-to">
         <p class="tac"><span>Subtotal: {{{totalPrice}}}</span></p>
+        <p id="cart-add-ons" class="subscript">
+            {{cart.quantity}} </p>
         {% endraw %}{% if additional_checkout_buttons %}
           <div class="additional_checkout_buttons">{{ content_for_additional_checkout_buttons }}</div>
         {% endif %}{% raw %}
