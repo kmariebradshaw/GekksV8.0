@@ -1,3 +1,5 @@
+ 
+
  <script id="CartTemplate" type="text/template">
 {% raw %}
 <section class="accent-padding">
@@ -33,9 +35,11 @@
         </div>
       <div class="ajaxcart__footer index-padding-to">
         <p class="tac"><span>Subtotal: {{{totalPrice}}}</span></p>
-        <p id="cart-add-ons" class="subscript">
-            {{cart.quantity}} </p>
-        {% endraw %}{% if additional_checkout_buttons %}
+        <p id="cart-add-ons" class="subscript tac">
+         </p>
+
+        {%endraw%}
+        {% if additional_checkout_buttons %}
           <div class="additional_checkout_buttons">{{ content_for_additional_checkout_buttons }}</div>
         {% endif %}{% raw %}
         <button type="submit" class="btn btn--secondary btn--full cart__checkout btn" name="checkout" style="margin-top: 0.5em;">
@@ -46,5 +50,3 @@
   </section>
   {% endraw %}
   </script>
- 
-
