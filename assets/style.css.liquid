@@ -21,12 +21,11 @@ a {
 }  
 .invis {     visibility: hidden;
  }
-#CartContainer { display: none; }  
 div { box-sizing: border-box; } 
 html { padding-bottom: 0 !important; } 
 nav,h1,h2,h3,h4,h5,a, span, input, th, select { font-family: 'Gilroy', sans-serif; font-weight: 900; }
 .ajaxified-cart-feedback, .subscript,.p1 { font-size: 10pt; } 
-main {padding-top: 87px}
+main {padding-top: 102px}
 form button {
   width: 100%;
   font-size: 14pt;
@@ -51,7 +50,7 @@ form input[type=submit], .modal .klaviyo_submit_button, form button { border: no
 .ais { align-items: flex-start !important; }
 .clickable { cursor: pointer; }
 p, textarea, td, ul, li, .error_message, .success_message { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
-body { margin: 0; color: #545359;overflow-x: hidden;}
+body { margin: -15px 0 0 0; color: #545359;overflow-x: hidden;}
 .text-green { color: #6DCDB8; } 
 .text-white { color: #fff; }
 .text-beige { color: #F9F2ED; }
@@ -195,8 +194,8 @@ ul {
   .closetpackprice { display: none; }
   .swatch { text-align: center; } 
 
-    #CartContainer { top: 85px;}
 
+    #CartContainer form  {   height: calc(100vh - 130px);}
   #washing h3 { padding: 10px; }
   #washing-instructions h3 { text-align: center; }
   .mobile-nav1 .childlink li a { font-weight: 300; }
@@ -638,7 +637,7 @@ footer ul { margin: 5px; }
 }
 }
 header {
-    position: fixed;
+    position: fixed !important;
     width: 100%;
     background: white;
     top: 0; 
@@ -1465,6 +1464,7 @@ body .up-label-vis:after {
 #int-wrapper-do { display: none; }
 
 }
+  #CartContainer { top: 0px; height:  100vh; }
 
 @media only screen and (min-width: 800px) {
   #int-wrapper { display: none; }
@@ -1481,7 +1481,8 @@ body .up-label-vis:after {
 }
   .swatch { text-align: left; } 
   .about-us  div .connecter {margin: -20px;}
-  #CartContainer { top: 87px;}
+      #CartContainer form  {   height: calc(100vh - 153px);}
+
   #washing-instructions img { 
   height: 250px; 
   }
@@ -1795,7 +1796,13 @@ transform: translateY(45deg);
     margin: 5px;
     font-weight: 300;
 }
-
+#close-cart {
+    float: right;
+}
+#product-wrap { 
+  overflow: scroll;
+  max-height: 400px;
+}
 .quarter { 
   width: 25%; 
 display: inline-block;
@@ -1853,47 +1860,52 @@ body .additional-checkout-button {
 }
 #CartContainer {
   position: fixed;
-  right: 0px;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: white;
-  max-width: 320px;
   z-index: 9999;
   border-left: 1px solid  #F9F7F7;
-  border-bottom: 1px solid  #F9F7F7;
-  max-height: 80vh;
+  background-image: url("{{'Pairs-04.svg' | asset_url}}"); 
+  background-position: -65px bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+      width: 45%;
+    min-width: 320px;
+    max-width: 450px;
+    right: 0;
+        transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+}
+#CartContainer form .flex-container-no .accent-padding { width: 50%; }
+#CartContainer form { min-height: fit-content; }
 
-}
-.ajaxcart__inner { padding-bottom: 10px; }
-.grid__item.one-quarter { width: fit-content; display: inline-block; }
-.grid__item.one-quarter img { vertical-align: middle; }
-.grid__item.three-quarters { 
-    text-transform: lowercase;
-    width: 60%;
-    display: inline-block;
-    vertical-align: middle;
-}
 body .btn { background: #6DCDB8; text-transform: lowercase; font-weight: 900; margin-top: 5px !important;}
-.grid__item.three-quarters .ajaxcart__product-meta {
-    font-weight: 300;
-    font-size: 10pt;
+
+.slide-in {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
 }
-.grid__item.three-quarters p { margin-bottom: 0; }
-.grid__item.three-quarters p a { display: block; }
-.grid__item.three-quarters button {
-    width: 20px;
-    background: none;
+.darken {
+    position: relative;
 }
-.ajaxcart__qty-num {
-    width: 20px;
-    text-align: center;
+header.darken { box-shadow: 1px 1px 1px #696969; }
+.darken:after {
+    content: '\A';
+    position: absolute;
+    width: 100%; 
+    height:100%;
+    top:0; 
+    left:0;
+    background:rgba(0,0,0,0.5);
+    opacity: 1;
+}  
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
 }
-.fallback-text {
-  font-weight: 300;
-  font-size: 10pt;
-}
-.text-right {
-  text-align: right;
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
 }
 /* Customer Flow */
 .customer form{
