@@ -90,7 +90,7 @@
     {% assign select = collections.all.products[6]%}
     <div class="example-shoes border-beige">
       <p class="tac nm">Examples Of Shoes These Work In</p>
-      <div class="scrollp leftp text-beige clickable invis">➤</div>
+      <div class="scrollp leftp clickable invis">➤</div>
       <div class="shoe-wrapper">
          {% case product.title %}
           {% when "Ballet Flats" %}
@@ -131,7 +131,7 @@
             {% endfor %} 
           {% endcase %}
        </div>
-       <div class="scrollp rightp text-beige clickable">➤</div>
+       <div class="scrollp rightp clickable">➤</div>
     </div>
   {% endunless %}
 </form>
