@@ -131,6 +131,7 @@ ul {
 @media only screen and (min-width: 800px) and (max-width: 1099px) {
   .index-padding-so { padding: 1px 10%; }
   h1 { font-size: 57pt; } 
+  #atfb h1 { font-size: 50pt; }
   h2 { font-size: 32pt; } 
   .accent-word { font-size: 20pt; } 
   h3{ font-size: 14pt; } 
@@ -193,6 +194,7 @@ ul {
   }
   .closetpackprice { display: none; }
   .swatch { text-align: center; } 
+      #atf1, #atfb {height: 100vw;} 
 
 
     #CartContainer form  {   height: calc(100vh - 130px);}
@@ -313,6 +315,15 @@ ul {
      background-position: center;
     background-size: cover;
   }
+/* silver atf a-b */
+  #atfb  div { margin: 0 auto; text-align: center;} 
+
+  body #index-page #atfb {
+    background-image: url({{'silver-m.gif' | asset_url }}); 
+     background-position: center;
+    background-size: cover;
+  }
+  /*end */
   .latest-news .third { 
     width: 100%;
 margin: 10px;
@@ -417,7 +428,6 @@ margin: 10px;
   body #installation-page iframe {height: 300px;}
   .endorsements-features ul li img  { max-width:  75px;}
   .icon-display li {margin: 10px;}
-      #atf1 {min-height: 450px;} 
       .about-us div .connecter {
     margin: 0 -10px;
 }
@@ -544,7 +554,6 @@ margin: 10px;
 
     #mission { padding: 30px; } 
 
-  #atf1 {min-height: 300px;}
   #newsletter_popup2  .third{ height: 400px;}
   #thumbnails li img { width: 45px; }
   #faq .q-and-a { padding: 25px; }
@@ -1493,11 +1502,16 @@ body .up-label-vis:after {
     .mobile-nav1 { display: none !important; }
   .cart span { right: 10px; }
   .cart .cart-icon {right: 20px;}
-  #atf1  div { margin: 5%; } 
+  #atf1  div, #atfb div { margin: 5%; } 
 .customer form{ padding: 50px; }
   #atf1 {
     background-image: url({{'datf.jpg' | asset_url }}); 
      background-position: center;
+    background-size: cover;
+  }
+  #atfb {
+    background-image: url({{'silver_desktop.gif' | asset_url }});
+       background-position: center;
     background-size: cover;
   }
   .latest-news .third { 
