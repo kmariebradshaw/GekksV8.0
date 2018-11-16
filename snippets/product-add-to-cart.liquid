@@ -83,7 +83,7 @@
   {% if product.title == "Gift Cards" %}
     <div class="spacer"></div>
   {% else %}
-    <p class="subscript clickable" id="size-chart">sizing chart</p>
+    <p class="subscript clickable" id="size-chart"><img src="{{'ruler.png' | asset_url}}" class="ruler-icon"/>sizing chart</p>
   {% endif %}
   <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="background-green text-white"><span>add to cart</span></button>
   {% unless product.title == "Select" or product.title == "Gift Cards" %}
