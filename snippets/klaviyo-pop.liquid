@@ -3,13 +3,12 @@
   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
     <input type="hidden" name="g" value="Ai9wnf">
     <div class="flex-container-no hide_on_submit">
-      <div class="third">
+      <div class="third" style="width: 45%;">
       </div>
       <div class="two-thirds accent-padding">
         <p class="nmt klaviyo_header_close tar clickable">✕</p>
-        <div class="accent-padding border-white">
-          <h3 class="text-green nm">first order</h3>
-          <h2 class="nm">discount</h2>
+        <div class="accent-padding">
+          <img src="{{'black-friday-tag.png' | asset_url}}" style="width: 200px" />
         </div>
         <p class="hide_on_submit"><span class="text-green">Sign Up Now for Exclusive <br>Black Friday & Cyber Monday Deals</span></p>
         <input type="email" id="newsletter_popup_$email" class="newsletter_email hide_on_submit" name="email">
@@ -36,7 +35,7 @@ $(document).ready(function(){
         KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
           delay_seconds: 0,
           ignore_cookie: true,
-          success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you!</h2><h3>Use the discount code below to receive<br>15% off your first order!</h3></div><h2 class='text-green'>WELCOME15</h2></div>",
+          success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you</h2><h3>Keep an eye out for savings!</h3></div></div>",
      success: function ($form) {
       $('#success-close').show();
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
