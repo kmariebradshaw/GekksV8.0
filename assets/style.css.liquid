@@ -1978,7 +1978,7 @@ vertical-align: middle;
   top: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
 }
 .sizing-chart {
   background-color: #fff;
@@ -2002,11 +2002,21 @@ vertical-align: middle;
     width: 100%;
 }
 #newsletter_popup2  .third{ 
-  background-image: url("{{'popup.jpg' | asset_url}}"); 
+  background-image: url("{{'holiday-popup.jpg' | asset_url}}"); 
   background-size: cover;
   background-position: center;
 }
-#newsletter_popup2 { overflow: hidden; }
+#newsletter_popup2 { overflow: hidden; 
+    width: 90%;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+#newsletter_popup2 .klaviyo_header_close  {
+    position: absolute;
+    top: 3%;
+    left: 95%;
+}
 /* Blog */
 
 .blog-btn { 
