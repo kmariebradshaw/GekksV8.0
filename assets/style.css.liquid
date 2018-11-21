@@ -25,7 +25,7 @@ div { box-sizing: border-box; }
 html { padding-bottom: 0 !important; } 
 nav,h1,h2,h3,h4,h5,a, span, input, th, select { font-family: 'Gilroy', sans-serif; font-weight: 900; }
 .ajaxified-cart-feedback, .subscript,.p1 { font-size: 10pt; } 
-main {padding-top: 102px}
+main {padding-top: 137px}
 form button {
   width: 100%;
   font-size: 14pt;
@@ -207,7 +207,7 @@ ul {
     width: 250px;
     right: 0;
     position: fixed;
-    top: 70px;
+    top: 105px;
     background: white;
     border-left: 1px solid #F9F7F7 ;
     border-bottom: 1px solid #F9F7F7 ;
@@ -639,7 +639,7 @@ header {
     position: fixed !important;
     width: 100%;
     background: white;
-    top: 0; 
+    top: 35px; 
     height: 85.7px;
     z-index: 999; 
     height: fit-content;
@@ -1978,7 +1978,7 @@ vertical-align: middle;
   top: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
 }
 .sizing-chart {
   background-color: #fff;
@@ -2002,11 +2002,21 @@ vertical-align: middle;
     width: 100%;
 }
 #newsletter_popup2  .third{ 
-  background-image: url("{{'popup.jpg' | asset_url}}"); 
+  background-image: url("{{'holiday-popup.jpg' | asset_url}}"); 
   background-size: cover;
   background-position: center;
 }
-#newsletter_popup2 { overflow: hidden; }
+#newsletter_popup2 { overflow: hidden; 
+    width: 90%;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+#newsletter_popup2 .klaviyo_header_close  {
+    position: absolute;
+    top: 3%;
+    left: 95%;
+}
 /* Blog */
 
 .blog-btn { 
@@ -2037,7 +2047,7 @@ main.blog .page-header {
 }
 
 /* extra / seasional page*/
-#spooky-accent, #halloween-embed {   
+#spooky-accent, #bfcm-embed {   
    max-width: 500px;
    margin: 0 auto;
   display: block;
@@ -2063,8 +2073,25 @@ main.blog .page-header {
 #inner-wrap { flex-wrap: wrap; }
 
 
+/*deals page*/
+#copied span {
+    padding: 15px;
+    background: #6DCDB8;
+    color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
 
-
-
-
+#copied {
+    position: absolute;
+    width: 150px;
+    left: calc(50% - 75px);
+}
+#banner-cta { 
+position: fixed; 
+top: 0;
+width: 100%;
+z-index: 999;
+}
+#banner-cta p { padding: 10px; text-transform: none;}
 

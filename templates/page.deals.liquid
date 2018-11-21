@@ -1,0 +1,19 @@
+<main id="extra-page">
+    <div id="copied" class="tac" style="position: absolute; display: none;"><p class="subscript"><span>coupon copied</span></p></div>
+  <section class="index-padding" style="padding-top: 60px !important;padding-bottom: 60px !important;">
+    <img src="{{'pre-bf-deals.gif' | asset_url}}" alt="Buy one closet pack and get a pair of Gekks free, code PREBLACKFRIDAY" class="fw clickable" id="deal-image" />
+  </section>
+</main>
+
+<script>
+  $('#deal-image').click(function() {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val("PREBLACKFRIDAY").select();
+    document.execCommand("copy")
+    $('#copied').slideDown()
+  })
+  $(document).ready(function() {
+    $('#banner-cta p').text("Black Friday deals are here!")
+  })
+</script>
