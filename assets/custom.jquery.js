@@ -60,14 +60,14 @@ $('body').click(function (event) {
     $(event.target).is('#size-chart')  && !$(event.target).closest('#CartContainer').length && !$(event.target).is('button') && !$(event.target).is('button span')) {
      $(".modal").hide(); 
      if ($('#CartContainer').is(":visible ")) {
-      console.log(event.target)
       cartClose();
      }
    }    
 });
 function cartClose() {
-
- $("#CartContainer").removeClass('slide-in').addClass('slide-out');
+  if ($('#CartContainer').hasClass('slide-in')) {
+    $("#CartContainer").removeClass('slide-in').addClass('slide-out');
+  }
  $('header, main, footer').removeClass('darken');
 }
 // desktop sub-nav

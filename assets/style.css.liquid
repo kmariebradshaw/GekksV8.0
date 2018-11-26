@@ -945,38 +945,11 @@ footer input::placeholder { color: #fff; }
 } 
 
 .prodrating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
+  vertical-align: middle;
   display: inline-block;
+  margin-right: 5px;
 }
-.prodrating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-  color: #6DCDB8;  
-}
-
-.prodrating > span:nth-of-type(n + 2):before {
-   content: "\2605";
-   position: absolute;
-   color: #6DCDB8; 
-}
-
-.prodrating > .pf:before {
-   content: "\2605";
-   position: absolute;
-   color: #6DCDB8; 
-   overflow: hidden; 
-    width: 45%; 
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-  left: 0; 
-  margin-left: 2px; 
-}
+.prodrating img { vertical-align: top; }
 .price.sale .subscript {
   text-decoration: line-through;
   text-decoration-color: #6DCDB8;
