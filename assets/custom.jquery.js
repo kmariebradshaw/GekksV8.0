@@ -57,7 +57,7 @@ $('.klaviyo_header_close').on('click', function() {
 });
 $('body').click(function (event) {
    if(!$(event.target).closest('.modal').length && !$(event.target).is('.modal') && !$(event.target).is('#referafriend h3') && !
-    $(event.target).is('#size-chart')  && !$(event.target).closest('#CartContainer').length && !$(event.target).is('button')) {
+    $(event.target).is('#size-chart')  && !$(event.target).closest('#CartContainer').length && !$(event.target).is('button') && !$(event.target).is('button span')) {
      $(".modal").hide(); 
      if ($('#CartContainer').is(":visible ")) {
       cartClose();
@@ -65,7 +65,9 @@ $('body').click(function (event) {
    }    
 });
 function cartClose() {
- $("#CartContainer").removeClass('slide-in');
+  if ($('#CartContainer').hasClass('slide-in')) {
+    $("#CartContainer").removeClass('slide-in').addClass('slide-out');
+  }
  $('header, main, footer').removeClass('darken');
 }
 // desktop sub-nav

@@ -23,13 +23,12 @@
       <a href="/pages/reviews">
         <div class="prodrating">
           {% if product.title == "Ballet Flats" or product.type == "Closet Pack" or product.title == "Heels & Wedges" %}
-            <span class="pf">
+          <img src="{{'475stars.png' | asset_url}}" alt="4.75" />
           {% else %}
-            <span>
+          <img src="{{'4stars.png' | asset_url}}" alt="4" />         
           {% endif%}
-            ☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
         </div>
-        <div id="orankl-summary-thumbnail" style="display:inline-block">
+        <div id="orankl-summary-thumbnail" style="display:inline-block; vertical-align: bottom">
           <div class="orankl-summary" data-product-key="{{ product.id }}" style="text-align:left;padding-bottom:0px">
             <style scoped>
               #orankl-summary-thumbnail .orankl-summary span { display: inline-block; text-transform: lowercase !important; font-weight: 900 !important;margin-left:0 !important;cursor:auto!important;color: #6DCDB8;  }
