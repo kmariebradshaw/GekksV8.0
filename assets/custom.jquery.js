@@ -64,12 +64,88 @@ $('body').click(function (event) {
      }
    }    
 });
+// ajax cart close 
 function cartClose() {
   if ($('#CartContainer').hasClass('slide-in')) {
     $("#CartContainer").removeClass('slide-in').addClass('slide-out');
   }
  $('header, main, footer').removeClass('darken');
 }
+// ajax cart countdown timer 
+$('.checkout').submit(function() {
+  setTimeout(function() {
+
+  //   var twentyMinutes = 60 * 20,
+  //   display = $('#timer-wrapper h3');
+  //   startTimer(twentyMinutes, display);
+  
+  discountTimedBanner(); 
+  localStorage.setItem("timer", true);
+  }, 500); 
+
+});
+
+ function discountTimedBanner(){
+   var minutesleft = 20;
+   var secondsleft = 0; 
+   var end;
+    if(localStorage.getItem("end")) {
+      end = new Date(localStorage.getItem("end"));
+   } else {
+       end = new Date();
+    end.setMinutes(end.getMinutes()+minutesleft);
+    end.setSeconds(end.getSeconds()+secondsleft);
+   }
+  var counter = function () {
+     var now = new Date();
+    var diff = end - now;
+    diff = new Date(diff);
+    var sec = diff.getSeconds();
+   var min = diff.getMinutes(); 
+    if (min < 10) {
+       min = "0" + min;
+    }
+     if (sec < 10) { 
+       sec = "0" + sec;
+     }     
+      
+      if(now >= end || localStorage.getItem("end") == "Invalid Date") { 
+        clearTimeout(interval);
+        localStorage.setItem("end", null)
+        localStorage.clear()
+      } 
+      else {
+        var value = min + ":" + sec;
+        localStorage.setItem("end", end);
+        document.getElementById('timer').innerHTML = value
+     }
+    }
+    var interval = setInterval(counter, 1000);
+}
+
+$('#activate-timer').click(function(){
+  discountTimedBanner(); 
+  localStorage.setItem("timer", true);
+});
+
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.text(minutes + ":" + seconds);
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
 // desktop sub-nav
 $('.sub-nav-header').on('click mouseover', function(event) {
   event.preventDefault();
@@ -273,55 +349,6 @@ if($discountCode){
   }
 } 
 }; 
-
-
- function discountTimedBanner(){
-   $('span a h4').hide();
-    $('#activate-countdown').hide(); 
-    $('#countdown').show();
-   var minutesleft = 10;
-   var secondsleft = 0; 
-   var finishedtext = "Out of Time! Check back soon!";
-   var end;
-    if(localStorage.getItem("end")) {
-      end = new Date(localStorage.getItem("end"));
-   } else {
-       end = new Date();
-    end.setMinutes(end.getMinutes()+minutesleft);
-    end.setSeconds(end.getSeconds()+secondsleft);
-   }
-  var counter = function () {
-     var now = new Date();
-    var diff = end - now;
-    diff = new Date(diff);
-    var sec = diff.getSeconds();
-   var min = diff.getMinutes(); 
-    if (min < 10) {
-       min = "0" + min;
-    }
-     if (sec < 10) { 
-       sec = "0" + sec;
-     }     
-      
-      if(now >= end || localStorage.getItem("end") == "Invalid Date") { 
-       $('#countdown').hide();
-        clearTimeout(interval);
-        localStorage.setItem("end", null)
-        localStorage.clear()
-      } 
-      else {
-        var value = min + ":" + sec;
-        localStorage.setItem("end", end);
-        document.getElementById('divCounter').innerHTML = value
-     }
-    }
-    var interval = setInterval(counter, 1000);
-}
-
-$('#activate-timer').click(function(){
-  discountTimedBanner(); 
-  localStorage.setItem("timer", true);
-});
 
 var $animation_elements = $('.review-list');
 var $window = $(window);
