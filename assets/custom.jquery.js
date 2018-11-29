@@ -72,61 +72,62 @@ function cartClose() {
  $('header, main, footer').removeClass('darken');
 }
 // ajax cart countdown timer 
-$('.checkout').submit(function() {
-  setTimeout(function() {
+//      <div>
+//             <div id="timer-wrapper" class="border-green tac">
+//               <h3 class="ib text-green" id="timer">20:00</h3>
+//             </div> 
+//             <p class="text-green tac subscript">Looks like an item you ordered is in high demand. No worries, we've reserved your order for 20 minutes.</p>
+//         </div>
+// $('.checkout').submit(function() {
+//   setTimeout(function() {
+//   discountTimedBanner(); 
+//   localStorage.setItem("timer", true);
+//   }, 500); 
 
-  //   var twentyMinutes = 60 * 20,
-  //   display = $('#timer-wrapper h3');
-  //   startTimer(twentyMinutes, display);
-  
-  discountTimedBanner(); 
-  localStorage.setItem("timer", true);
-  }, 500); 
+// });
 
-});
-
- function discountTimedBanner(){
-   var minutesleft = 20;
-   var secondsleft = 0; 
-   var end;
-    if(localStorage.getItem("end")) {
-      end = new Date(localStorage.getItem("end"));
-   } else {
-       end = new Date();
-    end.setMinutes(end.getMinutes()+minutesleft);
-    end.setSeconds(end.getSeconds()+secondsleft);
-   }
-  var counter = function () {
-     var now = new Date();
-    var diff = end - now;
-    diff = new Date(diff);
-    var sec = diff.getSeconds();
-   var min = diff.getMinutes(); 
-    if (min < 10) {
-       min = "0" + min;
-    }
-     if (sec < 10) { 
-       sec = "0" + sec;
-     }     
+//  function discountTimedBanner(){
+//    var minutesleft = 20;
+//    var secondsleft = 0; 
+//    var end;
+//     if(localStorage.getItem("end")) {
+//       end = new Date(localStorage.getItem("end"));
+//    } else {
+//        end = new Date();
+//     end.setMinutes(end.getMinutes()+minutesleft);
+//     end.setSeconds(end.getSeconds()+secondsleft);
+//    }
+//   var counter = function () {
+//      var now = new Date();
+//     var diff = end - now;
+//     diff = new Date(diff);
+//     var sec = diff.getSeconds();
+//    var min = diff.getMinutes(); 
+//     if (min < 10) {
+//        min = "0" + min;
+//     }
+//      if (sec < 10) { 
+//        sec = "0" + sec;
+//      }     
       
-      if(now >= end || localStorage.getItem("end") == "Invalid Date") { 
-        clearTimeout(interval);
-        localStorage.setItem("end", null)
-        localStorage.clear()
-      } 
-      else {
-        var value = min + ":" + sec;
-        localStorage.setItem("end", end);
-        document.getElementById('timer').innerHTML = value
-     }
-    }
-    var interval = setInterval(counter, 1000);
-}
+//       if(now >= end || localStorage.getItem("end") == "Invalid Date") { 
+//         clearTimeout(interval);
+//         localStorage.setItem("end", null)
+//         localStorage.clear()
+//       } 
+//       else {
+//         var value = min + ":" + sec;
+//         localStorage.setItem("end", end);
+//         document.getElementById('timer').innerHTML = value
+//      }
+//     }
+//     var interval = setInterval(counter, 1000);
+// }
 
-$('#activate-timer').click(function(){
-  discountTimedBanner(); 
-  localStorage.setItem("timer", true);
-});
+// $('#activate-timer').click(function(){
+//   discountTimedBanner(); 
+//   localStorage.setItem("timer", true);
+// });
 
 
 function startTimer(duration, display) {
