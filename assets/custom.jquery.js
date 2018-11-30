@@ -69,7 +69,7 @@ function cartClose() {
   if ($('#CartContainer').hasClass('slide-in')) {
     $("#CartContainer").removeClass('slide-in').addClass('slide-out');
   }
- $('header, main, footer').removeClass('darken');
+ $('header, main, footer, #banner-cta').removeClass('darken');
 }
 // ajax cart countdown timer 
 //      <div>
