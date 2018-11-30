@@ -1,3 +1,14 @@
+// banner snow fall 
+$(document).ready(function() {
+  n = 0 
+  setInterval(function () {
+    n += 1
+    $('#banner-cta').css("background-position-y", n)
+    console.log(n)
+  }, 100)
+})
+
+
 // hamburger nav
 $(document).ready(function(){
   $('#hamburger').click(function(){
@@ -54,7 +65,7 @@ $('body').on('click touchend', function(e) {
 // popup close
 $('.klaviyo_header_close').on('click', function() {
   $(this).closest('.modal').hide();
-        $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
+  $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
 
 });
 $('body').click(function (event) {
@@ -65,7 +76,6 @@ $('body').click(function (event) {
       cartClose();
      }
       $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
-
    }    
 });
 // ajax cart close 
