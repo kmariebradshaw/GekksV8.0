@@ -23,7 +23,7 @@ $cartContainer.append(template(data));cartCallback(cart);};var _showFeedback=fun
 
 var feedback='<p class="ajaxified-cart-feedback '+success+'">'+html+'</p>';$('.is-added').after(feedback);$('.ajaxified-cart-feedback').slideDown();};cartCallback=function(cart){$body.removeClass('drawer--is-loading');$body.trigger('afterCartLoad.ajaxCart',cart);
 
-$('header, main, footer').addClass('darken');
+$('header, main, footer, #banner-cta').addClass('darken');
 $('#CartContainer').show().removeClass('slide-out').addClass('slide-in'); 
 
 _showFeedback('success',' added to cart! <a href="/cart" class="text-green">View Cart.</a>',$formContainer);if(window.Shopify&&Shopify.StorefrontExpressButtons){Shopify.StorefrontExpressButtons.initialize();}};adjustCart=function(){$body.on('click','.ajaxcart__qty-adjust',function(){if(isUpdating){return;}
