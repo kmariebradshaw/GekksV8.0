@@ -1,19 +1,46 @@
 <main id="extra-page">
     <div id="copied" class="tac" style="position: absolute; display: none;"><p class="subscript"><span>coupon copied</span></p></div>
   <section class="index-padding" style="padding-top: 60px !important;padding-bottom: 60px !important;">
-    <img src="{{'pre-bf-deals.gif' | asset_url}}" alt="Buy one closet pack and get a pair of Gekks free, code PREBLACKFRIDAY" class="fw clickable" id="deal-image" />
+    <h1 class="ttc tac nm">Happy Holidays</h1>
+    <div class="flex-container accent-padding border-lightgray">
+      <div class="half tac clickable" id="holiday10">
+        <h2 class="text-green ttc nmb">$10 Off</h3>
+        <p>on $40+ orders<br>code: Holiday10</p>
+      </div>
+      <div class="half tac clickable" id="holiday25">
+        <h2 class="text-green ttc nmb">$25 Off</h3>
+        <p>on $80+ orders<br>code: Holiday25</p>
+      </div>
+    </div>
   </section>
 </main>
 
 <script>
-  $('#deal-image').click(function() {
+  $('#holiday10').click(function() {
     var $temp = $("<input>");
     $("body").append($temp);
-    $temp.val("PREBLACKFRIDAY").select();
+    $temp.val("HOLIDAY10").select();
     document.execCommand("copy")
-    $('#copied').slideDown()
+    $('#copied').slideUp().slideDown().delay(2000).slideUp(); 
+  })
+  $('#holiday25').click(function() {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val("HOLIDAY25").select();
+    document.execCommand("copy")
+    $('#copied').slideUp().slideDown().delay(2000).slideUp(); 
+   
   })
   $(document).ready(function() {
-    $('#banner-cta p').text("Black Friday deals are here!")
+    $('#banner-cta p').text("Holiday deals are here!")
   })
 </script>
+<style>
+.index-padding {
+  background-image: url("{{'Holiday_deals.gif' | asset_url}}");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+}
+.index-padding h1 { padding-top: 30%; }
+</style>
