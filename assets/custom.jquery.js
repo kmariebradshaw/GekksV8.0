@@ -62,6 +62,8 @@ $('body').click(function (event) {
      if ($('#CartContainer').is(":visible ")) {
       cartClose();
      }
+      $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
+
    }    
 });
 // ajax cart close 
@@ -69,7 +71,7 @@ function cartClose() {
   if ($('#CartContainer').hasClass('slide-in')) {
     $("#CartContainer").removeClass('slide-in').addClass('slide-out');
   }
- $('header, main, footer, #banner-cta').removeClass('darken');
+ $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
 }
 // ajax cart countdown timer 
 //      <div>
