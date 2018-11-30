@@ -54,6 +54,8 @@ $('body').on('click touchend', function(e) {
 // popup close
 $('.klaviyo_header_close').on('click', function() {
   $(this).closest('.modal').hide();
+        $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
+
 });
 $('body').click(function (event) {
    if(!$(event.target).closest('.modal').length && !$(event.target).is('.modal') && !$(event.target).is('#referafriend h3') && !
