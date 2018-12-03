@@ -190,6 +190,10 @@ ul {
     line-height: 2.5;
     font-size: 16pt;
     text-align: center;
+    border-bottom: 1px solid #F9F7F7;
+}
+body .mobile-nav1 li:last-of-type, body .mobile-nav1 li:nth-of-type(4) {
+  border-bottom: none;
 }
   .closetpackprice { display: none; }
   .swatch { text-align: center; } 
@@ -199,8 +203,15 @@ ul {
     #CartContainer form  {   height: calc(100vh - 130px);}
   #washing h3 { padding: 10px; }
   #washing-instructions h3 { text-align: center; }
-  .mobile-nav1 .childlink li a { font-weight: 300; }
+  .mobile-nav1 .childlink li a { 
+    font-weight: 300; 
+    font-size: 12pt;
+    color: #545359;
+  }
+  .mobile-nav1 .childlink li { line-height: 1.5; border-bottom: none; }
+
   .collection-prod span { float: right; }
+  .collection-prod { margin-right: -12.34px; }
   #nav-social a img { max-width: 30px; margin: 10px; }
   body .mobile-nav1  {
     overflow-y: auto;
@@ -225,12 +236,8 @@ ul {
             transform: translateX(100%);
     -webkit-transform: translateX(100%);
 }
-#nav-social {
-    position: absolute;
-    bottom: 30px;
-    width: calc( 100% - 20px );
-    text-align: center;
-}
+.mobile-nav1 li a { color: #6DCDB8; }
+#nav-social {margin-top: 50px;}
 #hamburger {
   display: inline-block !important; 
   width: 40px;
