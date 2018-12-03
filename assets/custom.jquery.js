@@ -1,3 +1,14 @@
+// banner snow fall 
+$(document).ready(function() {
+  n = 0 
+  setInterval(function () {
+    n += 1
+    $('#banner-cta').css("background-position-y", n)
+    console.log(n)
+  }, 100)
+})
+
+
 // hamburger nav
 $(document).ready(function(){
   $('#hamburger').click(function(){
@@ -54,6 +65,8 @@ $('body').on('click touchend', function(e) {
 // popup close
 $('.klaviyo_header_close').on('click', function() {
   $(this).closest('.modal').hide();
+  $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
+
 });
 $('body').click(function (event) {
    if(!$(event.target).closest('.modal').length && !$(event.target).is('.modal') && !$(event.target).is('#referafriend h3') && !
@@ -62,6 +75,7 @@ $('body').click(function (event) {
      if ($('#CartContainer').is(":visible ")) {
       cartClose();
      }
+      $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
    }    
 });
 // ajax cart close 
@@ -69,7 +83,7 @@ function cartClose() {
   if ($('#CartContainer').hasClass('slide-in')) {
     $("#CartContainer").removeClass('slide-in').addClass('slide-out');
   }
- $('header, main, footer, #banner-cta').removeClass('darken');
+ $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
 }
 // ajax cart countdown timer 
 //      <div>

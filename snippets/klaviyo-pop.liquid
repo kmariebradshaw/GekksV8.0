@@ -6,7 +6,7 @@
       <div class="third" style="width: 45%;">
       </div>
       <div class="two-thirds accent-padding">
-        <p class="nmt klaviyo_header_close tar clickable">✕</p>
+        <p class="nmt klaviyo_header_close tar clickable" style="font-size: 13pt;"><span>✕</span></p>
        <div class="accent-padding border-white">
           <h3 class="text-green nm">first order</h3>
           <h2 class="nm">discount</h2>
@@ -47,6 +47,7 @@ $(document).ready(function(){
   }); 
   };
     createCookie("newsletterModal", "Displayed", 5)
+    $('.index-sections, main, header, footer, #banner-cta').addClass('darken')
    }, 3000); 
   }
 }); 
@@ -94,7 +95,9 @@ $(document).ready(function(){
               },
             }); 
             executed = true 
-            sessionStorage.exitAttempted = 1          
+            sessionStorage.exitAttempted = 1    
+                $('.index-sections, main, header, footer, #banner-cta').addClass('darken')
+      
       }; 
     };
   };
