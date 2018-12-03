@@ -32,8 +32,10 @@ $(document).ready(function(){
   var flowFinish = readCookie('flowFinish')
   var gekksVisit = readCookie('gekksVisit')
   var newsletterModal = readCookie('newsletterModal')
-  if ((flowFinish) && (gekksVisit) && !(newsletterModal)){
+  if ((flowFinish) && (gekksVisit) && !(newsletterModal) && $('.mobile-nav1:visible').length == 0){
+  console.log($('.mobile-nav1:visible').length)
     setTimeout(function(){
+      $('.modal').removeClass('darken')
       if ($('.modal:visible').length == 0) {
         KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
           delay_seconds: 0,
@@ -47,7 +49,7 @@ $(document).ready(function(){
   }); 
   };
     createCookie("newsletterModal", "Displayed", 5)
-    $('.index-sections, main, header, footer, #banner-cta').addClass('darken')
+    $('.index-sections, main, header, footer, #banner-cta, .mobile-nav1').addClass('darken')
    }, 3000); 
   }
 }); 
@@ -84,7 +86,10 @@ $(document).ready(function(){
   if (!sessionStorage.exitAttempted) {
    $(document).on('mouseleave', leaveFromTop);
       function leaveFromTop(e){
-        if ($('.modal:visible').length == 0 && (e.clientY < 0 ) && (!executed)){
+        if ($('.modal:visible').length == 0 && (e.clientY < 0 ) && (!executed) && $('.mobile-nav1:visible').length == 0) {
+          console.log($('.mobile-nav1:visible').length)
+
+            $('.modal').removeClass('darken')
             KlaviyoSubscribe.attachToModalForm('#exit_offer', {
               success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you!</h2><h3>Use the discount code below to receive 10% off your first order over $30 USD</h3><h2 class='text-green'>GEKKS10</h2></div>",
               ignore_cookie: true, 
@@ -96,7 +101,7 @@ $(document).ready(function(){
             }); 
             executed = true 
             sessionStorage.exitAttempted = 1    
-                $('.index-sections, main, header, footer, #banner-cta').addClass('darken')
+                $('.index-sections, main, header, footer, #banner-cta, .mobile-nav1').addClass('darken')
       
       }; 
     };

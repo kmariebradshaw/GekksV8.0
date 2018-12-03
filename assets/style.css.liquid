@@ -187,10 +187,14 @@ ul {
   body .mobile-nav1 li {
     float: none;
     display: block;
-    text-align: left;
-    line-height: 1.5;
-    font-size: 14pt;
-  }
+    line-height: 2.5;
+    font-size: 16pt;
+    text-align: center;
+    border-bottom: 1px solid #F9F7F7;
+}
+body .mobile-nav1 li:last-of-type, body .mobile-nav1 li:nth-of-type(4) {
+  border-bottom: none;
+}
   .closetpackprice { display: none; }
   .swatch { text-align: center; } 
       #atf1 {height: 100vw;} 
@@ -199,19 +203,47 @@ ul {
     #CartContainer form  {   height: calc(100vh - 130px);}
   #washing h3 { padding: 10px; }
   #washing-instructions h3 { text-align: center; }
-  .mobile-nav1 .childlink li a { font-weight: 300; }
+  .mobile-nav1 .childlink li a { 
+    font-weight: 300; 
+    font-size: 12pt;
+    color: #545359;
+  }
+  .mobile-nav1 .childlink li { line-height: 1.5; border-bottom: none; }
+
   .collection-prod span { float: right; }
+  .collection-prod { margin-right: -16px; }
   #nav-social a img { max-width: 30px; margin: 10px; }
-  body .mobile-nav1 {
-    overflow: hidden;
-    width: 250px;
+  body .mobile-nav1  {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 45%;
     right: 0;
     position: fixed;
-    top: 105px;
+    top: 0;
     background: white;
-    border-left: 1px solid #F9F7F7 ;
-    border-bottom: 1px solid #F9F7F7 ;
-  }
+    border-left: 1px solid #F9F7F7;
+    margin: 0;
+    min-width: 300px;
+    max-width: 450px;
+    height: 100vh;
+    z-index: 999;
+      background-image: url("{{'Pairs-01.svg' | asset_url}}"); 
+        background-size: contain;
+  background-repeat: no-repeat;
+
+  background-position: -40px bottom;
+
+            transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+.mobile-nav1 li a { color: #6DCDB8; }
+.mobile-nav1 li a span { 
+    font-size: 10pt;
+    font-family: 'Zapf Dingbats';
+    margin-top: 12px;
+    width: 16px;
+}
+#nav-social {margin-top: 50px;}
 #hamburger {
   display: inline-block !important; 
   width: 40px;
@@ -1879,7 +1911,7 @@ body .btn { background: #6DCDB8; text-transform: lowercase; font-weight: 900; ma
 .darken {
     position: relative;
 }
-header.darken { box-shadow: 1px 1px 1px #696969; }
+header.darken, #CartContainer.darken, .mobile-nav1.darken { box-shadow: 1px 1px 1px #696969; }
 .darken:after {
     content: '\A';
     position: absolute;
