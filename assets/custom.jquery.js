@@ -14,6 +14,10 @@ $('#hamburger').click(function(){
   $('.mobile-nav1').show().removeClass('slide-out').addClass('slide-in');
   $('.index-sections, main, header, footer, #banner-cta, .modal').addClass('darken')
 });
+$('#hamburger-close span').click(function() {
+    $('.mobile-nav1').removeClass('slide-in').addClass('slide-out');
+  $('.index-sections, main, header, footer, #banner-cta, .modal').removeClass('darken')
+})
 $('#nav-more').click(function() {
   $(this).hide(); 
   $('.nav-more').show(); 
@@ -22,7 +26,7 @@ $('.collection-prod').click(function() {
   event.preventDefault();
   $(this).siblings('.childlink').slideToggle();
   $(this).css(':after', 'transform:rotate(90deg)')
-  $(this).children('span').text($(this).children('span').text() == '○' ? '●' : '○')
+  $(this).children('span').text($(this).children('span').text() == '◯' ? '⬤' : '◯')
 });
 // sizing chart
 $('#size-chart').click( function() {
