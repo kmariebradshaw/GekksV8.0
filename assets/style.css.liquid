@@ -203,19 +203,33 @@ ul {
   .collection-prod span { float: right; }
   #nav-social a img { max-width: 30px; margin: 10px; }
   body .mobile-nav1  {
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     width: 45%;
     right: 0;
     position: fixed;
     top: 0;
     background: white;
     border-left: 1px solid #F9F7F7;
-    border-bottom: 1px solid #F9F7F7;
     margin: 0;
     min-width: 300px;
     max-width: 450px;
     height: 100vh;
     z-index: 999;
+      background-image: url("{{'Pairs-01.svg' | asset_url}}"); 
+        background-size: contain;
+  background-repeat: no-repeat;
+
+  background-position: -40px bottom;
+
+            transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+#nav-social {
+    position: absolute;
+    bottom: 30px;
+    width: calc( 100% - 20px );
+    text-align: center;
 }
 #hamburger {
   display: inline-block !important; 
