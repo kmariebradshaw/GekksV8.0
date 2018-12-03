@@ -206,10 +206,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
               {% endif %}
               {% endfor %}
-
-              {% for link in linklists.mobile-nav-1.links offset:9 limit:1 %}
-                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-              {% endfor %} 
          
               <div id="nav-social" class="accent-padding">
               <a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'Instagram_darkgray.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 

@@ -65,7 +65,7 @@ $('body').on('click touchend', function(e) {
 // popup close
 $('.klaviyo_header_close').on('click', function() {
   $(this).closest('.modal').hide();
-  $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
+  $('header, main, footer, #banner-cta, .index-sections, .mobile-nav1').removeClass('darken');
 
 });
 $('body').click(function (event) {
@@ -75,7 +75,7 @@ $('body').click(function (event) {
      if ($('#CartContainer').is(":visible ")) {
       cartClose();
      }
-      $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
+      $('header, main, footer, #banner-cta, .index-sections, .mobile-nav1').removeClass('darken');
    }    
 });
 // ajax cart close 
@@ -83,7 +83,7 @@ function cartClose() {
   if ($('#CartContainer').hasClass('slide-in')) {
     $("#CartContainer").removeClass('slide-in').addClass('slide-out');
   }
- $('header, main, footer, #banner-cta, .index-sections').removeClass('darken');
+ $('header, main, footer, #banner-cta, .index-sections, .mobile-nav1').removeClass('darken');
 }
 // ajax cart countdown timer 
 //      <div>
