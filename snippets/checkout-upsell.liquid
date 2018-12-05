@@ -159,41 +159,101 @@ $(document).ready(function() {
     }
     else if (mloafers == 1 ) {
       product_title = "Men's Closet Pack"
-      product_image = ""
-      product_variant = ""
       product_price = "$32.00"
-      product_id = 
       pitch = "Your sneakers need to love too! Upgrade to a closet pack <span>and get $4 off.</span>"  
+      product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/IMG_6744_83a3102b-65df-4471-b3f9-a71639096650_2000x2000.jpg"
+      if (medium == 1) {
+        product_variant = "Medium (US: 8.5-11) / Black"
+        variant_id = 31619579153
+      }
+      else if (large == 1) {
+        product_variant = "Large (US: 11.5-14) / Black"
+        variant_id = 31619579537
+      }
+      else if (small == 1 ) {
+        product_variant = "Small (US: 6.5-8) / Black"
+        variant_id = 31619578961
+      }
       show = true
     }
     else if (msneakers == 1 ) {
       product_title = "Men's Closet Pack"
-      product_image = ""
-      product_variant = ""
       product_price = "$32.00"
-      product_id = 
       pitch = "Your loafers need to love too! Upgrade to a closet pack <span>and get $4 off.</span>" 
+      product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/IMG_6744_83a3102b-65df-4471-b3f9-a71639096650_2000x2000.jpg"
+     if (medium == 1) {
+        product_variant = "Medium (US: 8.5-11) / Black"
+        variant_id = 31619579153
+      }
+      else if (large == 1) {
+        product_variant = "Large (US: 11.5-14) / Black"
+        variant_id = 31619579537
+      }
+      else if (small == 1 ) {
+        product_variant = "Small (US: 6.5-8) / Black"
+        variant_id = 31619578961
+      }
       show = true
-    
     }
     else if (heels == 1) {
       product_title = "Ballet Flats"
-      product_image = ""
-      product_variant = ""
       product_price = "$18.00"
-      product_id = 
       pitch = "Your flats need to love too!"
+      if (medium == 1) {
+        if (black == 1) {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Black_Flat2_2000x2000.jpg"
+          product_variant = "Medium (US: 7-8.5) / Black"
+          variant_id = 18247857860
+        }
+        else {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Flat_Bare_2000x2000.jpg"
+          product_variant = "Medium (US: 7-8.5) / Nude"
+          variant_id = 18247857924
+        }     
+      } 
+      else if (large == 1 ) {
+        if (black == 1) {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Black_Flat2_2000x2000.jpg"
+          product_variant = "Large (US: 9-11.5) / Black"
+          variant_id = 18247857988
+        }
+        else {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Flat_Bare_2000x2000.jpg"
+          product_variant = "Large (US: 9-11.5) / Nude"
+          variant_id = 18247858052
+        }    
+      }
+      else if (small == 1 ) {
+        if (black == 1) {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Black_Flat2_2000x2000.jpg"
+          product_variant = "Small (US: 5-6.5) / Black"
+          variant_id = 18247857668
+        }
+        else {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Flat_Bare_2000x2000.jpg"
+          product_variant = "Small (US: 5-6.5) / Nude"
+          variant_id = 19347385476
+        }    
+      }
       show = true
      }
     else if (womenscpak == 1) {
       product_title = "Heels & Wedges"
-      product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Heel_3_2000x2000.jpg"
-      product_variant = ""
       product_price = "$18.00"
-      product_id = 
+      product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Womens_BlackHeel_2000x2000.jpg"
       pitch = "Add one more pair to receive <span>free shipping</span>!"   
-      show = true
-
+      if (medium == 1) {
+        product_variant = "Medium (US: 7-8.5) / Black"
+        variant_id = 702715527185
+      }
+      else if (large == 1) {
+        product_variant = "Large (US: 9-11.5) / Black"
+        variant_id = 702715592721
+      }
+      else if (small == 1 ) {
+        product_variant = "Small (US: 5-6.5) / Black"
+        variant_id = 702715461649
+      }
     }
   }
   else if (total == 2) {
