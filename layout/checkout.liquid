@@ -58,9 +58,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
 
+   {{ order_summary_toggle }}
     <div class="content" data-content>
       <div class="wrap">
-      
+        
         <div class="main" role="main">
           <div class="main__header">
             {{ content_for_logo }}
@@ -68,7 +69,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {{ alternative_payment_methods }}
           </div>
           <div class="main__content">
-            {{ order_summary_toggle }}
             {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
           </div>
           <div class="main__footer">
@@ -84,9 +84,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <div class="gift-option" style="display: none;">
            <p class="subscript"> <input type="checkbox" name="note" value="Gift" id="gift">Order Contains a Gift</p>
- 
           </div>
-        </div>
+          {% include 'checkout-upsell' %}
       </div>
     </div> 
     {{ tracking_code }}

@@ -8,8 +8,8 @@ $(document).ready(function() {
   if ($(".section--shipping-method").length) {
     $('.gift-option').insertBefore(".section--shipping-method").show(); 
   }
-}); 
-$(document).ready(function() {
+
+
   $('#gift').change(function() {
     if ($(this).prop("checked") == true) {
       jQuery.post('/cart/update.js', {note: "gift"});
