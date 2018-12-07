@@ -58,22 +58,31 @@ $(document).ready(function() {
     {% case product_id %}
     {% when  4832850820 %}
       flats = '{{item.quantity}}'
+      womens = true
     {% when 8081586504 %}
       womenscpak = '{{item.quantity}}'
+      womens = true
     {% when 89803620369 %}
       heels = '{{item.quantity}}'
+      womens = true
     {% when 4833042564  %}
       wloafers = '{{item.quantity}}'
+      womens = true
     {% when 4833046212 %}
       wsneakers = '{{item.quantity}}'
+      womens = true
     {% when 8797677073 %}
-     mencpak = '{{item.quantity}}'
+      mencpak = '{{item.quantity}}'
+      mens = true 
     {% when 4832899012 %}
       msneakers = '{{item.quantity}}'
+      mens = true 
     {% when 4832930500 %}
       mloafers = '{{item.quantity}}'
+      mens = true 
     {% endcase %} 
   {% endfor %}
+  console.log(total)
   // display logic 
   if (total == 1 ) {
     if (flats == 1 ) {
@@ -258,7 +267,6 @@ $(document).ready(function() {
     if ((flats == 1 && wloafers== 1) || (flats == 1 && wsneakers == 1 ) || (wsneakers  == 1 && wloafers == 1 )) {
       product_title = "Womens Closet Pack"
       product_price = "$49.00"
-
       product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/WCP2_2000x2000.jpg?v=1529529690"
       if (flats == 1 && wloafers == 1 ) {
         pitch = "Upgrade to a Closet Pack and receive <span>$5 off</span> and a pair of Gekks for sneakers!"
@@ -282,12 +290,31 @@ $(document).ready(function() {
         variant_id = 26654748040
       }
     }
-  else if (total == 3) {
-    if (womenscpak == 0 && menscpak == 0) {
-      $('#pitch').show().html('Add one more pair and<br> receive <b>free shipping</b>!')
-    }
   }
-}
+  else if (total == 3) {
+    console.log(total + 'hit')
+    if (womenscpak == 0 && menscpak == 0) {
+      console.log('hit')
+      product_title = "Choose Your Pair"
+      product_price = "$18.00"
+      pitch = "Add one more pair and receive <span>free shipping</span>!"
+      if (womens == true) {
+        product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/WCP2_2000x2000.jpg?v=1529529690"
+      }
+      else if (mens == true) {
+        product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/IMG_6744_83a3102b-65df-4471-b3f9-a71639096650_2000x2000.jpg"
+      }
+      if (medium == 1) {
+        product_variant = "Medium (US: 7-8.5) / Black"
+      }
+      else if (large == 1) {
+        product_variant = "Large (US: 9-11.5) / Black"
+      }
+      else if (small == 1 ) {
+        product_variant = "Small (US: 5-6.5) / Black"
+      }
+      // add buttons for all the variants in the size 
+    }
   }
    $('#pitch').html(pitch); 
    $('#pitch-photo').attr("src", product_image); 
@@ -296,7 +323,8 @@ $(document).ready(function() {
    if (show = true ) {
      $('.checkout-upsell').insertBefore(".section--contact-information").show();
    }
-})
+ }
+}); 
 
 
  </script>
