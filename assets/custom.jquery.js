@@ -13,9 +13,12 @@ $('#hamburger').click(function(){
   // $(this).toggleClass('open');
   $('.mobile-nav1').show().removeClass('slide-out').addClass('slide-in');
   $('.index-sections, main, header, footer, #banner-cta, .modal').addClass('darken')
+  $('body').addClass('freeze-frame')
 });
 $('#hamburger-close span').click(function() {
     $('.mobile-nav1').removeClass('slide-in').addClass('slide-out');
+    $('body').removeClass('freeze-frame')
+
   $('.index-sections, main, header, footer, #banner-cta, .modal').removeClass('darken')
 })
 $('#nav-more').click(function() {
@@ -91,6 +94,8 @@ $('body').click(function (event) {
         $(".mobile-nav1").removeClass('slide-in').addClass('slide-out');
       }     
     }
+      $('body').removeClass('freeze-frame')
+
       $('header, main, footer, #banner-cta, .index-sections, .mobile-nav1').removeClass('darken');
    }    
 });
