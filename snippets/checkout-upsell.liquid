@@ -326,11 +326,11 @@ $(document).ready(function() {
    $('#pitch-product').html('<span>' + product_title + " " + '</span>' + product_price); 
    $('#pitch-variant').html(product_variant + " | Quantity: 1")
    if (show == true ) {
-    // if (!sessionStorage.upsellAttempted) {
+    if (!sessionStorage.upsellAttempted) {
      $('.checkout-upsell').insertBefore(".section--contact-information").show();
-      // sessionStorage.upsellAttempted = 1    
+     sessionStorage.upsellAttempted = 1    
 
-    // }
+     }
    }
  }
 
