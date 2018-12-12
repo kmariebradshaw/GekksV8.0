@@ -1,0 +1,381 @@
+          <div class="checkout-upsell" style="display: none">
+            <p class="tac" id="pitch"></p>
+            <div class="flex-container" id="product-wrapper">
+              <img src="{{'' | asset_url}}" id="pitch-photo"/>
+              <div class="tac two-thirds">
+                <p class="nm" id="pitch-product"></p>
+                <p class="nm" id="pitch-variant"></p>
+                  <div class="fw button atc" id="add-single"><span>add to cart</span></div>
+                  <div class="fw button atc all-pairs" data-variant-small="18247857668" data-variant-medium="18247857860" data-variant-large="18247857988" style="display: none;"><span>flats</span></div>
+                  <div class="fw button atc all-pairs" data-variant-small="18250940100" data-variant-medium="18250940804" data-variant-large="18250941956" style="display: none;"><span>sneakers</span></div>
+                  <div class="fw button atc all-pairs" data-variant-small="18250901828" data-variant-medium="18250902084" data-variant-large="18250902276" style="display: none;"><span>loafers</span></div>
+                  <div class="fw button atc all-pairs" data-variant-small="702715461649" data-variant-medium="702715527185" data-variant-large="702715592721" style="display: none;"><span>heels</span></div>
+            </div>
+          </div>
+        </div>
+
+
+<script>
+$(document).ready(function() {
+ if ($(".section--contact-information").length) {
+  var flats = 0;
+  var wloafers = 0; 
+  var wsneakers = 0; 
+  var heels = 0;  
+  var womenscpak = 0;  
+  var mloafers = 0; 
+  var msneakers = 0; 
+  var menscpak = 0; 
+  var total = '{{checkout.item_count}}';
+  var product_title = ""
+  var product_image = ""
+  var product_variant = ""
+  var product_price = ""
+  var variant_id = 0
+  var pitch = ""
+  var small = 0 
+  var medium = 0 
+  var large = 0 
+  var nude = 0 
+  var black = 0
+  var show = false
+  var upgrade = false
+  var choose = false 
+// calculates the current cart quantities by product id
+  {% for item in checkout.line_items %}
+    {% assign variant_title = item.variant.title %}
+    {% if variant_title contains "Small" %} 
+      small += 1 
+    {% elsif variant_title contains "Medium" %} 
+      medium += 1 
+    {% elsif variant_title contains "Large" %} 
+      large += 1 
+    {% endif %}
+    {% if variant_title contains "Nude" %} 
+      nude += 1 
+    {% elsif variant_title contains "Black" %} 
+      black += 1 
+    {%endif%}
+    {% assign product_id = item.product.id %} 
+    {% case product_id %}
+    {% when  4832850820 %}
+      flats = '{{item.quantity}}'
+      womens = true
+    {% when 8081586504 %}
+      womenscpak = '{{item.quantity}}'
+      womens = true
+    {% when 89803620369 %}
+      heels = '{{item.quantity}}'
+      womens = true
+    {% when 4833042564  %}
+      wloafers = '{{item.quantity}}'
+      womens = true
+    {% when 4833046212 %}
+      wsneakers = '{{item.quantity}}'
+      womens = true
+    {% when 8797677073 %}
+      mencpak = '{{item.quantity}}'
+      mens = true 
+    {% when 4832899012 %}
+      msneakers = '{{item.quantity}}'
+      mens = true 
+    {% when 4832930500 %}
+      mloafers = '{{item.quantity}}'
+      mens = true 
+    {% endcase %} 
+  {% endfor %}
+  // display logic 
+  if (total == 1 ) {
+    if (flats == 1 ) {
+      product_title = "Heels & Wedges"
+      product_price = "$18.00"
+      pitch = "Your heels need to love too!"
+      if (medium == 1) {
+        if (black == 1) {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Womens_BlackHeel_2000x2000.jpg"
+          product_variant = "Medium (US: 7-8.5) / Black"
+          variant_id = 702715527185
+        }
+        else {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Heel_3_2000x2000.jpg"
+          product_variant = "Medium (US: 7-8.5) / Nude"
+          variant_id = 702715559953
+        }     
+      } 
+      else if (large == 1 ) {
+        if (black == 1) {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Womens_BlackHeel_2000x2000.jpg"
+          product_variant = "Large (US: 9-11.5) / Black"
+          variant_id = 702715592721
+        }
+        else {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Heel_3_2000x2000.jpg"
+          product_variant = "Large (US: 9-11.5) / Nude"
+          variant_id = 702715625489
+        }    
+      }
+      else if (small == 1 ) {
+        if (black == 1) {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Womens_BlackHeel_2000x2000.jpg"
+          product_variant = "Small (US: 5-6.5) / Black"
+          variant_id = 702715461649
+        }
+        else {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Heel_3_2000x2000.jpg"
+          product_variant = "Small (US: 5-6.5) / Nude"
+          variant_id = 702715494417
+        }    
+      }
+      show = true
+    }
+    else if (wloafers == 1) {
+      product_title = "Sneakers & Lace-Ups"
+      product_price = "$18.00"
+      pitch = "Your sneakers need to love too!"
+      product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/IMG_6571_96860db1-46f8-40fd-b7ff-816054a5aba2_2000x2000.jpg"
+      if (medium == 1) {
+        product_variant = "Medium (US: 7-8.5) / Black"
+        variant_id = 18250940804
+      }
+      else if (large == 1) {
+        product_variant = "Large (US: 9-11.5) / Black"
+        variant_id = 18250941956
+      }
+      else if (small == 1 ) {
+        product_variant = "Small (US: 5-6.5) / Black"
+        variant_id = 18250940100
+      }
+      show = true
+    }
+    else if (wsneakers == 1) {
+      product_title = "Loafers & Slip-Ons"
+      product_price = "$18.00"
+      pitch = "Your loafers need to love too!" 
+      product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Women_Loafer_4_2000x2000.jpg"
+      if (medium == 1) {
+        product_variant = "Medium (US: 7-8.5) / Black"
+        variant_id = 18250902084
+      }
+      else if (large == 1) {
+        product_variant = "Large (US: 9-11.5) / Black"
+        variant_id = 18250902276
+      }
+      else if (small == 1 ) {
+        product_variant = "Small (US: 5-6.5) / Black"
+        variant_id = 18250901828
+      }
+      show = true
+    }
+    // removed while men's are out of stock 
+    // else if (mloafers == 1 ) {
+    //   product_title = "Men's Closet Pack"
+    //   product_price = "$32.00"
+    //   pitch = "Your sneakers need to love too! Upgrade to a closet pack <span>and get $4 off.</span>" 
+    //   link = "" 
+    //   product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/IMG_6744_83a3102b-65df-4471-b3f9-a71639096650_2000x2000.jpg"
+    //   if (medium == 1) {
+    //     product_variant = "Medium (US: 8.5-11) / Black"
+    //     variant_id = 31619579153
+    //   }
+    //   else if (large == 1) {
+    //     product_variant = "Large (US: 11.5-14) / Black"
+    //     variant_id = 31619579537
+    //   }
+    //   else if (small == 1 ) {
+    //     product_variant = "Small (US: 6.5-8) / Black"
+    //     variant_id = 31619578961
+    //   }
+    //   show = true
+    // }
+    // else if (msneakers == 1 ) {
+    //   product_title = "Men's Closet Pack"
+    //   product_price = "$32.00"
+    //   pitch = "Your loafers need to love too! Upgrade to a closet pack <span>and get $4 off.</span>" 
+    //   product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/IMG_6744_83a3102b-65df-4471-b3f9-a71639096650_2000x2000.jpg"
+    //  if (medium == 1) {
+    //     product_variant = "Medium (US: 8.5-11) / Black"
+    //     variant_id = 31619579153
+    //   }
+    //   else if (large == 1) {
+    //     product_variant = "Large (US: 11.5-14) / Black"
+    //     variant_id = 31619579537
+    //   }
+    //   else if (small == 1 ) {
+    //     product_variant = "Small (US: 6.5-8) / Black"
+    //     variant_id = 31619578961
+    //   }
+    //   show = true
+    // }
+    else if (heels == 1) {
+      product_title = "Ballet Flats"
+      product_price = "$18.00"
+      pitch = "Your flats need to love too!"
+      if (medium == 1) {
+        if (black == 1) {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Black_Flat2_2000x2000.jpg"
+          product_variant = "Medium (US: 7-8.5) / Black"
+          variant_id = 18247857860
+        }
+        else {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Flat_Bare_2000x2000.jpg"
+          product_variant = "Medium (US: 7-8.5) / Nude"
+          variant_id = 18247857924
+        }     
+      } 
+      else if (large == 1 ) {
+        if (black == 1) {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Black_Flat2_2000x2000.jpg"
+          product_variant = "Large (US: 9-11.5) / Black"
+          variant_id = 18247857988
+        }
+        else {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Flat_Bare_2000x2000.jpg"
+          product_variant = "Large (US: 9-11.5) / Nude"
+          variant_id = 18247858052
+        }    
+      }
+      else if (small == 1 ) {
+        if (black == 1) {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Black_Flat2_2000x2000.jpg"
+          product_variant = "Small (US: 5-6.5) / Black"
+          variant_id = 18247857668
+        }
+        else {
+          product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Nude_Flat_Bare_2000x2000.jpg"
+          product_variant = "Small (US: 5-6.5) / Nude"
+          variant_id = 19347385476
+        }    
+      }
+      show = true
+     }
+    else if (womenscpak == 1) {
+      product_title = "Heels & Wedges"
+      product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/Womens_BlackHeel_2000x2000.jpg"
+      pitch = "Add one more pair to receive <span>free shipping</span>!"   
+      if (medium == 1) {
+        product_variant = "Medium (US: 7-8.5) / Black"
+        variant_id = 702715527185
+      }
+      else if (large == 1) {
+        product_variant = "Large (US: 9-11.5) / Black"
+        variant_id = 702715592721
+      }
+      else if (small == 1 ) {
+        product_variant = "Small (US: 5-6.5) / Black"
+        variant_id = 702715461649
+      }
+      show = true 
+    }
+  }
+  else if (total == 2) {
+    if ((flats == 1 && wloafers== 1) || (flats == 1 && wsneakers == 1 ) || (wsneakers  == 1 && wloafers == 1 )) {
+      product_title = "Womens Closet Pack"
+      upgrade = true 
+      product_price = "$49.00"
+      product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/WCP2_2000x2000.jpg?v=1529529690"
+       if (flats == 1 && wloafers == 1 ) {
+        pitch = "Upgrade to a Closet Pack and receive<br> <span>$5 off</span> and a pair of Gekks for sneakers!"
+      }
+      else if (flats == 1 && wsneakers == 1 ) {
+        pitch = "Upgrade to a Closet Pack and receive<br> <span>$5 off</span> and a pair of Gekks for loafers!"
+      }
+      else if (wsneakers  == 1 && wloafers == 1 ) {
+        pitch = "Upgrade to a Closet Pack and receive<br> <span>$5 off</span> and a pair of Gekks for flats!'"
+      }
+
+     if (medium >= 1) {
+        product_variant = "Medium (US: 7-8.5) / Black"
+        variant_id = 26654825672
+      }
+      else if (large >= 1) {
+        product_variant = "Large (US: 9-11.5) / Black"
+        variant_id = 26654825736
+      }
+      else if (small >= 1 ) {
+        product_variant = "Small (US: 5-6.5) / Black"
+        variant_id = 26654748040
+      } 
+      show = true
+    }
+  }
+  else if (total == 3) {
+    if (womenscpak == 0 && menscpak == 0) {
+      product_title = "Quick Add a Pair"
+      product_price = "for $18.00"
+      pitch = "Add one more pair and receive <span>free shipping</span>!"
+      choose = true 
+      if (womens == true) {
+        product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/WCP2_2000x2000.jpg?v=1529529690"
+        if (medium >= 1) {
+          product_variant = "Medium (US: 7-8.5) / Black"
+        }
+        else if (large >= 1) {
+          product_variant = "Large (US: 9-11.5) / Black"
+        }
+        else if (small >= 1 ) {
+          product_variant = "Small (US: 5-6.5) / Black"
+        }
+        show = true 
+        $('.all-pairs').show(); 
+        $('#add-single').hide(); 
+      }
+    }
+  }
+   $('#pitch').html(pitch); 
+   $('#pitch-photo').attr("src", product_image); 
+   $('#pitch-product').html('<span>' + product_title + " " + '</span>' + product_price); 
+   $('#pitch-variant').html(product_variant + " | Quantity: 1")
+   if (show == true ) {
+    if (!sessionStorage.upsellAttempted) {
+     $('.checkout-upsell').insertBefore(".section--contact-information").show();
+     sessionStorage.upsellAttempted = 1    
+
+     }
+   }
+ }
+
+$('.atc').click(function() {
+   $(this).addClass('loading');
+   $(this).text('adding');
+   if (choose == true) {
+    if (medium >= 1) {
+      variant_id = $(this).attr("data-variant-medium")
+    }
+    else if (large >= 1 ) {
+      variant_id = $(this).attr("data-variant-large")
+    }
+    else if (small >= 1) {
+      variant_id = $(this).attr("data-variant-small")
+    }
+   }
+   if (upgrade == true) {
+    jQuery.post('/cart/clear.js', {
+      success:  function() {
+        setTimeout(function() {
+          jQuery.post('/cart/add.js', {
+          quantity: 1,
+          id: variant_id, 
+            success: function(){
+             location.reload(); 
+            }
+          })
+        }, 1200);  
+      }
+     })
+    }
+    else {
+     jQuery.post('/cart/add.js', {       
+       quantity: 1,
+       id: variant_id, 
+       success: function(){
+         setTimeout(function() {
+          location.reload(); 
+          }, 1000);  
+
+       }
+     }) 
+    }
+})
+}); 
+
+ </script>
