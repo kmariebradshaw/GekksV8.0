@@ -6,10 +6,10 @@
                 <p class="nm" id="pitch-product"></p>
                 <p class="nm" id="pitch-variant"></p>
                   <div class="fw button atc" id="add-single"><span>add to cart</span></div>
-                  <div class="fw button atc all-pairs" style="display: none;"><span>flats</span></div>
-                  <div class="fw button atc all-pairs" style="display: none;"><span>sneakers</span></div>
-                  <div class="fw button atc all-pairs" style="display: none;"><span>loafers</span></div>
-                  <div class="fw button atc all-pairs" style="display: none;"><span>heels</span></div>
+                  <div class="fw button atc all-pairs" data-variant-small="18247857668" data-variant-medium="18247857860" data-variant-large="18247857988" style="display: none;"><span>flats</span></div>
+                  <div class="fw button atc all-pairs" data-variant-small="18250940100" data-variant-medium="18250940804" data-variant-large="18250941956" style="display: none;"><span>sneakers</span></div>
+                  <div class="fw button atc all-pairs" data-variant-small="18250901828" data-variant-medium="18250902084" data-variant-large="18250902276" style="display: none;"><span>loafers</span></div>
+                  <div class="fw button atc all-pairs" data-variant-small="702715494417" data-variant-medium="702715559953" data-variant-large="702715625489" style="display: none;"><span>heels</span></div>
             </div>
           </div>
         </div>
@@ -40,6 +40,7 @@ $(document).ready(function() {
   var black = 0
   var show = false
   var upgrade = false
+  var choose = false 
 // calculates the current cart quantities by product id
   {% for item in checkout.line_items %}
     {% assign variant_title = item.variant.title %}
@@ -273,14 +274,13 @@ $(document).ready(function() {
       product_price = "$49.00"
       product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/WCP2_2000x2000.jpg?v=1529529690"
        if (flats == 1 && wloafers == 1 ) {
-        pitch = "Upgrade to a Closet Pack and receive <span>$5 off</span> and a pair of Gekks for sneakers!"
+        pitch = "Upgrade to a Closet Pack and receive<br> <span>$5 off</span> and a pair of Gekks for sneakers!"
       }
-      // Upgrade to a Closet Pack (includes sneakers) and receive $5 Off 
       else if (flats == 1 && wsneakers == 1 ) {
-        pitch = "Upgrade to a Closet Pack and receive<br> <b>$5 off</b> and a pair of Gekks for loafers!"
+        pitch = "Upgrade to a Closet Pack and receive<br> <span>$5 off</span> and a pair of Gekks for loafers!"
       }
       else if (wsneakers  == 1 && wloafers == 1 ) {
-        pitch = "Upgrade to a Closet Pack and receive <b>$5 off</b> and a pair of Gekks for sneakers!'"
+        pitch = "Upgrade to a Closet Pack and receive<br> <span>$5 off</span> and a pair of Gekks for sneakers!'"
       }
 
      if (medium >= 1) {
@@ -299,10 +299,12 @@ $(document).ready(function() {
     }
   }
   else if (total == 3) {
+    console.log(total)
     if (womenscpak == 0 && menscpak == 0) {
       product_title = "Quick Add a Pair"
       product_price = "for $18.00"
       pitch = "Add one more pair and receive <span>free shipping</span>!"
+      choose = true 
       if (womens == true) {
         product_image = "//cdn.shopify.com/s/files/1/0424/0893/products/WCP2_2000x2000.jpg?v=1529529690"
         if (medium >= 1) {
@@ -322,30 +324,56 @@ $(document).ready(function() {
     }
   }
    $('#pitch').html(pitch); 
-   console.log(variant_id)
    $('#pitch-photo').attr("src", product_image); 
    $('#pitch-product').html('<span>' + product_title + " " + '</span>' + product_price); 
    $('#pitch-variant').html(product_variant + " | Quantity: 1")
    if (show == true ) {
+    // if (!sessionStorage.upsellAttempted) {
      $('.checkout-upsell').insertBefore(".section--contact-information").show();
+      // sessionStorage.upsellAttempted = 1    
+
+    // }
    }
  }
 
 $('.atc').click(function() {
    $(this).addClass('loading');
-       $(this).text('adding');
-       if (upgrade == true) {
-        jQuery.post('/cart/clear.js')
-       }
-       jQuery.post('/cart/add.js', {
-         quantity: 1,
-         id: variant_id, 
-         success: function(){
-           setTimeout(function(){
+   $(this).text('adding');
+   if (choose == true) {
+    if (medium >= 1) {
+      variant_id = $(this).attr("data-variant-medium")
+    }
+    else if (large >= 1 ) {
+      variant_id = $(this).attr("data-variant-large")
+    }
+    else if (small >= 1) {
+      variant_id = $(this).attr("data-variant-small")
+    }
+   }
+   if (upgrade == true) {
+    jQuery.post('/cart/clear.js', {
+      success:  function() {
+        setTimeout(function() {
+          jQuery.post('/cart/add.js', {
+          quantity: 1,
+          id: variant_id, 
+            success: function(){
              location.reload(); 
-           }, 1000);          
-         }
-       }) 
+            }
+          })
+        }, 1000);  
+      }
+     })
+    }
+    else {
+     jQuery.post('/cart/add.js', {
+       quantity: 1,
+       id: variant_id, 
+       success: function(){
+           location.reload(); 
+       }
+     }) 
+    }
 })
 }); 
 
