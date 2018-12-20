@@ -28,14 +28,30 @@
           <img src="{{'4stars.png' | asset_url}}" alt="4" />         
           {% endif%}
         </div>
-        <div id="orankl-summary-thumbnail" style="display:inline-block; vertical-align: bottom">
-          <div class="orankl-summary" data-product-key="{{ product.id }}" style="text-align:left;padding-bottom:0px">
-            <style scoped>
-              #orankl-summary-thumbnail .orankl-summary span { display: inline-block; text-transform: lowercase !important; font-weight: 900 !important;margin-left:0 !important;cursor:auto!important;color: #6DCDB8;  }
-              #orankl-summary-thumbnail .orankl-summary .icon-orankl-star { display: none !important; font-size: 22px !important; width: 26px !important; }
-            </style>
-          </div>
-        </div>
+        <span class="text-green vam">
+        {% case product.title %}
+          {% when "Ballet Flats" %}
+            1224
+          {% when "Women's Closet Pack" %}
+            540
+          {% when "Heels & Wedges" %}
+            87
+          {% when "Men's Closet Pack" %}
+            109
+          {% when "Loafers & Slip-Ons" %}
+            {% if product.collections.first.title == "Women" %}
+              323
+            {% else %}
+              124
+            {% endif %}
+          {% when "Sneakers & Lace-Ups" %}
+            {% if product.collections.first.title == "Women" %}
+              219
+            {% else %}
+              76
+            {% endif %}
+        {% endcase %}
+        </span>
        </div>
      </a>
     </div>  
@@ -49,7 +65,7 @@
   
   {% if product.available and product.variants.size > 1 and product.type != "Gift Card"%}
     {% include 'swatch' with 'Color' %}
-  {% endif %}
+  {% endif %} 
   {% if product.available %}
     <meta itemprop="priceCurrency" content="{{ shop.currency }}">
     <link itemprop="availability" href="http://schema.org/InStock">
