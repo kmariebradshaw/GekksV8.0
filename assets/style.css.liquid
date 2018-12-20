@@ -867,13 +867,25 @@ footer input::placeholder { color: #fff; }
 .current-switch h3 div { color: #545359; text-decoration: underline;}  
 #shop-w { background-image: url("{{'shop-women.jpg' | asset_url}}"); background-position: center; } 
 #shop-m { background-image: url("{{'shop-men1.jpg' | asset_url }}"); background-position: bottom center; } 
-#lifestyle-w { background-image: url("{{'heels-lifestyle.jpg' | asset_url}}"); background-position: right; } 
-#lifestyle-m { background-image: url("{{'sneakers-lifestyle.jpg' | asset_url}}"); background-position: center; } 
-#shop-grid a div { 
+/*#lifestyle-w { background-image: url("{{'heels-lifestyle.jpg' | asset_url}}"); background-position: right; } 
+*/
+/*#lifestyle-m { background-image: url("{{'sneakers-lifestyle.jpg' | asset_url}}"); background-position: center; } 
+*/#shop-grid a div { 
   display: inline-flex !important; 
   align-items: center; 
   cursor: pointer;
 }
+#lifestyle-m img {
+      width: 150%;
+    height: 500px;
+    object-position: center;
+}
+#lifestyle-w img {
+    width: 150%;
+    height: 500px;
+    object-position: -100px center;
+}
+.of { object-fit: cover; }
 #shop-grid a div h2 { 
   width: 100%; 
   text-align: center; 
