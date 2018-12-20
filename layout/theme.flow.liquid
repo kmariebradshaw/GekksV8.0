@@ -101,13 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
     {% include 'head-fb-open-graph' %}
     {{ content_for_header }}
-    <!-- orankl js -->
-    {% if template contains 'product' or template contains 'reviews' %} 
-    <script type="text/javascript">
-      (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://www.orankl.com/javascript?store_key=dc8e48a7-b20c-4472-b296-32446a08b070";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
-    </script> 
-    {% endif %}
-    <!-- end orankl js -->
+   
     {% comment %}Klaivyo{% endcomment %}
     <script type="text/javascript">
   var _learnq = _learnq || [];
