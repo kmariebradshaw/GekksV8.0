@@ -57,8 +57,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {{ 'style.css' | asset_url | stylesheet_tag }}
     <script type="text/javascript" src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=ueKycW"></script>
     <script src="{{'klaviyo.js' | asset_url}}" ></script>
-    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
-    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ 'jquery.min.js' | asset_url }}" ></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js" async=""></script>
     <script src="{{ 'custom.jquery.js' | asset_url }}" defer></script>
     <script src="{{  'main.js' | asset_url }}" defer></script>
     <script src="{{  'option_selection.js' | shopify_asset_url }}" defer></script>
@@ -66,8 +66,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="{{ 'modernizr.min.js' | asset_url }}" defer></script>
     <script src="{{ 'handlebars.min.js' | asset_url }}" defer></script>
     <script src="{{ 'jquery.easing.1.3.min.js' | asset_url }}" defer></script>
-         <script src="{{'jquery.mobile.custom.min.js' | asset_url}}"></script> 
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="{{'jquery.mobile.custom.min.js' | asset_url}}" defer></script> 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" defer />
+<script src="{{'lazysizes.min.js' | asset_url}}" async=""></script>
 
    <script src="https://scripts.sirv.com/sirv.js" defer></script>
 
@@ -215,9 +216,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 {% endif %}
               {% endfor %}
               <div id="nav-social" class="accent-padding">
-                <a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'Instagram_darkgray.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
-                <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'facebook_darkgrey.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
-                <a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest_darkgrey.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
+                <a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img data-src="{{'Instagram_darkgray.png' | asset_url}}" class="lazyload" alt="Instagram" target="_blank"/></a> 
+                <a href="https://www.facebook.com/GekksLowCutLiners"><img data-src="{{'facebook_darkgrey.png' | asset_url}}" class="lazyload" alt="Facebook" target="_blank"/></a>
+                <a href="https://www.instagram.com/gekks_go_sockless/"><img data-src="{{'pinterest_darkgrey.png' | asset_url}}" class="lazyload" alt="Pinterest" target="_blank"/></a> 
               </div>
             </ul>
 
@@ -246,9 +247,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <footer class="background-green">
         <div class="social-icons">
-          <a href="https://www.instagram.com/gekks_go_sockless/?hl=en" target="_blank""><img src="{{'ig.png' | asset_url}}" alt="Instagram" /></a>
-          <a href="https://www.facebook.com/GekksLowCutLiners/" target="_blank"><img src="{{'fb.png' | asset_url}}" alt="Facebook" /></a>
-          <a href="https://www.pinterest.com/gekksliners/" target="_blank"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" /></a>
+          <a href="https://www.instagram.com/gekks_go_sockless/?hl=en" target="_blank""><img data-src="{{'ig.png' | asset_url}}" class="lazyload" alt="Instagram" /></a>
+          <a href="https://www.facebook.com/GekksLowCutLiners/" target="_blank"><img data-src="{{'fb.png' | asset_url}}" alt="Facebook" class="lazyload" /></a>
+          <a href="https://www.pinterest.com/gekksliners/" target="_blank"><img data-src="{{'pinterest.png' | asset_url}}" alt="Pinterest" class="lazyload" /></a>
       </div>
         <div id="footer-nav">
           <div id="nav-wrap">
@@ -315,5 +316,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   duration: 600,
 })
   </script>
+
   </body>
 </html>
