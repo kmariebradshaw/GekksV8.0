@@ -470,14 +470,14 @@ body #intro-bubbles li {
                     <div class="fbutton"><span>let's get started</span></div></div>
             </section>
             <section id="step-two-five" style="display:none;">
-                <div> <img class="sgblogo" src="{{'jlogo.png' | asset_url}}" alt="Gekks" />
+                <div> <img class="sgblogo lazyload" data-src="{{'jlogo.png' | asset_url}}" alt="Gekks"  />
                     <h1>let's start with some basics</h1>
                     <h3>what will you be shopping for?</h3>
                     <ul>
-                        <li class="sbutton woman" onClick="ga('send', 'event', 'Education', 'Gender', 'Woman');"><img src="{{'Icon-woman.svg' | asset_url}}" />
+                        <li class="sbutton woman" onClick="ga('send', 'event', 'Education', 'Gender', 'Woman');"><img data-src="{{'Icon-woman.svg' | asset_url}}" class="lazyload"/>
                             <div>women's</div>
                         </li>
-                        <li class="sbutton man" onClick="ga('send', 'event', 'Education', 'Gender', 'Man');"><img src="{{'Icon-man.svg' | asset_url}}" />
+                        <li class="sbutton man" onClick="ga('send', 'event', 'Education', 'Gender', 'Man');"><img data-src="{{'Icon-man.svg' | asset_url}}" class="lazyload" />
                             <div>men's</div>
                         </li>
                     </ul>
@@ -490,7 +490,7 @@ body #intro-bubbles li {
                 </div>
             </section>
             <section id="step-two" class="prob-select-first" style="display:none;">
-                <div> <img class="sgblogo" src="{{'jlogo.png' | asset_url}}" alt="Gekks" />
+                <div> <img class="sgblogo lazyload" data-src="{{'jlogo.png' | asset_url}}" alt="Gekks" />
                     <h1 style="margin: 0 2%;">tap your sockless <br class="s_w_b" style="display: none;">style problems</h1>
                     <h3 style="margin: 0 9%;">select as many as you'd like</h3>
                     <ul>
@@ -510,7 +510,7 @@ body #intro-bubbles li {
                     <div class="flip-container">
                       <div class="flipper">
                         <div class="front">
-                          <li class="sbutton slip flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Slip');"><img src="{{'Icon-sock-adjust.png' | asset_url}}" />
+                          <li class="sbutton slip flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Slip');"><img data-src="{{'Icon-sock-adjust.png' | asset_url}}" class="lazyload"/>
                           <div>constant sock adjustment</div>
                           your "no slip" no-shows slip
                           <br>down your heel.</li>
@@ -524,7 +524,7 @@ body #intro-bubbles li {
                     <div class="flip-container">
                       <div class="flipper">
                         <div class="front">
-                        <li class="sbutton lost flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Search');"><img src="{{'Icon-sock-drawer.png' | asset_url}}" />
+                        <li class="sbutton lost flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Search');"><img data-src="{{'Icon-sock-drawer.png' | asset_url}}" class="lazyload" />
                             <div>searching your sock drawer</div>your socks aren't organized, don't lie.</li>
                         </div>
                         <div class="back-card">
@@ -537,7 +537,7 @@ body #intro-bubbles li {
                     <div class="flip-container">
                       <div class="flipper">
                         <div class="front">
-                        <li class="sbutton heel flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Blister');"><img src="{{'Icon-blister.png' | asset_url}}" />
+                        <li class="sbutton heel flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Blister');"><img data-src="{{'Icon-blister.png' | asset_url}}" class="lazyload" />
                             <div>heel blisters</div>your heels look like you got attacked
                             <br>by a 3-inch tall bear.</li>
                             </div>
@@ -579,17 +579,17 @@ body #intro-bubbles li {
                 </div>
             </section>
             <section id="step-four" style="display:none;">
-                <div> <img class="sgblogo" src="{{'jlogo.png' | asset_url}}" alt="Gekks" />
+                <div> <img class="sgblogo lazyload" data-src="{{'jlogo.png' | asset_url}}" alt="Gekks" />
                     <h3>almost done...</h3>
                     <h1>what shoe styles do you like to look sockless in?</h1>
                     <ul>
-                        <li class="sbutton flats" onClick="ga('send', 'event', 'Education', 'Style', 'Flats');"><img src="{{'Gekks-Icon-Flats_NEW.png' | asset_url}}" />
+                        <li class="sbutton flats" onClick="ga('send', 'event', 'Education', 'Style', 'Flats');"><img data-src="{{'Gekks-Icon-Flats_NEW.png' | asset_url}}" class="lazyload"/>
                         <div>flats</div>ballet flats, mary jane, etc.</li>
-                        <li class="sbutton heels" onClick="ga('send', 'event', 'Education', 'Style', 'Heels');"><img src="{{'Gekks-Icon-Heel_NEW.png' | asset_url}}" />
+                        <li class="sbutton heels" onClick="ga('send', 'event', 'Education', 'Style', 'Heels');"><img data-src="{{'Gekks-Icon-Heel_NEW.png' | asset_url}}" class="lazyload"/>
                         <div>heels</div>heels, wedges, pumps, etc.</li>
-                        <li class="sbutton loaf" onClick="ga('send', 'event', 'Education', 'Style', 'Loafer');"><img src="{{'Gekks-Icon-Loafer_NEW.png' | asset_url}}" />
+                        <li class="sbutton loaf" onClick="ga('send', 'event', 'Education', 'Style', 'Loafer');"><img data-src="{{'Gekks-Icon-Loafer_NEW.png' | asset_url}}" class="lazyload"/>
                           <div>loafers & slip-ons</div>boat shoes, lace-less shoes</li>
-                        <li class="sbutton sn" onClick="ga('send', 'event', 'Education', 'Style', 'Sneaker');"><img src="{{'Gekks-Icon-Sneaker_NEW.png' | asset_url}}" />
+                        <li class="sbutton sn" onClick="ga('send', 'event', 'Education', 'Style', 'Sneaker');"><img data-src="{{'Gekks-Icon-Sneaker_NEW.png' | asset_url}}" class="lazyload"/>
                           <div>sneakers & lace-ups</div>tennis shoes, shoes with laces, etc.</li>
                     </ul>
                     <div class="errors-s"></div>
@@ -627,10 +627,10 @@ body #intro-bubbles li {
     
                     <center>
                     <div>
-                     <img src="{{'simple.png' | asset_url}}" alt="Real Simple" class="pres-log" style="margin-left: 0;"/>
-                    <img src="{{'maxim.png' | asset_url}}" alt="Maxim" class="pres-log" />
-                    <img src="{{'vogue.png' | asset_url}}" alt="Vogue" class= "pres-log" />
-                    <img src="{{'BuzzFeed.png' | asset_url}}" alt="BuzzFeed" class="pres-log" />
+                     <img data-src="{{'simple.png' | asset_url}}" alt="Real Simple" class="pres-log lazyload" style="margin-left: 0;"/>
+                    <img data-src="{{'maxim.png' | asset_url}}" alt="Maxim" class="pres-log lazyload" />
+                    <img data-src="{{'vogue.png' | asset_url}}" alt="Vogue" class= "lazyload pres-log" />
+                    <img data-src="{{'BuzzFeed.png' | asset_url}}" alt="BuzzFeed" class="pres-log lazyload" />
                     </div>
                     </center>
                     </div>
