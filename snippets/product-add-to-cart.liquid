@@ -110,39 +110,39 @@
          {% case product.title %}
           {% when "Ballet Flats" %}
             {% for image in select.images offset: 103 limit: 15 %}
-             <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+             <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
             {% endfor %}
           {% when "Loafers & Slip-Ons" %}
            {% if product.collections.first.title ==  "Women" %} 
             {% for image in select.images offset: 118 limit: 6 %}
-              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
             {% endfor %}
             {% else %}
                {% for image in select.images offset: 95 limit: 7 %}
-               <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+               <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload"/></div>
                {% endfor %}
             {% endif %}
           {% when "Sneakers & Lace-Ups" %}
            {% if product.collections.first.title == "Women" %}
             {% for image in select.images offset: 125 limit: 7%}
-              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
             {% endfor %}
           {% else %}
             {% for image in select.images offset: 87 limit: 8 %}
-              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
             {% endfor %}             
           {% endif %}
           {% when "Women's Closet Pack" %}
             {% for image in select.images offset: 132 limit: 9 %}
-              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload"/></div>
             {% endfor %}  
             {% when "Men's Closet Pack" %}
             {% for image in select.images offset: 141 limit: 8 %}
-              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
             {% endfor %}                               
             {% when "Heels & Wedges" %}
             {% for image in select.images offset: 174 limit: 9 %}
-              <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
             {% endfor %} 
           {% endcase %}
        </div>
