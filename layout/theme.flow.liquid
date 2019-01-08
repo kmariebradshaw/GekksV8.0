@@ -174,34 +174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
     
             
-            <ul class="mobile-nav1 accent-padding" style="display: none;">
-              {% for link in linklists.mobile-nav-1.links limit:9 %}
-                {% assign child_list_handle = link.title | handleize %}
-                  {% if linklists[child_list_handle].links != blank %}
-                    <li><a class="collection-prod" href="{{ link.url }}">{{ link.title | escape }} <span>></span></a>
-                      <ul class="childlink accent-padding" style="display: none;">
-                      {% for childlink in linklists[child_list_handle].links %}
-                        <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
-                      {% endfor %}
-                      </ul>
-                    </li> 
-              {% elsif link.title == "Log In" %}
-               <li style="margin-top: 30px;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-              {% else %}
-                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-              {% endif %}
-              {% endfor %}
-
-              {% for link in linklists.mobile-nav-1.links offset:9 limit:1 %}
-                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-              {% endfor %} 
          
-              <div id="nav-social" class="accent-padding">
-              <a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'Instagram_darkgray.png' | asset_url}}" alt="Instagram" target="_blank"/></a> 
-              <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'facebook_darkgrey.png' | asset_url}}" alt="Facebook" target="_blank"/></a>
-              <a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest_darkgrey.png' | asset_url}}" alt="Pinterest" target="_blank"/></a> 
-            </div>
-            </ul>
           </nav>
             <div class="customer-portal">
               {% if customer %}
@@ -223,12 +196,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
     
-   
     <footer class="background-green">
         <div class="social-icons">
-          <a href="https://www.instagram.com/gekks_go_sockless/?hl=en" target="_blank""><img src="{{'ig.png' | asset_url}}" alt="Instagram" /></a>
-          <a href="https://www.facebook.com/GekksLowCutLiners/" target="_blank"><img src="{{'fb.png' | asset_url}}" alt="Facebook" /></a>
-          <a href="https://www.pinterest.com/gekksliners/" target="_blank"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest" /></a>
+          <a href="https://www.instagram.com/gekks_go_sockless/?hl=en" target="_blank""><img data-src="{{'ig.png' | asset_url}}" class="lazyload" alt="Instagram" /></a>
+          <a href="https://www.facebook.com/GekksLowCutLiners/" target="_blank"><img data-src="{{'fb.png' | asset_url}}" alt="Facebook" class="lazyload" /></a>
+          <a href="https://www.pinterest.com/gekksliners/" target="_blank"><img data-src="{{'pinterest.png' | asset_url}}" alt="Pinterest" class="lazyload" /></a>
       </div>
         <div id="footer-nav">
           <div id="nav-wrap">
