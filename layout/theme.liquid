@@ -202,18 +202,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
                 {% endif %}
               {% endfor %}
-              <li><a href="#" id="nav-more">more</a></li>
+              <li><a href="#" id="nav-more" class="collection-prod">more<span>◯</span></a>
+              <ul class="childlink accent-padding" style="display: none;">
               {% for link in linklists.mobile-nav-1.links offset: 3 %}
                 {% if link.title == "Login" %}
                   {% if customer %}
-                    <li class="nav-more" style="display: none;"><a href="/account">View Account</a></li>
+                    <li class="nav-more"><a href="/account">View Account</a></li>
                   {% else %}
-                    <li class="nav-more" style=" display: none;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                    <li class="nav-more"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
                   {% endif %}
                 {% else %}
-                  <li class="nav-more" style=" display: none;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                  <li class="nav-more"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
                 {% endif %}
               {% endfor %}
+              </ul>
+              </li>
               <div id="nav-social" class="accent-padding">
                 <a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img data-src="{{'Instagram_darkgray.png' | asset_url}}" class="lazyload" alt="Instagram" target="_blank"/></a> 
                 <a href="https://www.facebook.com/GekksLowCutLiners"><img data-src="{{'facebook_darkgrey.png' | asset_url}}" class="lazyload" alt="Facebook" target="_blank"/></a>

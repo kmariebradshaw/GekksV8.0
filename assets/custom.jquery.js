@@ -21,10 +21,10 @@ $('#hamburger-close span').click(function() {
 
   $('.index-sections, main, header, footer, #banner-cta, .modal').removeClass('darken')
 })
-$('#nav-more').click(function() {
-  $(this).hide(); 
-  $('.nav-more').show(); 
-}); 
+// $('#nav-more').click(function() {
+//   $(this).hide(); 
+//   $('.nav-more').show(); 
+// }); 
 $('.collection-prod').click(function() {
   event.preventDefault();
   $(this).siblings('.childlink').slideToggle();
