@@ -30,7 +30,7 @@
 $(document).ready(function(){ 
   var flowFinish = readCookie('flowFinish')
   var gekksVisit = readCookie('gekksVisit')
-  var newsletterModal = false
+  var newsletterModal = readCookie('newsletterModal')
   if ((flowFinish) && (gekksVisit) && !(newsletterModal) && $('.mobile-nav1:visible').length == 0){
     setTimeout(function(){
       $('.modal').removeClass('darken')
