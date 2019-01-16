@@ -8,12 +8,35 @@ $(document).ready(function(){
         $('.priceu').show();
       {% endif %}
     {% endif %}
-    // on checkout 
-      // determine code
-      // auto apply code 
-  } 
-  else {
-    console.log('never signed up')
+      var total = '{{checkout.item_count}}';
+      var womenscpak = 0;  
+      {% for item in checkout.line_items %}
+        {% case item.product.id %}
+          {% when 8081586504 %}
+            womenscpak = '{{item.quantity}}'
+        {% endcase %}
+      {% endfor %}
+      if (womenscpak == 0 ) {
+        if (total >= 3 && womenscpak == 0) {
+          jQuery.get('/discount/GKKM12')
+        }
+      }
+      else {
+        if (total - womenscpak == 0) {
+          jQuery.get('/discount/GKKMGWC')
+        }
+        else {
+          console.log("GWC" + (womenscpak) + "S" + (total - womenscpak))
+          jQuery.get('/discount/GWC' + (womenscpak) + "S" + (total - womenscpak))
+        }
+      } 
   }
 }); 
 </script>
+
+
+
+
+
+
+
