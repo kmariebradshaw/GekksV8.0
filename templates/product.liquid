@@ -36,7 +36,7 @@
         </div>
       {% endunless %} 
       {% if product.type == "Closet Pack"%}
-      <div class="mo-plus fw" id="moprice"><h3 class="tac nmb">{{ product.price | money }} <span style="text-decoration: line-through; color: gray;">{% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}{{ product.compare_at_price | money }}{% endif %}</span></h3>
+      <div class="mo-plus fw" id="moprice"><h3 class="tac nmb">{{ product.price | money }} <span style="text-decoration: line-through; color: gray;">{% if productq.price < product.compare_at_price_max and product.type == "Closet Pack" %}{{ product.compare_at_price | money }}{% endif %}</span></h3>
         {% if product.title == "Women's Closet Pack" %}
           <p class="subscript tac nmt">Save $5 when you buy a closet pack!</p>
         {% elsif product.title == "Men's Closet Pack" %}
@@ -44,12 +44,17 @@
         {% endif %}
       </div>
       {% endif %}
-      <div class="mo-plus fw priceu"><h3 class="tac nmb">
+      <div class="mo-plus fw">
+        <div class="priceu">
         {% if product.title == "Women's Closet Pack" %}
-          $36.00 <span style="text-decoration: line-through; color: gray;">{% if product.price < product.compare_at_price_max %}{{ product.compare_at_price | money }}{% endif %}</span></h3>
+          <h3 class="tac nmb">$36.00 <span style="text-decoration: line-through; color: gray;">{% if product.price < product.compare_at_price_max %}$49.00{% endif %}</span></h3>
+          <p class="nmt subscript tac">discount applied at checkout</p>
         {% else %}
-          $18.00 </h3><p class="subscript tac nm">or</p><h3 class="tac nmt">$12.00 <span class="subscript" style="font-weight: 300;"s>(when you buy 3 or more pairs)</span></h3>
-       {% endif %}
+          <div class="flex-container-no">
+          <h3 class="tar" style="width: 56%; margin-right: 10px">$18.00 <span class="subscript" style="font-weight: 300; margin: 0 5px;">or</span> $12.00 </h3><span class="subscript" style="font-weight: 300;">when you buy 3 <br>or more pairs</span>
+        </div>
+          {% endif %}
+        </div>
       </div>
       <img data-src="{{ product.featured_image.src | product_img_url: '2000x2000' }}" alt="{{ product.title }}" id="featured-image" class="lazyload"/>
       {% unless product.title == "Gift Cards" %}
