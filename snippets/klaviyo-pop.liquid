@@ -41,6 +41,8 @@ $(document).ready(function(){
           ignore_cookie: true,
           success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you</h2><h3>Keep an eye out for savings!</h3></div></div>",
      success: function ($form) {
+          createCookie("emailSignUp", "popup", 14)
+
       $('#success-close').show();
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
       $form.find('.hide_on_submit').hide();
@@ -94,6 +96,8 @@ $(document).ready(function(){
               ignore_cookie: true, 
               delay_seconds: 0.1,
               success: function ($form) {
+                          createCookie("emailSignUp", "exit", 14)
+
               $form.find('.hide_on_submit').hide();
               ga('send', 'event', 'Acquisition', 'Exit Offer', 'Website');
               },

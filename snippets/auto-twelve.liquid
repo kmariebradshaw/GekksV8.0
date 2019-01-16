@@ -1,0 +1,19 @@
+<script>
+$(document).ready(function(){
+  var emailSignUp = readCookie('emailSignUp');
+  if (emailSignUp) {
+    {% if template contains 'product' %}
+      {% if product.title != "Men's Closet Pack" %}
+        $('.price, body #moprice').attr('style', 'display: none !important;')
+        $('.priceu').show();
+      {% endif %}
+    {% endif %}
+    // on checkout 
+      // determine code
+      // auto apply code 
+  } 
+  else {
+    console.log('never signed up')
+  }
+}); 
+</script>
