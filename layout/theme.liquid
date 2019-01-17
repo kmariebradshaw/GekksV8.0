@@ -73,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    <script src="https://scripts.sirv.com/sirv.js" defer></script>
 
     {% include 'ajax-cart-template' %}
-
+    {% include 'auto-twelve' %}
     <script async>
       jQuery(function($) {
         ajaxCart.init({
@@ -309,15 +309,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     <script>$("#referafriend").click(function(){/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?document.getElementById("k_id_modal").style.display="inline-block":document.getElementById("desktop_refer_k").style.display="inline-block"});</script>
 
-    <script>$(document).ready(function(){checkForDiscount();});
 
-  </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({
   duration: 600,
 })
   </script>
+<input class="js-form-discount" type="hidden" name="discount" value="" style="display: none;" >
 
   </body>
 </html>

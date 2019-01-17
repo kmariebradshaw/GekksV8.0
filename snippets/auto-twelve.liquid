@@ -1,0 +1,41 @@
+<script>
+$(document).ready(function(){
+  var emailSignUp = readCookie('emailSignUp');
+  if (emailSignUp) {
+    {% if template contains 'product' %}
+      {% if product.title != "Men's Closet Pack" %}
+        $('.price, body #moprice').attr('style', 'display: none !important;')
+        $('.priceu').show();
+      {% endif %}
+    {% endif %}
+      var total = '{{checkout.item_count}}';
+      var womenscpak = 0;  
+      {% for item in checkout.line_items %}
+        {% case item.product.id %}
+          {% when 8081586504 %}
+            womenscpak = '{{item.quantity}}'
+        {% endcase %}
+      {% endfor %}
+      if (womenscpak == 0 ) {
+        if (total >= 3 && womenscpak == 0) {
+          jQuery.get('/discount/GKKM12')
+        }
+      }
+      else {
+        if (total - womenscpak == 0) {
+          jQuery.get('/discount/GKKMGWC')
+        }
+        else {
+          jQuery.get('/discount/GWC' + (womenscpak) + "S" + (total - womenscpak))
+        }
+      } 
+  }
+}); 
+</script>
+
+
+
+
+
+
+

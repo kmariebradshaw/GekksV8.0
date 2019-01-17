@@ -367,25 +367,6 @@ function countdownActive(){
    }, 15000); 
  }
  
-
-function checkForDiscount() {
-$discountInput = $("input.js-form-discount");
-$coupon = getParameterByName('coupon');
-
-if($coupon){
-  createCookie('discountCode', $coupon, { expires: 2 });
-}
-
-$discountCode = readCookie('discountCode');
-
-
-if($discountCode){
-  if ($discountInput.length > 0) { 
-    $discountInput.val( $discountCode );
-  }
-} 
-}; 
-
 var $animation_elements = $('.review-list');
 var $window = $(window);
 
@@ -415,7 +396,6 @@ check_if_in_view()
 
 $(document).ready(function() {
   check_if_in_view();
-checkForDiscount()
 })
 
 

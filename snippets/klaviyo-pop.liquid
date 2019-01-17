@@ -8,10 +8,9 @@
       <div class="two-thirds accent-padding">
         <p class="nmt klaviyo_header_close tar clickable" style="font-size: 13pt;"><span>✕</span></p>
        <div class="accent-padding border-white">
-          <h3 class="text-green nm">first order</h3>
-          <h2 class="nm">discount</h2>
+          <h2 class="text-green nm">$12 Gekks!</h2>
         </div>
-        <p class="hide_on_submit"><span class="text-green">Enter your information to instantly unlock a new customer coupon.</span></p>
+        <p class="hide_on_submit"><span class="text-green">Enter your information to instantly unlock a discount for $12 Gekks</span></p>
         
         <input type="email" id="newsletter_popup_$email" class="newsletter_email hide_on_submit" name="email">
         <div class="klaviyo_form_actions hide_on_submit">
@@ -39,8 +38,10 @@ $(document).ready(function(){
         KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
           delay_seconds: 0,
           ignore_cookie: true,
-          success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you</h2><h3>Keep an eye out for savings!</h3></div></div>",
+          success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you!</h2><h3>You've unlocked $12 Gekks when you purchase 3 or more pairs.</h3><p class='tac'>Discount will be automatically applied in checkout</p></div></div>",
      success: function ($form) {
+          createCookie("emailSignUp", "popup", 14)
+
       $('#success-close').show();
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
       $form.find('.hide_on_submit').hide();
@@ -94,6 +95,8 @@ $(document).ready(function(){
               ignore_cookie: true, 
               delay_seconds: 0.1,
               success: function ($form) {
+                          createCookie("emailSignUp", "exit", 14)
+
               $form.find('.hide_on_submit').hide();
               ga('send', 'event', 'Acquisition', 'Exit Offer', 'Website');
               },
