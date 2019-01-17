@@ -66,7 +66,7 @@
 
       {% endunless %}
                  <div class=" fw ndo-plus">
-        <div class="priceu">
+        <div class="priceu" style="display: none;">
         {% if product.title == "Women's Closet Pack" %}
           <h3 class="tac nmb">$36.00 <span style="text-decoration: line-through; color: gray;">{% if product.price < product.compare_at_price_max %}$49.00{% endif %}</span></h3>
         {% else %}
@@ -120,7 +120,7 @@
   {% else %}
     <p class="subscript clickable" id="size-chart"><img src="{{'ruler.png' | asset_url}}" class="ruler-icon"/>sizing chart</p>
   {% endif %}
-  <p class="priceu subscript" id="discount-at-checkout"><span>*discount applied at checkout</span></p>
+  <p class="priceu subscript" id="discount-at-checkout" style="display: none;"><span>*discount applied at checkout</span></p>
   <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="background-green text-white"><span>add to cart</span></button>
   {% unless product.title == "Select" or product.title == "Gift Cards" %}
     {% assign select = collections.all.products[6]%}
