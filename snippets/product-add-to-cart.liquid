@@ -30,6 +30,12 @@
           <img src="{{'4stars.png' | asset_url}}" alt="4" />         
           {% endif%}
         </div>
+
+
+
+
+
+
         <span class="text-green vam">
         {% case product.title %}
           {% when "Ballet Flats" %}
@@ -57,7 +63,19 @@
        </div>
      </a>
     </div>  
+
       {% endunless %}
+                 <div class=" fw ndo-plus">
+        <div class="priceu">
+        {% if product.title == "Women's Closet Pack" %}
+          <h3 class="tac nmb">$36.00 <span style="text-decoration: line-through; color: gray;">{% if product.price < product.compare_at_price_max %}$49.00{% endif %}</span></h3>
+        {% else %}
+          <div class="flex-container-no">
+          <h3 class="" style=" margin-right: 10px">$18 <span class="subscript" style="font-weight: 300; margin: 0 5px;">or</span> $12 </h3><span class="subscript" style="font-weight: 300;">when you buy 3 <br>or more pairs</span>
+        </div>
+          {% endif %}
+        </div>
+      </div>
       {% else %}
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">                          
         <link itemprop="availability" href="http://schema.org/OutOfStock">
