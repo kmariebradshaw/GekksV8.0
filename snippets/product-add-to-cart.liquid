@@ -67,6 +67,8 @@
       {% endunless %}
                  <div class=" fw ndo-plus">
         <div class="priceu" style="display: none;">
+                    <img src="{{'winterspecial.png' | asset_url}}" style="width: 300px; display: block;" />
+
         {% if product.title == "Women's Closet Pack" %}
           <h3 class="tac nmb">$36.00 <span style="text-decoration: line-through; color: gray;">{% if product.price < product.compare_at_price_max %}$49.00{% endif %}</span></h3>
         {% else %}
