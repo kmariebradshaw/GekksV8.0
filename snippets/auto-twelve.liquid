@@ -1,7 +1,5 @@
 <script>
 $(document).ready(function(){
-  var emailSignUp = readCookie('emailSignUp');
-  if (emailSignUp) {
     {% if template contains 'product' %}
       {% if product.title != "Men's Closet Pack" %}
         $('.price, body #moprice').attr('style', 'display: none !important;')
@@ -9,7 +7,6 @@ $(document).ready(function(){
       {% endif %}
     {% endif %}
       if ($(".section--contact-information").length || $('.section--shipping-method').length) {
-      console.log('hit')
       var total = '{{checkout.item_count}}';
       var womenscpak = 0;  
       {% for item in checkout.line_items %}
@@ -32,7 +29,6 @@ $(document).ready(function(){
         }
       } 
       }
-  }
 }); 
 </script>
 
