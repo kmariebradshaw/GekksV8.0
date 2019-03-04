@@ -1,4 +1,4 @@
-<div class="modal" id="newsletter_popup2" style="display:none;">
+<div class="modal modal-newsletter" id="newsletter_popup2" style="display:none;">
   <div class="background-lightgray tac" id="container-news">
   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
     <input type="hidden" name="g" value="Ai9wnf">
@@ -25,7 +25,68 @@
     <div class="success_message"></div>
   </div>
 </div> 
- 
+
+ <!-- <div class="modal modal-newsletter" id="newsletter_popup3" style="display: none;">
+  <div class="background-green tac" id="container-news">
+    <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
+      <input type="hidden" name="g" value="Ai9wnf">
+      <p class="nmt klaviyo_header_close tac text-white clickable" style="font-size: 13pt;"><span>✕</span></p>
+      <h1 class="text-white nm hide_on_submit">$12 Gekks!</h1>
+      <p class="hide_on_submit text-white nmt">Enter your information to instantly<br> unlock a discount for $12 Gekks</p>  
+      <input type="email" id="newsletter_popup_$email" class="newsletter_email hide_on_submit" name="email">
+      <div class="klaviyo_form_actions hide_on_submit">
+        <button type="submit" class="klaviyo_submit_button border-white"><span>let's go!</span></button> 
+      </div>
+      <p class="text-white hide_on_submit">Stay in the know with <b>exclusive deals</b></p>
+      <div class="error_message subscript" style="display: none;"></div> 
+    </form>
+    <div class="success_message"></div>
+  </div>
+</div>  
+<style>
+  #newsletter_popup3 #container-news {
+    border-radius: 100%;
+    overflow: hidden;
+    height: 400px;
+    width: 400px;
+    margin: 0 auto;
+    background-image:url({{'bluetieks.jpg' | asset_url}}); 
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#newsletter_popup3 #container-news form{
+    width: 250px;
+    margin: 20px auto;
+}
+#newsletter_popup3 #container-news h1 { font-size: 30pt; }
+#newsletter_popup3 #container-news p { font-size: 12pt; }
+#newsletter_popup3 #container-news form .klaviyo_submit_button {
+    display: inline-block;
+    font-size: 16pt;
+    line-height: 1;
+    color: white;
+    text-transform: lowercase;
+    width: 100%;
+    padding: 7px;
+    background: transparent;
+    border: 2px solid white;
+}
+@media only screen and (max-width: 450px) {
+  #newsletter_popup3 #container-news {
+    border-radius: 100%;
+    overflow: hidden;
+    height: 350px;
+    width: 350px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-image:url({{'bluetieks.jpg' | asset_url}}); 
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  #newsletter_popup3 #container-news h1 { font-size: 23pt; }
+#newsletter_popup3 #container-news p { font-size: 10pt; }
+
 <script>
 $(document).ready(function(){ 
   var flowFinish = readCookie('flowFinish')
@@ -35,13 +96,13 @@ $(document).ready(function(){
     setTimeout(function(){
       $('.modal').removeClass('darken')
       if ($('.modal:visible').length == 0) {
-        KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
+        KlaviyoSubscribe.attachToModalForm('.modal-newsletter', {
           delay_seconds: 0,
           ignore_cookie: true,
-          success_message: "<div class='success_feedback accent-padding'><div class='accent-padding border-white'><h2>Thank you!</h2><h3>You've unlocked $12 Gekks when you purchase 3 or more pairs.</h3><p class='tac'>Discount will be automatically applied in checkout</p></div></div>",
+          success_message: "<div class='success_feedback accent-padding'><div class='accent-padding'><h2>Thank you!</h2><h3>You've unlocked $12 Gekks when you purchase 3 or more pairs.</h3><p class='tac'>Discount will be automatically applied in checkout</p></div></div>",
      success: function ($form) {
           createCookie("emailSignUp", "popup", 14)
-
+            $('#container-news').css("background-image", "none"); 
       $('#success-close').show();
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
       $form.find('.hide_on_submit').hide();
