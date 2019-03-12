@@ -49,6 +49,7 @@ form input[type=submit], .modal .klaviyo_submit_button, form button { border: no
 .jcs { justify-content: flex-start; }
 .jcc { justify-content: center; }
 .jce { justify-content: flex-end; }
+.fdc { flex-direction: column; }
 .ais { align-items: flex-start !important; }
 .clickable { cursor: pointer; }
 p, textarea, td, ul, li, .error_message, .success_message { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
@@ -578,7 +579,6 @@ margin: 10px;
 
     #mission { padding: 30px; } 
 
-  #newsletter_popup2  .third{ height: 400px;}
   #thumbnails li img { width: 45px; }
   #faq .q-and-a { padding: 25px; }
   .page-header, .accent-padding { padding: 10px; } 
@@ -646,7 +646,6 @@ footer ul { margin: 5px; }
   body>header nav ul .desktop-sub-nav li a {font-size: 12pt; }
   .mo { display: none !important; } 
   .sizing-chart td, .sizing-chart tr { padding: 7px; }
-  #newsletter_popup2  .third{ height: 500px;}
   #mission { padding: 50px; } 
   #take-the-quiz { padding: 100px;} 
   .accent-section .half, #care-instructions .half { height: 440px; } 
@@ -2044,23 +2043,51 @@ vertical-align: middle;
     text-transform: lowercase;
     width: 100%;
 }
-#newsletter_popup2  .third{ 
-  background-image: url("{{'holiday-popup.jpg' | asset_url}}"); 
-  background-size: cover;
-  background-position: center;
-}
-#newsletter_popup2 { overflow: hidden; 
-    width: 90%;
-    min-width: 300px;
-    max-width: 600px;
-}
-
-#newsletter_popup2 .klaviyo_header_close {
-    position: absolute;
-    right: calc( 1% + 10px);
-    top: 10px;
+  #newsletter_popup3 #container-news {
+    border-radius: 100%;
+    overflow: hidden;
+    height: 400px;
+    width: 400px;
+    margin: 0 auto;
+        background-image:url({{'ab-pop.jpg' | asset_url}}); 
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
 }
 
+#newsletter_popup3 #container-news form{
+    width: 250px;
+    margin: 20px auto 0 auto;
+}
+#newsletter_popup3 #container-news h1 { font-size: 30pt; }
+#newsletter_popup3 #container-news p { font-size: 12pt; }
+#newsletter_popup3 #container-news form .klaviyo_submit_button {
+    display: inline-block;
+    font-size: 16pt;
+    line-height: 1;
+    color: white;
+    text-transform: lowercase;
+    width: 100%;
+    padding: 7px;
+    background: transparent;
+    border: 2px solid white;
+}
+@media only screen and (max-width: 450px) {
+  #newsletter_popup3 #container-news {
+    border-radius: 100%;
+    overflow: hidden;
+    height: 350px;
+    width: 350px;
+    max-width: 100%;
+    margin: 0 auto;
+        background-image: url({{'ab-pop.jpg' | asset_url}}); 
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+  }
+  #newsletter_popup3 .accent-padding { padding: 20px; }
+  #newsletter_popup3 #container-news h1 { font-size: 23pt; }
+#newsletter_popup3 #container-news p { font-size: 10pt; }
 /* Blog */
 
 .blog-btn { 
@@ -2115,8 +2142,6 @@ main.blog .page-header {
     padding: 25px;
 } 
 #inner-wrap { flex-wrap: wrap; }
-
-
 /*deals page*/
 #copied span {
     padding: 15px;
@@ -2141,16 +2166,16 @@ main.blog .page-header {
    -webkit-transition: 2s; 
     transition: 2s;
 }
-#banner-cta p { padding: 10px; text-transform: none; width: fit-content; margin: 0 auto; display: inline-block; background: #6DCDB8;}
-/*Customize Flow */
-#intro-bubbles {
-  width: fit-content;
-  margin: 0 auto !important;
-  width: -moz-max-content;   
+#banner-cta p { 
+  padding: 10px; 
+  text-transform: none; 
+  width: fit-content; 
+  margin: 0 auto; 
+  display: inline-block; 
+  background: #6DCDB8;
 }
-/**/
+
 .freeze-frame { height: 100vh; overflow: hidden; }
-/* modal a-b*/
 
 
 
