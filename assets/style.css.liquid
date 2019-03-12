@@ -49,6 +49,7 @@ form input[type=submit], .modal .klaviyo_submit_button, form button { border: no
 .jcs { justify-content: flex-start; }
 .jcc { justify-content: center; }
 .jce { justify-content: flex-end; }
+.fdc { flex-direction: column; }
 .ais { align-items: flex-start !important; }
 .clickable { cursor: pointer; }
 p, textarea, td, ul, li, .error_message, .success_message { font-family: 'Gilroy', sans-serif; font-weight: 300; } 
@@ -2048,7 +2049,7 @@ vertical-align: middle;
     height: 400px;
     width: 400px;
     margin: 0 auto;
-        background:url({{'ab-pop.jpg' | asset_url}}); 
+        background-image:url({{'ab-pop.jpg' | asset_url}}); 
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
@@ -2056,7 +2057,7 @@ vertical-align: middle;
 
 #newsletter_popup3 #container-news form{
     width: 250px;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
 }
 #newsletter_popup3 #container-news h1 { font-size: 30pt; }
 #newsletter_popup3 #container-news p { font-size: 12pt; }
@@ -2079,11 +2080,12 @@ vertical-align: middle;
     width: 350px;
     max-width: 100%;
     margin: 0 auto;
-        background: url({{'ab-pop.jpg' | asset_url}}); 
+        background-image: url({{'ab-pop.jpg' | asset_url}}); 
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
   }
+  #newsletter_popup3 .accent-padding { padding: 20px; }
   #newsletter_popup3 #container-news h1 { font-size: 23pt; }
 #newsletter_popup3 #container-news p { font-size: 10pt; }
 /* Blog */
@@ -2140,8 +2142,6 @@ main.blog .page-header {
     padding: 25px;
 } 
 #inner-wrap { flex-wrap: wrap; }
-
-
 /*deals page*/
 #copied span {
     padding: 15px;
@@ -2166,14 +2166,15 @@ main.blog .page-header {
    -webkit-transition: 2s; 
     transition: 2s;
 }
-#banner-cta p { padding: 10px; text-transform: none; width: fit-content; margin: 0 auto; display: inline-block; background: #6DCDB8;}
-/*Customize Flow */
-#intro-bubbles {
-  width: fit-content;
-  margin: 0 auto !important;
-  width: -moz-max-content;   
+#banner-cta p { 
+  padding: 10px; 
+  text-transform: none; 
+  width: fit-content; 
+  margin: 0 auto; 
+  display: inline-block; 
+  background: #6DCDB8;
 }
-/**/
+
 .freeze-frame { height: 100vh; overflow: hidden; }
 
 
