@@ -5,8 +5,8 @@
     <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
       <input type="hidden" name="g" value="Ai9wnf">
       <p class="nmt klaviyo_header_close tac text-white clickable" style="font-size: 13pt;"><span>✕</span></p>
-      <p class="hide_on_submit text-white nmt">Enter your information to instantly<br> unlock a discount for $12 Gekks</p>  
-      <h1 class="text-white nm hide_on_submit">$12 Gekks!</h1>
+      <p class="hide_on_submit text-white nmt">Enter your information to instantly<br> unlock a discount for 15% Off</p>  
+      <h1 class="text-white nm hide_on_submit">15% Off!</h1>
       <p class="nmt"></p>
       <input type="email" id="newsletter_popup_$email" class="newsletter_email hide_on_submit" name="email">
       <div class="klaviyo_form_actions hide_on_submit">
@@ -31,7 +31,7 @@ $(document).ready(function(){
         KlaviyoSubscribe.attachToModalForm('.modal-newsletter', {
           delay_seconds: 0,
           ignore_cookie: true,
-          success_message: "<div class='success_feedback accent-padding'><div class='accent-padding'><h2 class='nm'>Thank you!</h2><h3>You've unlocked $12 Gekks when you purchase 3 or more pairs.</h3><p class='tac'>Discount will be automatically applied in checkout</p></div></div>",
+          success_message: "<div class='success_feedback accent-padding'><div class='accent-padding'><h2 class='nm'>Thank you!</h2><h3>You've unlocked 15% off <br> on orders $60+</h3><p class='tac'>Use code 'Welcome15'</p></div></div>",
      success: function ($form) {
           createCookie("emailSignUp", "popup", 14)
             $('#container-news').css("background-image", "none"); 
@@ -39,7 +39,7 @@ $(document).ready(function(){
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
       $form.find('.hide_on_submit').hide();
     },
-  }); 
+  });  
   };
     createCookie("newsletterModal", "Displayed", 5)
     $('.index-sections, main, header, footer, #banner-cta, .mobile-nav1').addClass('darken')
