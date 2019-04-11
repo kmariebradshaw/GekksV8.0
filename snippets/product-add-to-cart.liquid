@@ -295,3 +295,9 @@ $('.shoe-wrapper').scroll(function() {
 </div>
 {% endif %}
 </form>
+ {% unless product.available %} 
+ <div id="sold-out-email">
+  <p class="subscript tac">Sign up below to be notified when these are back in stock!</p>
+  <div class="klaviyo-form-NRDXL2"></div>
+</div>
+{% endunless %}
